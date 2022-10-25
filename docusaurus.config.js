@@ -1,132 +1,217 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const lightCodeTheme = require('prism-react-renderer/themes/github');
+const darkCodeTheme = require('prism-react-renderer/themes/dracula');
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: "My Site",
-  tagline: "Dinosaurs are cool",
-  url: "https://your-docusaurus-test-site.com",
-  baseUrl: "/",
-  onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  title: 'Chakra UI',
+  tagline: 'Dinosaurs are cool',
+  url: 'https://chakra-ui.com',
+  baseUrl: '/docs/',
+  onBrokenLinks: 'throw',
+  onBrokenMarkdownLinks: 'warn',
+  favicon: 'img/favicon.png',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
+  organizationName: 'facebook', // Usually your GitHub org/user name.
+  projectName: 'docusaurus', // Usually your repo name.
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
   i18n: {
-    defaultLocale: "en",
-    locales: ["en"],
+    defaultLocale: 'en',
+    locales: ['en'],
   },
-
-  presets: [
-    [
-      "classic",
-      /** @type {import('@docusaurus/preset-classic').Options} */
-      ({
-        docs: {
-          sidebarPath: require.resolve("./sidebars.js"),
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
-        blog: {
-          showReadingTime: true,
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
-        },
-        theme: {
-          customCss: require.resolve("./src/css/custom.css"),
-        },
-      }),
-    ],
-  ],
 
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
-        title: "My Site",
         logo: {
-          alt: "My Site Logo",
-          src: "img/logo.svg",
+          alt: 'My Site Logo',
+          src: 'img/logo.svg',
         },
         items: [
           {
-            type: "doc",
-            docId: "intro",
-            position: "left",
-            label: "Tutorial",
+            type: 'doc',
+            docId: 'index',
+            docsPluginId: 'default',
+            position: 'left',
+            label: 'Getting Started',
+            sidebarPath: require.resolve('./sidebars/getting-started.js'),
           },
-          { to: "/blog", label: "Blog", position: "left" },
           {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
+            type: 'doc',
+            docId: 'style-props',
+            docsPluginId: 'styled-system',
+            position: 'left',
+            label: 'Styled System',
+            sidebarPath: require.resolve('./sidebars/styled-system.js'),
+          },
+          // {
+          //   type: 'doc',
+          //   docId: 'index',
+          //   position: 'left',
+          //   label: 'Components',
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: 'index',
+          //   position: 'left',
+          //   label: 'Hooks',
+          // },
+          // {
+          //   type: 'doc',
+          //   docId: 'index',
+          //   position: 'left',
+          //   label: 'Community',
+          // },
+          { to: '/changelog', label: 'Changelog', position: 'left' },
+          // {
+          //   type: 'doc',
+          //   docId: 'index',
+          //   position: 'left',
+          //   label: 'Blog',
+          // },
+          {
+            href: 'https://github.com/facebook/docusaurus',
+            label: 'GitHub',
+            position: 'right',
           },
         ],
       },
       footer: {
-        style: "dark",
+        style: 'dark',
         links: [
           {
-            title: "Docs",
+            title: 'Docs',
             items: [
               {
-                label: "Tutorial",
-                to: "/docs/intro",
+                label: 'Tutorial',
+                to: '/docs/intro',
               },
             ],
           },
           {
-            title: "Community",
+            title: 'Community',
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
+                label: 'Stack Overflow',
+                href: 'https://stackoverflow.com/questions/tagged/docusaurus',
               },
               {
-                label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                label: 'Discord',
+                href: 'https://discordapp.com/invite/docusaurus',
               },
               {
-                label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                label: 'Twitter',
+                href: 'https://twitter.com/docusaurus',
               },
             ],
           },
           {
-            title: "More",
+            title: 'More',
             items: [
               {
-                label: "Blog",
-                to: "/blog",
+                label: 'Blog',
+                to: '/blog',
               },
               {
-                label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                label: 'GitHub',
+                href: 'https://github.com/facebook/docusaurus',
               },
             ],
           },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
       },
+      algolia: {
+        indexName: 'chakra-ui',
+        apiKey: 'df1dcc41f7b8e5d68e73dd56d1e19701',
+        appId: 'BH4D9OD16A',
+        contextualSearch: true,
+      },
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
+
+  themes: [
+    '@docusaurus/theme-search-algolia',
+    '@docusaurus/theme-live-codeblock',
+  ],
+
+  plugins: [
+    [
+      '@docusaurus/theme-classic',
+      {
+        customCss: require.resolve('./src/css/custom.css'),
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-blog',
+      {
+        path: 'changelog',
+        routeBasePath: 'changelog',
+        postsPerPage: 1,
+        blogSidebarCount: 'ALL',
+        showReadingTime: false,
+        blogSidebarTitle: 'Changelogs',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        routeBasePath: '/getting-started',
+        path: './docs/getting-started',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        versions: {
+          current: {
+            label: 'v2',
+          },
+        },
+        lastVersion: 'current',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'styled-system',
+        routeBasePath: '/styled-system',
+        path: './docs/styled-system',
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
+        versions: {
+          current: {
+            label: 'v2',
+          },
+        },
+        lastVersion: 'current',
+      },
+    ],
+    [
+      '@docusaurus/plugin-client-redirects',
+      {
+        createRedirects(existingPath) {
+          if (existingPath.includes('/frameworks')) {
+            return [existingPath.replace('/frameworks', '')];
+          }
+
+          if (existingPath.includes('/integrations')) {
+            return [existingPath.replace('/integrations', '')];
+          }
+          return undefined;
+        },
+      },
+    ],
+    '@docusaurus/plugin-sitemap',
+  ],
 };
 
 module.exports = config;
