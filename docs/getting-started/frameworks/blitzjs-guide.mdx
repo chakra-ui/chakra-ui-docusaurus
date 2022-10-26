@@ -26,12 +26,14 @@ This installs Chakra UI and sets up the `ChakraProvider`.
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
 
-> Boom! You're good to go 🚀🚀🚀 However, if you'd love to take it a step
-> further, check out the optional step below.
+:::note
+You're good to go with steps 1 and 2. However, if you'd love to
+take it a step further, check out step 3.
+:::
 
-#### 2. Optional Setup
+### 2. Optional Setup
 
-- Customizing Theme
+#### Customizing Theme
 
 If you intend to customise the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
@@ -39,7 +41,7 @@ requirements, you can extend the `theme` from `@chakra-ui/react`.
 Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
 
-```jsx live=false
+```tsx
 // 1. Import the extendTheme function
 import { extendTheme } from '@chakra-ui/react';
 
@@ -74,19 +76,23 @@ function App() {
 }
 ```
 
-> To further customize components or build your own design system, the
-> `theme-tools` package includes useful utilities. Install
-> `@chakra-ui/theme-tools`.
+:::tip
+To further customize components or build your own design system, the
+`theme-tools` package includes useful utilities. Install
+`@chakra-ui/theme-tools`.
+:::
 
-- Using Chakra Icons
+#### Using Chakra Icons
 
 Chakra provides a set of commonly used interface icons you can use in your
 project.
 
 If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
 
-> Follow this guide for customising Chakra Icons
-> [Using Chakra UI Icons](/docs/components/media-and-icons/icon).
+:::tip
+Follow this guide for customising Chakra Icons
+[Using Chakra UI Icons](/docs/components/media-and-icons/icon).
+:::
 
 #### Notes on TypeScript 🚨
 

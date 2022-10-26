@@ -44,7 +44,7 @@ of your application.
 Go to `pages/_app.js` or `pages/_app.tsx` (create it if it doesn't exist) and
 wrap the `Component` with the `ChakraProvider`:
 
-```jsx live=false
+```tsx
 // pages/_app.js
 import { ChakraProvider } from '@chakra-ui/react';
 
@@ -67,8 +67,7 @@ requirements, you need to extend the `theme`.
 Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
 
-```jsx live=false
-// pages/_app.js
+```tsx title="pages/_app.js"
 import { ChakraProvider } from '@chakra-ui/react';
 
 // 1. Import the extendTheme function
@@ -97,23 +96,24 @@ function MyApp({ Component, pageProps }) {
 export default MyApp;
 ```
 
-> To further customize components or build your own design system, the
-> `theme-tools` package includes useful utilities.
+:::tip
+To further customize components or build your own design system, the
+`theme-tools` package includes useful utilities.
+:::
 
 ### Color Mode Script
 
 The color mode script needs to be added before the content inside the `body` tag
 for local storage syncing to work correctly.
 
-> When setting the initial color mode, we recommend adding it as a config to
-> your theme and reference that in the `ColorModeScript`.
+:::tip
+When setting the initial color mode, we recommend adding it as a config to
+your theme and reference that in the `ColorModeScript`. To use `ColorModeScript`
+on a site with strict `Content-Security-Policy`, you can use the `nonce` prop
+that will be passed to the `<script>` tag.
+:::
 
-> To use `ColorModeScript` on a site with strict `Content-Security-Policy`, you
-> can use the `nonce` prop that will be passed to the `<script>` tag.
-
-```jsx live=false ln={14}
-// pages/_document.js
-
+```tsx {14} title="pages/_document.js"
 import { ColorModeScript } from '@chakra-ui/react';
 import { Html, Head, Main, NextScript } from 'next/document';
 import theme from './theme';

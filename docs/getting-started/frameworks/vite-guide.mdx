@@ -7,7 +7,7 @@ category: frameworks
 sidebar_position: 70
 ---
 
-### 1. Installation
+## 1. Installation
 
 In your Vite React project, install Chakra UI by running either of the
 following:
@@ -20,7 +20,7 @@ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6
 ```
 
-### 2. Provider Setup
+## 2. Provider Setup
 
 After installing Chakra UI, you need to set up the `ChakraProvider` at the root
 of your application.
@@ -28,7 +28,7 @@ of your application.
 Go to the `src` directory and inside `main.jsx` or `main.tsx`, wrap
 `ChakraProvider` around `App`:
 
-```jsx live=false
+```tsx
 import { ChakraProvider } from '@chakra-ui/react';
 import * as ReactDOM from 'react-dom/client';
 
@@ -42,10 +42,12 @@ ReactDOM.createRoot(rootElement).render(
 );
 ```
 
-> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out step 3.
+:::note
+You're good to go with steps 1 and 2. However, if you'd love to
+take it a step further, check out step 3.
+:::
 
-### 3. Customizing theme (Optional)
+## 3. Customizing theme (Optional)
 
 If you intend to customise the default theme object to match your design
 requirements, you need to extend the `theme`.
@@ -53,7 +55,7 @@ requirements, you need to extend the `theme`.
 Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
 
-```jsx live=false
+```tsx
 // 1. Import the extendTheme function
 import { extendTheme } from '@chakra-ui/react';
 import * as ReactDOM from 'react-dom/client';
@@ -81,22 +83,23 @@ ReactDOM.createRoot(rootElement).render(
 );
 ```
 
-> **⚡Quick tip:** In cases where hot reload doesn't work, first check to make
-> sure you're using the latest version of Vite. If hot reload issue persists,
-> use this workaround in your `vite.config.js` or `vite.config.ts` file:
+:::tip
+In cases where hot reload doesn't work, first check to make
+sure you're using the latest version of Vite. If hot reload issue persists,
+use this workaround in your `vite.config.js` or `vite.config.ts` file:
+:::
 
-```jsx live=false
-
+```tsx
 server: {
-    watch: {
-      usePolling: true,
-    },
-
+  watch: {
+    usePolling: true,
+  },
+},
 ```
 
 Now, your `vite.config.js` or `vite.config.ts` should now look like this:
 
-```jsx live=false
+```tsx
 import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 
@@ -111,12 +114,12 @@ export default defineConfig({
 });
 ```
 
-#### Notes on TypeScript 🚨
+### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
 
-### ChakraProvider Props
+## ChakraProvider Props
 
 | Name             | Type             | Default               | Description                                         |
 | ---------------- | ---------------- | --------------------- | --------------------------------------------------- |

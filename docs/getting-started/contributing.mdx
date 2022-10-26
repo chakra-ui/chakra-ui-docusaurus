@@ -7,7 +7,7 @@ tags: ['contributing']
 sidebar_position: 50
 ---
 
-Thanks for showing interest to contribute to Chakra UI 💖, you rock!
+Thanks for showing interest to contribute to Chakra UI 💖 you rock!
 
 When it comes to open source, there are different ways you can contribute, all
 of which are valuable. Here's a few guidelines that should help you as you
@@ -46,36 +46,28 @@ cd chakra-ui-docs
    `npx contentlayer build` before running `pnpm dev` in order to generate the
    docsite content.
 
-> If you run into any issues, kindly reach out to the Chakra UI React team here:
-> https://discord.gg/chakra-ui
+:::note
+If you run into any issues, kindly reach out to the Chakra UI React team here:
+https://discord.gg/chakra-ui
+:::
 
 ### Commands
 
-**`pnpm`**: installs the dependency packages.
-
-**`pnpm dev`**: starts the local development server.
-
-**`pnpm build`**: builds the docsite for production.
-
-**`pnpm lint`**: runs the nextjs linter which checks for code issues.
-
-**`pnpm avatars:gen`**: regenerates the avatars
-
-**`pnpm members:gen`**: regenerates the members
-
-**`pnpm former-members:gen`**: regenerates the former members
-
-**`pnpm search-meta:gen`**: regenerates the search meta
-
-**`pnpm showcase-data:gen`**: regenerates the showcase data
-
-**`pnpm changelog:gen`**: regenerates the Changelog
-
-**`pnpm cache:clean`**: deletes the `.contentlayer` folder
-
-**`pnpm clean`**: deletes the `pnpm.lock` file and `node_modules`
-
-**`pnpm reinstall`**: reinstalls the dependency packages
+```bash
+pnpm # installs the dependency packages.
+pnpm dev # starts the local development server.
+pnpm build # builds the docsite for production.
+pnpm lint # runs the nextjs linter which checks for code issues.
+pnpm avatars:gen # regenerates the avatars
+pnpm members:gen # regenerates the members
+pnpm former-members:gen # regenerates the former members
+pnpm search-meta:gen # regenerates the search meta
+pnpm showcase-data:gen # regenerates the showcase data
+pnpm changelog:gen # regenerates the Changelog
+pnpm cache:clean # deletes the `.contentlayer` folder
+pnpm clean # deletes the `pnpm.lock` file and `node_modules`
+pnpm reinstall # reinstalls the dependency packages
+```
 
 ## Updating the docs for new release
 
@@ -153,7 +145,9 @@ project:
 echo "GITHUB_TOKEN=<PASTE YOUR TOKEN HERE>" >> .env
 ```
 
-> The `.env` file is already ignored by git.
+:::note
+The `.env` file is already ignored by git.
+:::
 
 ## License
 

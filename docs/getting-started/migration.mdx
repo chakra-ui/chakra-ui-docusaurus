@@ -9,8 +9,9 @@ Chakra UI v2 is focused on providing compatibility for React 18. Doing so we had
 to introduce some breaking changes. That lead us to remove some features that we
 deprecated previously.
 
-> Still using v0 and want to upgrade to v1?
-> [Go here](https://v1.chakra-ui.com/guides/migration)
+:::tip
+Still using v0 and want to upgrade to v1? [Go here](https://v1.chakra-ui.com/guides/migration)
+:::
 
 ---
 
@@ -23,9 +24,10 @@ Here is a list of steps to migrate your project to v2.
 Make sure you update all `@chakra-ui` packages you use to
 `@chakra-ui/<package-name>@2.0.0` and your `react` dependencies to at least v18
 
-> 🚨 Chakra UI v2 is not backwards compatible with React v17 and lower. Make
-> sure to upgrade to React v18.
-
+:::caution
+Chakra UI v2 is not backwards compatible with React v17 and lower. Make
+sure to upgrade to React v18.
+:::
 Here is how your dependencies could look like:
 
 ```json
@@ -83,8 +85,10 @@ ReactDOM.createRoot(yourRootElement).render(
 toast({ title: 'Chakra UI' });
 ```
 
-> Please note: There are **no breaking changes** to the hook `useToast`. There
-> are only breaking changes to `createStandaloneToast`.
+:::info
+Please note: There are **no breaking changes** to the hook `useToast`. There
+are only breaking changes to `createStandaloneToast`.
+:::
 
 ### 3. Color mode update
 
@@ -102,7 +106,7 @@ To opt out of this feature, set `theme.config.disableTransitionOnChange` to
 Allow user configure the storage key for the provider and script. We now export
 a `createLocalStorageManager` and `createCookieStorageManager` functions.
 
-```jsx live=false
+```tsx
 const manager = createLocalStorageManager('my-key');
 
 function App({ Component, pageProps }) {
@@ -117,7 +121,7 @@ function App({ Component, pageProps }) {
 If you use `ColorModeScript`, you'll need to configure the `storageKey` from
 script as well.
 
-```jsx live=false
+```tsx
 <ColorModeScript storageKey='my-key' />
 ```
 
@@ -126,7 +130,7 @@ script as well.
 Add support for using cookie storage in color mode script. To use cookie script,
 you can set `type` prop to `cookie`.
 
-```jsx live=false
+```tsx
 <ColorModeScript type='cookie' />
 ```
 
@@ -193,6 +197,8 @@ We removed deprecated types.
 
 **That's it! Welcome to Chakra UI v2 🥳.**
 
-> If you still experience issues after migrating, feel free to
-> [create an issue](https://github.com/chakra-ui/chakra-ui/issues) or join our
-> Discord chat here: https://discord.gg/dQHfcWF
+:::info
+If you still experience issues after migrating, feel free to
+[create an issue](https://github.com/chakra-ui/chakra-ui/issues) or join our
+Discord chat here: [discord.gg/chakra-ui](https://discord.gg/chakra-ui).
+:::

@@ -7,7 +7,7 @@ category: frameworks
 sidebar_position: 60
 ---
 
-### 1. Installation
+## 1. Installation
 
 Inside your `Remix` project root directory, install Chakra UI by running either
 of the following:
@@ -20,37 +20,39 @@ npm i @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @
 yarn add @chakra-ui/react @emotion/react@^11 @emotion/styled@^11 framer-motion@^6 @emotion/server@^11
 ```
 
-### 2. Provider Setup
+## 2. Provider Setup
 
 To prevent loss of styles we need to do some changes on the server-side and
 client-side.
 
-We’ll create a `context.tsx` in the `app` folder.
+We&apos;ll create a `context.tsx` in the `app` folder.
 
-```jsx live=false
-// context.tsx
-import React, { createContext } from 'react'
+```tsx title="context.tsx"
+import React, { createContext } from 'react';
 
 export interface ServerStyleContextData {
-  key: string
-  ids: Array<string>
-  css: string
+  key: string;
+  ids: Array<string>;
+  css: string;
 }
 
-export const ServerStyleContext = createContext<ServerStyleContextData[] | null>(null)
+export const ServerStyleContext = createContext<
+  ServerStyleContextData[] | null
+>(null);
 
 export interface ClientStyleContextData {
-  reset: () => void
+  reset: () => void;
 }
 
-export const ClientStyleContext = createContext<ClientStyleContextData | null>(null)
+export const ClientStyleContext = createContext<ClientStyleContextData | null>(
+  null
+);
 ```
 
 Next on the agenda is to create the emotion cache file. To do that, create a new
 `createEmotionCache.ts` file in the `app` folder.
 
-```jsx live=false
-// createEmotionCache.ts
+```tsx title="createEmotionCache.ts"
 import createCache from '@emotion/cache';
 
 export default function createEmotionCache() {
@@ -59,10 +61,9 @@ export default function createEmotionCache() {
 ```
 
 After creating the emotion cache, we need to modify the entry files for both the
-client and the server. We'll use our createEmotionCache function here.
+client and the server. We'll use our `createEmotionCache` function here:
 
-```jsx live=false
-// entry.client.tsx
+```tsx title="entry.client.tsx"
 import React, { useState } from 'react';
 import { hydrate } from 'react-dom';
 import { CacheProvider } from '@emotion/react';
@@ -97,8 +98,7 @@ hydrate(
 );
 ```
 
-```jsx live=false
-// entry.server.tsx
+```tsx title="entry.server.tsx"
 import { renderToString } from 'react-dom/server';
 import { CacheProvider } from '@emotion/react';
 import createEmotionServer from '@emotion/server/create-instance';
@@ -147,11 +147,10 @@ export default function handleRequest(
 Inside our `root.tsx` file we'll create a `Document` wrapper and then we'll wrap
 our `App` with the Document.
 
-```jsx live=false
-// root.tsx
-import React, { useContext, useEffect } from 'react'
-import { withEmotionCache } from '@emotion/react'
-import { ChakraProvider } from '@chakra-ui/react'
+```tsx title="root.tsx"
+import React, { useContext, useEffect } from 'react';
+import { withEmotionCache } from '@emotion/react';
+import { ChakraProvider } from '@chakra-ui/react';
 import {
   Links,
   LiveReload,
@@ -159,10 +158,10 @@ import {
   Outlet,
   Scripts,
   ScrollRestoration,
-} from '@remix-run/react'
-import { MetaFunction, LinksFunction } from '@remix-run/node' // Depends on the runtime you choose
+} from '@remix-run/react';
+import { MetaFunction, LinksFunction } from '@remix-run/node'; // Depends on the runtime you choose
 
-import { ServerStyleContext, ClientStyleContext } from './context'
+import { ServerStyleContext, ClientStyleContext } from './context';
 
 export const meta: MetaFunction = () => ({
   charset: 'utf-8',
@@ -176,10 +175,10 @@ export let links: LinksFunction = () => {
     { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
     {
       rel: 'stylesheet',
-      href: 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;1,300;1,400;1,500;1,600;1,700;1,800&display=swap'
+      href: 'https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap',
     },
-  ]
-}
+  ];
+};
 
 interface DocumentProps {
   children: React.ReactNode;
@@ -205,7 +204,7 @@ const Document = withEmotionCache(
     }, []);
 
     return (
-      <html lang="en">
+      <html lang='en'>
         <head>
           <Meta />
           <Links />
@@ -231,7 +230,7 @@ const Document = withEmotionCache(
 
 And then we'll wrap the App just like so:
 
-```jsx live=false
+```tsx
 export default function App() {
   return (
     <Document>
@@ -243,7 +242,7 @@ export default function App() {
 }
 ```
 
-#### ChakraProvider Props
+### ChakraProvider Props
 
 | Name             | Type             | Default               | Description                                         |
 | ---------------- | ---------------- | --------------------- | --------------------------------------------------- |
@@ -252,12 +251,14 @@ export default function App() {
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
 
-> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out step 3.
+:::note
+You're good to go with steps 1 and 2. However, if you'd love to
+take it a step further, check out step 3.
+:::
 
-### 3. Optional Setup
+## 3. Optional Setup
 
-- Customizing Theme
+### Customizing Theme
 
 If you intend to customise the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
@@ -265,7 +266,7 @@ requirements, you can extend the `theme` from `@chakra-ui/react`.
 Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
 
-```jsx live=false
+```tsx
 import { extendTheme, ChakraProvider } from '@chakra-ui/react';
 
 const colors = {
@@ -289,7 +290,7 @@ export default function App() {
 }
 ```
 
-- Add colorModeManager
+### Add colorModeManager
 
 Remix is server-side rendered, so there will be color mode `flashing`, because chakra stores color mode in `localstorage` by default.
 
@@ -299,48 +300,49 @@ Here's how to fix it:
 
 1. Create loader in your `root.tsx`
 
-```tsx live=false
-// Typescript
-// This will return cookies
-export const loader: LoaderFunction = async ({ request }) => {
-  // first time users will not have any cookies and you may not return
-  // undefined here, hence ?? is necessary
-  return request.headers.get('cookie') ?? '';
-};
-```
+   ```tsx
+   // This will return cookies
+   export const loader: LoaderFunction = async ({ request }) => {
+     // first time users will not have any cookies and you may not return
+     // undefined here, hence ?? is necessary
+     return request.headers.get('cookie') ?? '';
+   };
+   ```
 
 2. Give `ChakraProvider` cookies from loader
 
-```jsx live=false
-// root.tsx
-// In your App function
-const cookies = useLoaderData()
-[...]
-// Add colorModeManager to ChakraProvider
-return (
-    <Document>
-      <ChakraProvider theme={theme}
-        colorModeManager={typeof cookies === 'string'
-          ? cookieStorageManagerSSR(cookies)
-          : localStorageManager
-        }>
-        [...]
-      </ChakraProvider>
-    </Document>
-  )
-```
+   ```tsx title="root.tsx"
+   // In your App function
+   const cookies = useLoaderData();
+   // ...
+   // Add colorModeManager to ChakraProvider
+   return (
+     <Document>
+       <ChakraProvider
+         theme={theme}
+         colorModeManager={
+           typeof cookies === 'string'
+             ? cookieStorageManagerSSR(cookies)
+             : localStorageManager
+         }
+       >
+         {/* ... */}
+       </ChakraProvider>
+     </Document>
+   );
+   ```
 
 That's it!
 
-#### Notes on TypeScript 🚨
+### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
 
-### 4. Community boilerplates
+## 4. Community boilerplates
 
 If you're starting a new project and would like to cut down on configuration
-time, you can use some of these community boilerplates. 👇
+time, you can use some of these community boilerplates:
 
 - https://github.com/aacevski/chakra-remix-boilerplate
 - https://github.com/NoQuarterTeam/boilerplate-remix

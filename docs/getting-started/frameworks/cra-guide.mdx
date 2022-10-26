@@ -84,7 +84,7 @@ of your application. This can be either in your `index.jsx` or `index.tsx`
 
 Put in the following code:
 
-```jsx live=false
+```tsx
 import * as React from 'react';
 
 // 1. import `ChakraProvider` component
@@ -109,12 +109,14 @@ function App() {
 | colorModeManager | `StorageManager` | `localStorageManager` | manager to persist a users color mode preference in |
 | portalZIndex     | `number`         | `undefined`           | common z-index to use for `Portal`                  |
 
-> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out step 3.
+:::note
+You're good to go with steps 1 and 2. However, if you'd love to
+take it a step further, check out step 3.
+:::
 
 ### 3. Optional Setup
 
-- Customizing Theme
+#### Customizing Theme
 
 If you intend to customise the default theme object to match your design
 requirements, you can extend the `theme` from `@chakra-ui/react`.
@@ -122,7 +124,7 @@ requirements, you can extend the `theme` from `@chakra-ui/react`.
 Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
 
-```jsx live=false
+```tsx
 // 1. Import the extendTheme function
 import { extendTheme, ChakraProvider } from '@chakra-ui/react';
 
@@ -147,24 +149,26 @@ function App() {
 }
 ```
 
-> To further customize components or build your own design system, the
-> `theme-tools` package includes useful utilities. Install
-> `@chakra-ui/theme-tools`.
+:::tip
+To further customize components or build your own design system, the
+`theme-tools` package includes useful utilities. Install
+`@chakra-ui/theme-tools`.
+:::
 
-- Using Chakra Icons
+#### Using Chakra Icons
 
 Chakra provides a set of commonly used interface icons you can use in your
-project.
+project. If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
 
-If you want to use the icons from Chakra UI, install `@chakra-ui/icons`.
-
-> Follow this guide for customising Chakra Icons
-> [Using Chakra UI Icons](/docs/components/media-and-icons/icon).
+:::tip
+Follow this guide for customising Chakra Icons:
+[Using Chakra UI Icons](/docs/components/media-and-icons/icon).
+:::
 
 #### Notes on TypeScript 🚨
 
 Please note that when adding Chakra UI to a TypeScript project, a minimum
 TypeScript version of `4.1.0` is required.
 
-In`create-react-app` project, you'll need to manually upgrade `typescript` to
+In `create-react-app` project, you'll need to manually upgrade `typescript` to
 `^4.1.0`.

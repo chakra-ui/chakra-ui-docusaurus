@@ -43,7 +43,7 @@ customizations and Storybook integration) below.
    root of your application. Go to `App.js` and add the `ChakraProvider` like
    this:
 
-   ```jsx live=false
+   ```tsx title="App.js"
    import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
 
    const App = () => (
@@ -62,9 +62,10 @@ customizations and Storybook integration) below.
    export default App;
    ```
 
-> Boom! You're good to go with steps 1 and 2 🚀🚀🚀 However, if you'd love to
-> take it a step further, check out the additional steps
-> [outlined below](#additional-setup).
+:::note
+You're good to go with steps 1 and 2. However, if you'd love to
+take it a step further, check out step 3.
+:::
 
 ### Notes on TypeScript 🚨
 
@@ -80,7 +81,7 @@ If you intend to
 will need to pass your extended theme object as a prop to `ChakraProvider` as
 follows:
 
-```jsx live=false
+```tsx
 // 1. Import the extendTheme function
 import { extendTheme } from '@chakra-ui/react';
 
@@ -116,9 +117,11 @@ RedwoodJS ships with Storybook included. To automatically wrap your your stories
 with the `<ChakraProvider />` and add a color mode toggle, follow the steps
 below.
 
-> The steps outlined here are semantically identical to our
-> [Storybook integration Guide](/getting-started/with-storybook), only the
-> install commands and file locations differ.
+:::note
+The steps outlined here are semantically identical to our
+[Storybook integration Guide](/getting-started/with-storybook), only the
+install commands and file locations differ.
+:::
 
 1. Install the official Storybook Addon for Chakra UI:
    ```bash
@@ -127,7 +130,7 @@ below.
    ```
 2. Add the addon to your configuration in `web/config/storybook.config.js`:
 
-   ```jsx live=false
+   ```tsx title="web/config/storybook.config.js"
    module.exports = {
      addons: [
        // ...
@@ -141,7 +144,7 @@ below.
    you will want to see them applied in Storybook as well. Enable them in `web/config/storybook.preview.js`
    like this:
 
-   ```jsx live=false
+   ```tsx title="web/config/storybook.preview.js"
    const theme = require('../path/to/your/theme');
 
    export const parameters = {
