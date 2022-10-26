@@ -8,16 +8,10 @@ const config = {
   title: "Chakra UI",
   tagline: "Dinosaurs are cool",
   url: "https://chakra-ui.com",
-  baseUrl: "/docs/",
+  baseUrl: "/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
   favicon: "img/favicon.png",
-
-  // GitHub pages deployment config.
-  // If you aren't using GitHub pages, you don't need these.
-  organizationName: "facebook", // Usually your GitHub org/user name.
-  projectName: "docusaurus", // Usually your repo name.
-
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
   // to replace "en" with "zh-Hans".
@@ -25,13 +19,12 @@ const config = {
     defaultLocale: "en",
     locales: ["en"],
   },
-
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
       navbar: {
         logo: {
-          alt: "My Site Logo",
+          alt: "Chakra UI Logo",
           src: "img/logo.svg",
         },
         items: [
@@ -41,7 +34,6 @@ const config = {
             docsPluginId: "default",
             position: "left",
             label: "Getting Started",
-            sidebarPath: require.resolve("./sidebars/getting-started.js"),
           },
           {
             type: "doc",
@@ -49,7 +41,6 @@ const config = {
             docsPluginId: "styled-system",
             position: "left",
             label: "Styled System",
-            sidebarPath: require.resolve("./sidebars/styled-system.js"),
           },
           // {
           //   type: 'doc',
@@ -63,39 +54,26 @@ const config = {
           //   position: 'left',
           //   label: 'Hooks',
           // },
-          // {
-          //   type: 'doc',
-          //   docId: 'index',
-          //   position: 'left',
-          //   label: 'Community',
-          // },
+          {
+            type: "doc",
+            docId: "index",
+            docsPluginId: "community",
+            position: "left",
+            label: "Community",
+          },
           { to: "/changelog", label: "Changelog", position: "left" },
-          // {
-          //   type: 'doc',
-          //   docId: 'index',
-          //   position: 'left',
-          //   label: 'Blog',
-          // },
-          // {
-          //   position: "right",
-          //   type: "iconLink",
-          //   icon: {
-          //     alt: "github logo",
-          //     src: `/img/github.svg`,
-          //     href: "https://github.com/chakra-ui/chakra-ui",
-          //     target: "_blank",
-          //   },
-          // },
-          // {
-          //   position: "right",
-          //   type: "iconLink",
-          //   icon: {
-          //     alt: "discord logo",
-          //     src: `/img/discord.svg`,
-          //     href: "https://discord.gg/chakra-ui",
-          //     target: "_blank",
-          //   },
-          // },
+          {
+            position: "right",
+            alt: "github logo",
+            src: "img/github.svg",
+            href: "https://github.com/chakra-ui/chakra-ui",
+          },
+          {
+            position: "right",
+            alt: "discord logo",
+            src: "img/discord.svg",
+            href: "https://discord.gg/chakra-ui",
+          },
         ],
       },
       footer: {
@@ -115,11 +93,11 @@ const config = {
             items: [
               {
                 label: "Discord",
-                href: "https://discordapp.com/invite/docusaurus",
+                href: "https://discord.gg/chakra-ui",
               },
               {
                 label: "Twitter",
-                href: "https://twitter.com/docusaurus",
+                href: "https://twitter.com/chakra-ui",
               },
             ],
           },
@@ -128,7 +106,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: "https://github.com/facebook/docusaurus",
+                href: "https://github.com/chakra-ui/chakra-ui",
               },
             ],
           },
@@ -177,12 +155,6 @@ const config = {
         path: "./docs/getting-started",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-        versions: {
-          current: {
-            label: "v2",
-          },
-        },
-        lastVersion: "current",
       },
     ],
     [
@@ -193,12 +165,16 @@ const config = {
         path: "./docs/styled-system",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
-        versions: {
-          current: {
-            label: "v2",
-          },
-        },
-        lastVersion: "current",
+      },
+    ],
+    [
+      "@docusaurus/plugin-content-docs",
+      {
+        id: "community",
+        routeBasePath: "/community",
+        path: "./docs/community",
+        showLastUpdateAuthor: true,
+        showLastUpdateTime: true,
       },
     ],
     [
