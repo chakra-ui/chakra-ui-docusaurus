@@ -1,8 +1,7 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
-const lightCodeTheme = require("prism-react-renderer/themes/github");
-const darkCodeTheme = require("prism-react-renderer/themes/dracula");
+const darkCodeTheme = require("prism-react-renderer/themes/nightOwl");
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -77,15 +76,30 @@ const config = {
           //   position: 'left',
           //   label: 'Blog',
           // },
-          {
-            href: "https://github.com/facebook/docusaurus",
-            label: "GitHub",
-            position: "right",
-          },
+          // {
+          //   position: "right",
+          //   type: "iconLink",
+          //   icon: {
+          //     alt: "github logo",
+          //     src: `/img/github.svg`,
+          //     href: "https://github.com/chakra-ui/chakra-ui",
+          //     target: "_blank",
+          //   },
+          // },
+          // {
+          //   position: "right",
+          //   type: "iconLink",
+          //   icon: {
+          //     alt: "discord logo",
+          //     src: `/img/discord.svg`,
+          //     href: "https://discord.gg/chakra-ui",
+          //     target: "_blank",
+          //   },
+          // },
         ],
       },
       footer: {
-        style: "dark",
+        style: "light",
         links: [
           {
             title: "Docs",
@@ -100,10 +114,6 @@ const config = {
             title: "Community",
             items: [
               {
-                label: "Stack Overflow",
-                href: "https://stackoverflow.com/questions/tagged/docusaurus",
-              },
-              {
                 label: "Discord",
                 href: "https://discordapp.com/invite/docusaurus",
               },
@@ -116,10 +126,6 @@ const config = {
           {
             title: "More",
             items: [
-              {
-                label: "Blog",
-                to: "/blog",
-              },
               {
                 label: "GitHub",
                 href: "https://github.com/facebook/docusaurus",
@@ -136,7 +142,7 @@ const config = {
         contextualSearch: true,
       },
       prism: {
-        theme: lightCodeTheme,
+        theme: darkCodeTheme,
         darkTheme: darkCodeTheme,
       },
     }),
