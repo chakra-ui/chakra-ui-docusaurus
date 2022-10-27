@@ -256,7 +256,7 @@ The properties that affect the theming of the `Avatar` component are:
 - `defineMultiStyleConfig`: a function used to define the style configuration
   for a multipart component.
 
-```jsx live=false
+```jsx
 import { avatarAnatomy } from '@chakra-ui/anatomy';
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 
@@ -266,7 +266,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 ## Customizing the default theme
 
-```jsx live=false
+```jsx
 import { avatarAnatomy } from '@chakra-ui/anatomy';
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 
@@ -295,7 +295,7 @@ export const avatarTheme = defineMultiStyleConfig({ baseStyle });
 After customizing the avatar theme, we can import it in our theme file and add
 it in the `components` property:
 
-```jsx live=false
+```jsx
 import { extendTheme } from '@chakra-ui/react';
 import { avatarTheme } from './components/avatar';
 
@@ -312,7 +312,7 @@ export const theme = extendTheme({
 Let's assume we want to include an super large avatar size. Here's how we can do
 that:
 
-```jsx live=false
+```jsx
 import { avatarAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
@@ -346,7 +346,7 @@ tool [here](/docs/styled-system/cli).
 Let's assume we want to include a custom rounded square variant. Here's how we
 can do that:
 
-```jsx live=false
+```jsx 
 import { avatarAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
@@ -390,7 +390,7 @@ export const avatarTheme = defineMultiStyleConfig({
 Let's assume we want to change the default size and variant of every avatar in
 our app. Here's how we can do that:
 
-```jsx live=false
+```jsx 
 import { avatarAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
