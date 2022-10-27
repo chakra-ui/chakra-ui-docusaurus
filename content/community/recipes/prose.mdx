@@ -7,6 +7,8 @@ tags: ["prose", "typography", "remote content"]
 author: nikolovlazar
 ---
 
+import ProseSandpack from "../../../src/sandpack-contents/recipes/prose.mdx"
+
 [Chakra UI Prose](https://github.com/nikolovlazar/chakra-ui-prose) is a
 "second-party" package that adds ready-made styles to a remote HTML content.
 It's "second-party" because it's created by one of Chakra UI's maintainers, but
@@ -85,15 +87,5 @@ to understand how you can override a certain element style.
 
 There's also a CodeSandbox available that uses the Chakra UI Prose package:
 
-<!--
-import { App, Index } from "configs/sandpack-contents/prose/prose";
+<ProseSandpack />
 
-<SandpackEditor
-  dependencies={{
-    "@nikolovlazar/chakra-ui-prose": "1.0.4",
-  }}
-  files={{
-    "/App.tsx": App,
-    "/index.tsx": Index,
-  }}
-/> -->
