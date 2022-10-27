@@ -1,11 +1,11 @@
 ---
-id: alert
 category: feedback
 title: Alert
 package: '@chakra-ui/alert'
-description:
-  Alerts are used to communicate a state that affects a system, feature or page.
+description: Alerts are used to communicate a state that affects a system, feature or page.
 ---
+
+Alerts are used to communicate a state that affects a system, feature or page.
 
 ## Import
 
@@ -24,12 +24,12 @@ import {
   AlertIcon,
   AlertTitle,
   AlertDescription,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Usage
 
-```jsx
+```jsx live
 <Alert status='error'>
   <AlertIcon />
   <AlertTitle>Your browser is outdated!</AlertTitle>
@@ -43,7 +43,7 @@ Change the status of the alerts by passing the `status` prop. This affects the
 color scheme and icon used. Alert supports `error`, `success`, `warning`, and
 `info` statuses.
 
-```jsx
+```jsx live
 <Stack spacing={3}>
   <Alert status='error'>
     <AlertIcon />
@@ -72,7 +72,7 @@ color scheme and icon used. Alert supports `error`, `success`, `warning`, and
 `Alert` has 4 variant styles you can use. Pass the `variant` prop and use either
 `subtle`, `solid`, `left-accent` or `top-accent`.
 
-```jsx
+```jsx live
 <Stack spacing={3}>
   <Alert status='success' variant='subtle'>
     <AlertIcon />
@@ -101,7 +101,7 @@ color scheme and icon used. Alert supports `error`, `success`, `warning`, and
 `Alert` ships with smaller components to allow for flexibility in creating all
 kinds of layouts. Here's an example of a custom alert style and layout:
 
-```jsx
+```jsx live
 <Alert
   status='success'
   variant='subtle'
@@ -125,13 +125,13 @@ kinds of layouts. Here's an example of a custom alert style and layout:
 alert with wrapping description text and the `CloseButton` component with simple
 close functionality:
 
-```jsx
+```jsx live
 function CompExample() {
   const {
     isOpen: isVisible,
     onClose,
     onOpen,
-  } = useDisclosure({ defaultIsOpen: true })
+  } = useDisclosure({ defaultIsOpen: true });
 
   return isVisible ? (
     <Alert status='success'>
@@ -153,6 +153,26 @@ function CompExample() {
     </Alert>
   ) : (
     <Button onClick={onOpen}>Show Alert</Button>
-  )
+  );
 }
 ```
+
+## Props
+
+### Alert Props
+
+`Alert` is the wrapper for `Alert` component. It composes the `Flex` component.
+
+<PropsTable of='Alert' />
+
+### AlertIcon Props
+
+`AlertIcon` composes `Icon` and changes the icon based on the `status` prop.
+
+### AlertTitle Props
+
+`AlertTitle` composes the `Box` component.
+
+### AlertDescription Props
+
+`AlertDescription` composes the `Box` component.

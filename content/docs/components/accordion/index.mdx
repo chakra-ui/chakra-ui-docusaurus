@@ -1,11 +1,14 @@
 ---
 title: Accordion
-category: "disclosure"
-package: "@chakra-ui/accordion"
+category: 'disclosure'
+package: '@chakra-ui/accordion'
 description:
   Accordions display a list of high-level options that can expand/collapse to
   reveal more information.
 ---
+
+Accordions display a list of high-level options that can expand/collapse to
+reveal more information.
 
 ## Import
 
@@ -27,7 +30,7 @@ import {
   AccordionButton,
   AccordionPanel,
   AccordionIcon,
-} from "@chakra-ui/react";
+} from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -43,7 +46,7 @@ the `up` and `down` arrow keys will move focus between accordion buttons.
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex='1' textAlign='left'>
           Section 1 title
         </Box>
         <AccordionIcon />
@@ -60,7 +63,7 @@ the `up` and `down` arrow keys will move focus between accordion buttons.
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex='1' textAlign='left'>
           Section 2 title
         </Box>
         <AccordionIcon />
@@ -89,7 +92,7 @@ items to be expanded at once.
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex='1' textAlign='left'>
           Section 1 title
         </Box>
         <AccordionIcon />
@@ -106,7 +109,7 @@ items to be expanded at once.
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex='1' textAlign='left'>
           Section 2 title
         </Box>
         <AccordionIcon />
@@ -131,7 +134,7 @@ If you set `allowToggle` to `true`, any expanded item may be collapsed again.
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex='1' textAlign='left'>
           Section 1 title
         </Box>
         <AccordionIcon />
@@ -148,7 +151,7 @@ If you set `allowToggle` to `true`, any expanded item may be collapsed again.
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex='1' textAlign='left'>
           Section 2 title
         </Box>
         <AccordionIcon />
@@ -174,8 +177,8 @@ style this state.
 <Accordion>
   <AccordionItem>
     <h2>
-      <AccordionButton _expanded={{ bg: "tomato", color: "white" }}>
-        <Box flex="1" textAlign="left">
+      <AccordionButton _expanded={{ bg: 'tomato', color: 'white' }}>
+        <Box flex='1' textAlign='left'>
           Click me to see a different style
         </Box>
         <AccordionIcon />
@@ -201,7 +204,7 @@ render prop. It provides 2 internal state props: `isExpanded` and `isDisabled`.
   <AccordionItem>
     <h2>
       <AccordionButton>
-        <Box flex="1" textAlign="left">
+        <Box flex='1' textAlign='left'>
           Section 1 title
         </Box>
         <AccordionIcon />
@@ -220,13 +223,13 @@ render prop. It provides 2 internal state props: `isExpanded` and `isDisabled`.
       <>
         <h2>
           <AccordionButton>
-            <Box flex="1" textAlign="left">
+            <Box flex='1' textAlign='left'>
               Section 2 title
             </Box>
             {isExpanded ? (
-              <MinusIcon fontSize="12px" />
+              <MinusIcon fontSize='12px' />
             ) : (
-              <AddIcon fontSize="12px" />
+              <AddIcon fontSize='12px' />
             )}
           </AccordionButton>
         </h2>
@@ -251,11 +254,11 @@ toggle (expand or collapse) the accordion.
 
 ### Accordion Props
 
-<PropsTable of="Accordion" />
+<PropsTable of='Accordion' />
 
 ### AccordionItem Props
 
-<PropsTable of="AccordionItem" />
+<PropsTable of='AccordionItem' />
 
 ### AccordionButton Props
 
