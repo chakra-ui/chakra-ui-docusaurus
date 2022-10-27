@@ -23,7 +23,13 @@ const SandpackEditor = ({
         showNavigator: true,
       }}
       customSetup={{
-        dependencies,
+        dependencies: {
+          '@chakra-ui/react': 'latest',
+          '@emotion/styled': 'latest',
+          'framer-motion': 'latest',
+          '@emotion/react': 'latest',
+          ...dependencies
+        }
       }}
     />
   );
