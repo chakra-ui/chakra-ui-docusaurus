@@ -37,23 +37,11 @@ const config = {
           },
           {
             type: "doc",
-            docId: "style-props",
-            docsPluginId: "styled-system",
+            docId: "index",
+            docsPluginId: "docs",
             position: "left",
-            label: "Styled System",
+            label: "Docs",
           },
-          // {
-          //   type: 'doc',
-          //   docId: 'index',
-          //   position: 'left',
-          //   label: 'Components',
-          // },
-          // {
-          //   type: 'doc',
-          //   docId: 'index',
-          //   position: 'left',
-          //   label: 'Hooks',
-          // },
           {
             type: "doc",
             docId: "index",
@@ -61,7 +49,6 @@ const config = {
             position: "left",
             label: "Community",
           },
-          { to: "/changelog", label: "Changelog", position: "left" },
           {
             position: "right",
             alt: "github logo",
@@ -140,7 +127,7 @@ const config = {
     [
       "@docusaurus/plugin-content-blog",
       {
-        path: "changelog",
+        path: "./content/changelog",
         routeBasePath: "changelog",
         postsPerPage: 1,
         blogSidebarCount: "ALL",
@@ -152,7 +139,7 @@ const config = {
       "@docusaurus/plugin-content-docs",
       {
         routeBasePath: "/",
-        path: "./docs/getting-started",
+        path: "./content/getting-started",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
@@ -160,9 +147,9 @@ const config = {
     [
       "@docusaurus/plugin-content-docs",
       {
-        id: "styled-system",
-        routeBasePath: "/styled-system",
-        path: "./docs/styled-system",
+        id: "docs",
+        routeBasePath: "/docs",
+        path: "./content/docs",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
@@ -172,7 +159,7 @@ const config = {
       {
         id: "community",
         routeBasePath: "/community",
-        path: "./docs/community",
+        path: "./content/community",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },

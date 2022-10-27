@@ -22,6 +22,7 @@
     "@docusaurus/core": "2.1.0",
     "@docusaurus/plugin-client-redirects": "^2.1.0",
     "@docusaurus/preset-classic": "2.1.0",
+    "@docusaurus/theme-classic": "^2.1.0",
     "@docusaurus/theme-live-codeblock": "^2.1.0",
     "@emotion/cache": "^11.10.3",
     "@emotion/react": "^11.10.4",
