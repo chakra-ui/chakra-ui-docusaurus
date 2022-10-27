@@ -26,6 +26,7 @@ const config = {
         logo: {
           alt: 'Chakra UI Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
         },
         items: [
           {
