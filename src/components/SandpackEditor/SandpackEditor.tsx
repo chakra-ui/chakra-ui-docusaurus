@@ -1,9 +1,13 @@
-import React from 'react';
-import { Box } from "@chakra-ui/react";
-import { SandpackCodeEditor, SandpackLayout, SandpackPreview, SandpackProvider } from "@codesandbox/sandpack-react";
+import { Box } from '@chakra-ui/react';
+import {
+  SandpackCodeEditor,
+  SandpackLayout,
+  SandpackPreview,
+  SandpackProvider,
+} from '@codesandbox/sandpack-react';
 import { useColorMode } from '@docusaurus/theme-common';
 
-import { createFileMap } from "./createFileMap";
+import { createFileMap } from './createFileMap';
 
 const SandpackEditor = ({
   children,
@@ -17,7 +21,7 @@ const SandpackEditor = ({
 
   return (
     <SandpackProvider
-      template="react-ts"
+      template='react-ts'
       files={files}
       theme={colorMode === 'dark' ? 'dark' : 'light'}
       customSetup={{
@@ -26,7 +30,7 @@ const SandpackEditor = ({
           '@emotion/styled': 'latest',
           'framer-motion': 'latest',
           '@emotion/react': 'latest',
-          ...dependencies
+          ...dependencies,
         },
       }}
     >
@@ -43,10 +47,7 @@ const SandpackEditor = ({
             minWidth: '400px',
           }}
         />
-        <Box
-          as={SandpackPreview}
-          minHeight='350px'
-        />
+        <Box as={SandpackPreview} minHeight='350px' />
       </Box>
     </SandpackProvider>
   );
