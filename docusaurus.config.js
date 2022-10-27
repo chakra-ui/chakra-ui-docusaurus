@@ -31,29 +31,10 @@ const config = {
           {
             type: 'doc',
             docId: 'index',
-            docsPluginId: 'default',
+            docsPluginId: 'docs',
             position: 'left',
-            label: 'Getting Started',
+            label: 'Docs',
           },
-          {
-            type: 'doc',
-            docId: 'style-props',
-            docsPluginId: 'styled-system',
-            position: 'left',
-            label: 'Styled System',
-          },
-          // {
-          //   type: 'doc',
-          //   docId: 'index',
-          //   position: 'left',
-          //   label: 'Components',
-          // },
-          // {
-          //   type: 'doc',
-          //   docId: 'index',
-          //   position: 'left',
-          //   label: 'Hooks',
-          // },
           {
             type: 'doc',
             docId: 'index',
@@ -140,7 +121,7 @@ const config = {
     [
       '@docusaurus/plugin-content-blog',
       {
-        path: 'changelog',
+        path: './content/changelog',
         routeBasePath: 'changelog',
         postsPerPage: 1,
         blogSidebarCount: 'ALL',
@@ -152,7 +133,7 @@ const config = {
       '@docusaurus/plugin-content-docs',
       {
         routeBasePath: '/',
-        path: './docs/getting-started',
+        path: './content/getting-started',
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
@@ -160,9 +141,9 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
-        id: 'styled-system',
-        routeBasePath: '/styled-system',
-        path: './docs/styled-system',
+        id: 'docs',
+        routeBasePath: '/docs',
+        path: './content/docs',
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
@@ -172,7 +153,7 @@ const config = {
       {
         id: 'community',
         routeBasePath: '/community',
-        path: './docs/community',
+        path: './content/community',
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
       },
