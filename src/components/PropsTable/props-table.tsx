@@ -40,7 +40,7 @@ export type PropsTableProps = {
   only?: string[] | null;
 };
 
-const PropsTable = ({
+export const PropsTable = ({
   of,
   omit = ["layerStyle", "noOfLines", "textStyle", "orientation", "styleConfig"],
   only,
@@ -59,7 +59,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
   }
 
   return (
-    <ChakraIFrameProvider>
+    <ChakraProvider resetCSS={false}>
       <Stack overflowX="auto" spacing="16" my="10">
         {propList.map((prop) => (
           <chakra.div
@@ -74,7 +74,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
                 fontSize: "0.9em",
                 textAlign: "start",
                 fontWeight: 500,
-                padding: "4px 16px 4px 8px",
+                padding: "4px 16px 4px 16px",
                 whiteSpace: "nowrap",
                 verticalAlign: "baseline",
               },
@@ -126,11 +126,9 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
           </chakra.div>
         ))}
       </Stack>
-    </ChakraIFrameProvider>
+    </ChakraProvider>
   );
 };
-
-export default PropsTable;
 
 const TYPE_GENERIC_THEMEABLE = [
   "string",
