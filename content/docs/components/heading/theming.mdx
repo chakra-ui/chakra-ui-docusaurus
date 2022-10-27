@@ -1,7 +1,8 @@
 ---
-id: heading
 scope: theming
 ---
+
+import Showcase from "../../../../src/sandpack-contents/component-theming/heading.mdx"
 
 The `Heading` component is a single part component. All of the styling is
 applied directly to the `h2` element.
@@ -109,23 +110,5 @@ export const headingheme = defineStyleConfig({
 ```
 
 ## Showcase
-<!-- 
-import {
-  App,
-  Index,
-  HeadingTheme,
-} from 'configs/sandpack-contents/component-theming/heading'
 
-<SandpackEmbed
-  files={{
-    '/theme/components/Heading.ts': HeadingTheme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />

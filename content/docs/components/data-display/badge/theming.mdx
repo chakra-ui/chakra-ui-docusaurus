@@ -1,7 +1,8 @@
 ---
-id: badge
 scope: theming
 ---
+
+import Showcase from "../../../../../src/sandpack-contents/component-theming/badge.mdx"
 
 The `Badge` component is a single part component. All of the styling is applied
 directly to the `span` element.
@@ -24,13 +25,13 @@ The properties that affect the theming of the `Badge` component are:
 - `defineStyleConfig`: a function used to define the style configuration for a
   single part component.
 
-```jsx live=false
+```jsx 
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 ```
 
 ## Customizing the default theme
 
-```jsx live=false
+```jsx 
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 const boxy = defineStyle({
@@ -46,7 +47,7 @@ export const badgeTheme = defineStyleConfig({
 After customizing the badge theme, we can import it in our theme file and add it
 in the `components` property:
 
-```jsx live=false
+```jsx 
 import { extendTheme } from '@chakra-ui/react'
 import { badgeTheme } from './components/badge'
 
@@ -63,7 +64,7 @@ export const theme = extendTheme({
 Let's assume we want to include an extra large badge size. Here's how we can do
 that:
 
-```jsx live=false
+```jsx 
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 const xl = defineStyle({
@@ -87,7 +88,7 @@ tool [here](/docs/styled-system/cli).
 Let's assume we want to include a custom branded variant. Here's how we can do
 that:
 
-```jsx live=false
+```jsx 
 import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
 
 const brandPrimary = defineStyle({
@@ -116,7 +117,7 @@ export const badgeTheme = defineStyleConfig({
 Let's assume we want to use our own custom color scale based on our brand. We'd
 need to define the color scale first in the main theme file:
 
-```jsx live=false
+```jsx 
 import { extendTheme } from '@chakra-ui/react'
 
 export const theme = extendTheme({
@@ -134,7 +135,7 @@ export const theme = extendTheme({
 
 Then, we can use the custom color scale as the color scheme for the badge:
 
-```jsx live=false
+```jsx 
 <Badge colorScheme='brand'>...</Badge>
 ```
 
@@ -143,7 +144,7 @@ Then, we can use the custom color scale as the color scheme for the badge:
 Let's assume we want to change the default size, variant or color scheme of
 every badge in our app. Here's how we can do that:
 
-```jsx live=false
+```jsx 
 import { defineStyleConfig } from '@chakra-ui/react'
 
 export const badgeTheme = defineStyleConfig({
@@ -160,23 +161,5 @@ export const badgeTheme = defineStyleConfig({
 ```
 
 ## Showcase
-<!-- 
-import {
-  App,
-  Index,
-  BadgeTheme,
-} from 'configs/sandpack-contents/component-theming/badge'
 
-<SandpackEmbed
-  files={{
-    '/theme/components/Badge.ts': BadgeTheme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />
