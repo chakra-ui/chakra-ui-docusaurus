@@ -2,14 +2,14 @@
 id: highlight
 category: typography
 title: Highlight
-package: '@chakra-ui/layout'
+package: "@chakra-ui/layout"
 description: Highlight allows you to highlight substrings of a text.
 ---
 
 ## Import
 
 ```js
-import { Highlight } from '@chakra-ui/react'
+import { Highlight } from "@chakra-ui/react";
 ```
 
 ## Usage
@@ -21,7 +21,7 @@ define the styles for the highlighted parts.
 ### Highlight a word
 
 ```jsx
-<Highlight query='spotlight' styles={{ px: '1', py: '1', bg: 'orange.100' }}>
+<Highlight query="spotlight" styles={{ px: "1", py: "1", bg: "orange.100" }}>
   With the Highlight component, you can spotlight words.
 </Highlight>
 ```
@@ -32,10 +32,10 @@ The Highlight component can be used within any of the typography components.
 Here's an example of how to use it within Heading
 
 ```jsx
-<Heading lineHeight='tall'>
+<Heading lineHeight="tall">
   <Highlight
-    query='spotlight'
-    styles={{ px: '2', py: '1', rounded: 'full', bg: 'red.100' }}
+    query="spotlight"
+    styles={{ px: "2", py: "1", rounded: "full", bg: "red.100" }}
   >
     With the Highlight component, you can spotlight words.
   </Highlight>
@@ -48,10 +48,10 @@ To highlight multiple phrases that have the same style, pass the substrings you
 want to highlight as an array to the `query` prop
 
 ```jsx
-<Heading lineHeight='tall'>
+<Heading lineHeight="tall">
   <Highlight
-    query={['spotlight', 'emphasize', 'Accentuate']}
-    styles={{ px: '2', py: '1', rounded: 'full', bg: 'teal.100' }}
+    query={["spotlight", "emphasize", "Accentuate"]}
+    styles={{ px: "2", py: "1", rounded: "full", bg: "teal.100" }}
   >
     With the Highlight component, you can spotlight, emphasize and accentuate
     words.
@@ -70,18 +70,18 @@ case for this is in a search query.
 ```jsx
 <Box>
   <Text>Search result for: "spot"</Text>
-  <Text mt='6' fontWeight='bold'>
-    <Highlight query='spot' styles={{ py: '1', fontWeight: 'normal' }}>
+  <Text mt="6" fontWeight="bold">
+    <Highlight query="spot" styles={{ py: "1", fontWeight: "normal" }}>
       Spotlight bulb
     </Highlight>
   </Text>
-  <Text fontWeight='bold'>
-    <Highlight query='spot' styles={{ py: '1', fontWeight: 'normal' }}>
+  <Text fontWeight="bold">
+    <Highlight query="spot" styles={{ py: "1", fontWeight: "normal" }}>
       Spot cleaner
     </Highlight>
   </Text>
-  <Text fontWeight='bold'>
-    <Highlight query='spot' styles={{ py: '1', fontWeight: 'normal' }}>
+  <Text fontWeight="bold">
+    <Highlight query="spot" styles={{ py: "1", fontWeight: "normal" }}>
       Spot ceiling
     </Highlight>
   </Text>
@@ -94,7 +94,7 @@ In cases where you want to customize multiple rendered elements and their
 styles, use the `useHighlight` hook.
 
 ```js
-import { useHighlight } from '@chakra-ui/react'
+import { useHighlight } from "@chakra-ui/react";
 ```
 
 ```jsx

@@ -33,7 +33,7 @@ Chakra provides multiple ways to use icons in your project:
 > clickable icon, use the [IconButton](/docs/components/form/icon-button)
 > instead.
 
-```jsx live=false
+```jsx 
 import { PhoneIcon, AddIcon, WarningIcon } from '@chakra-ui/icons'
 
 // The default icon size is 1em (16px)
@@ -63,7 +63,7 @@ To use third-party icon libraries like
 1. Import the `Icon` component from `@chakra-ui/react`
 2. Pass the desired third party icon into the `as` prop
 
-```jsx live=false
+```jsx 
 // 1. Import
 import { Icon } from '@chakra-ui/react'
 import { MdSettings } from 'react-icons/md'
@@ -98,7 +98,7 @@ Chakra provides two methods for creating your custom icons:
 
 They can be imported from `@chakra-ui/react`:
 
-```jsx live=false
+```jsx 
 import { Icon, createIcon } from '@chakra-ui/react'
 ```
 
@@ -120,7 +120,7 @@ The `Icon` component renders as an `svg` element.
 
 This enables you to define your own custom icon components:
 
-```jsx live=false
+```jsx 
 const CircleIcon = (props) => (
   <Icon viewBox='0 0 200 200' {...props}>
     <path
@@ -152,7 +152,7 @@ The `createIcon` function is a convenience wrapper around the process of
 generating icons with `Icon`, allowing you to achieve the same functionality
 with less effort.
 
-```jsx live=false
+```jsx 
 import { createIcon } from '@chakra-ui/icons'
 
 // using `path`

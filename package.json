@@ -20,6 +20,7 @@
     "@chakra-ui/props-docs": "^2.0.22",
     "@chakra-ui/react": "^2.3.6",
     "@codesandbox/sandpack-react": "^1.15.2",
+    "@codesandbox/sandpack-themes": "^1.15.2",
     "@docusaurus/core": "2.1.0",
     "@docusaurus/plugin-client-redirects": "^2.1.0",
     "@docusaurus/preset-classic": "2.1.0",

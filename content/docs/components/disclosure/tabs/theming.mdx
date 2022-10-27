@@ -1,7 +1,9 @@
 ---
-id: tabs
 scope: theming
+title: "Theming"
 ---
+
+import Showcase from "../../../../examples/component-theming/tabs.mdx";
 
 The `Tabs` component is a multipart component. The styling needs to be applied
 to each part specifically.
@@ -183,7 +185,7 @@ The properties that affect the theming of the `Tabs` component are:
 - `defineMultiStyleConfig`: a function used to define the style configuration
   for a multipart component.
 
-```jsx live=false
+```jsx
 import { tabsAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
 
@@ -193,7 +195,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 ## Customizing the default theme
 
-```jsx live=false
+```jsx
 import { tabsAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 
@@ -218,7 +220,7 @@ export const tabsTheme = defineMultiStyleConfig({ baseStyle });
 After customizing the the `Tabs` theme, we can import it in our theme file and
 add it in the `components` property.
 
-```jsx live=false
+```jsx
 import { extendTheme } from "@chakra-ui/react";
 import { tabsTheme } from "./components/Tabs";
 
@@ -236,7 +238,7 @@ export default theme;
 Let's assume we want to include an extra large tab size. Here's how we can do
 that:
 
-```jsx live=false
+```jsx
 import { tabsAnatomy } from '@chakra-ui/anatomy';
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
 
@@ -276,7 +278,7 @@ tool [here](/docs/styled-system/cli).
 Let's assume we want to include a custom variant that is fully enclosed and can
 have a color scheme applied. Here's how we can do that:
 
-```jsx live=false
+```jsx
 import { tabsAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react'
 import { mode } from '@chakra-ui/theme-tools' // import utility to set light and dark mode props
@@ -331,7 +333,7 @@ export const tabsTheme = defineMultiStyleConfig({ variants })
 Let's assume we cant to change the default size, variant, and color scheme of
 every tab in our app. Here's how we can do that:
 
-```jsx live=false
+```jsx
 
 import { tabsAnatomy } from '@chakra-ui/anatomy';
 import { createMultiStyleConfigHelpers } from '@chakra-ui/react';
@@ -354,30 +356,4 @@ export const tabsTheme = defineMultiStyleConfig({ defaultProps })
 
 ## Showcase
 
-<!--
-import {
-  App,
-  Index,
-  Theme,
-  Tabs,
-  ColorModeSwitcher,
-} from 'configs/sandpack-contents/component-theming/tabs'
-
-<SandpackEmbed
-  files={{
-    '/theme/components/Tabs.tsx': Tabs,
-    '/theme/index.tsx': Theme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-    '/ColorModeSwitcher.tsx': {
-      code: ColorModeSwitcher,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />

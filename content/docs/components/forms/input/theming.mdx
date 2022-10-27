@@ -1,7 +1,8 @@
 ---
-id: input
 scope: theming
 ---
+
+import Showcase from "../../../../examples/component-theming/input.mdx";
 
 The `Input` component is a multipart component. The styling needs to be applied
 to each part specifically.
@@ -207,7 +208,7 @@ The properties that affect the theming of the `Input` component are:
 - `defineMultiStyleConfig`: a function used to define the style configuration
   for a multipart component.
 
-```jsx live=false
+```jsx
 import { inputAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 
@@ -217,7 +218,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 ## Customizing the default theme
 
-```jsx live=false
+```jsx
 import { inputAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers } from "@chakra-ui/react";
 
@@ -238,7 +239,7 @@ export const inputTheme = defineMultiStyleConfig({ baseStyle });
 After customizing the input theme, we can import it in our theme file and add it
 in the `components` property:
 
-```jsx live=false
+```jsx
 import { extendTheme } from "@chakra-ui/react";
 import { inputTheme } from "./components/input.ts";
 
@@ -255,7 +256,7 @@ export const theme = extendTheme({
 Let's assume we want to include an extra large input size. Here's how we can do
 that:
 
-```jsx live=false
+```jsx
 import { inputAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
@@ -287,7 +288,7 @@ tool [here](/docs/styled-system/cli).
 Let's assume we want to include a custom pill variant. Here's how we can do
 that:
 
-```jsx live=false
+```jsx
 import { inputAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
@@ -335,7 +336,7 @@ export const inputTheme = defineMultiStyleConfig({
 Let's assume we want to change the default size and variant of every input in
 our app. Here's how we can do that:
 
-```jsx live=false
+```jsx
 import { inputAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
@@ -356,23 +357,4 @@ export const inputTheme = defineMultiStyleConfig({
 
 ## Showcase
 
-<!--
-import {
-  App,
-  Index,
-  InputTheme,
-} from 'configs/sandpack-contents/component-theming/input'
-
-<SandpackEmbed
-  files={{
-    '/theme/components/Input.ts': InputTheme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />

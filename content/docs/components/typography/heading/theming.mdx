@@ -1,7 +1,8 @@
 ---
-id: heading
 scope: theming
 ---
+
+import Showcase from "../../../../examples/component-theming/heading.mdx";
 
 The `Heading` component is a single part component. All of the styling is
 applied directly to the `h2` element.
@@ -23,7 +24,7 @@ The properties that affect the theming of the `Heading` component are:
   single part component.
 
 ```js
-import { defineStyle, defineStyleConfig } from '@chakra-ui/react'
+import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
 ```
 
 ## Customizing the default theme
@@ -46,12 +47,12 @@ After customizing the heading theme, we can import it in our theme file and add
 it in the components property:
 
 ```js
-import { extendTheme } from '@chakra-ui/react'
-import { headingTheme } from './components/heading'
+import { extendTheme } from "@chakra-ui/react";
+import { headingTheme } from "./components/heading";
 
 export const theme = extendTheme({
   components: { Heading: headingTheme },
-})
+});
 ```
 
 > This is a crucial step to make sure that any changes that we make to the
@@ -109,23 +110,5 @@ export const headingheme = defineStyleConfig({
 ```
 
 ## Showcase
-<!-- 
-import {
-  App,
-  Index,
-  HeadingTheme,
-} from 'configs/sandpack-contents/component-theming/heading'
 
-<SandpackEmbed
-  files={{
-    '/theme/components/Heading.ts': HeadingTheme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />

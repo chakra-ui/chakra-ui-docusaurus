@@ -2166,6 +2166,11 @@
     react-devtools-inline "4.4.0"
     react-is "^17.0.2"
 
+"@codesandbox/sandpack-themes@^1.15.2":
+  version "1.15.2"
+  resolved "https://registry.yarnpkg.com/@codesandbox/sandpack-themes/-/sandpack-themes-1.15.2.tgz#617ea6fb439ab54c84fd08fff600ce9306cdacb6"
+  integrity sha512-exz/V2xy3UFBnzJ7w36US67S75fTa9dQ/XaAz8NBVr8I+Q0ydskkmQ7dymvJhDCVNLnn++f0Exw8xIayMYpV3g==
+
 "@colors/colors@1.5.0":
   version "1.5.0"
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
