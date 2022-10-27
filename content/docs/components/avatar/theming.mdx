@@ -1,7 +1,8 @@
 ---
-id: avatar
 scope: theming
 ---
+
+import Showcase from "../../../../src/sandpack-contents/component-theming/avatar.mdx"
 
 The `Avatar` component is a multipart component. The styling needs to be applied
 to each part specifically.
@@ -411,23 +412,4 @@ export const avatarTheme = defineMultiStyleConfig({
 
 ## Showcase
 
-<!--
-import {
-  App,
-  Index,
-  AvatarTheme,
-} from 'configs/sandpack-contents/component-theming/avatar'
-
-<SandpackEmbed
-  files={{
-    '/theme/components/Avatar.ts': AvatarTheme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />

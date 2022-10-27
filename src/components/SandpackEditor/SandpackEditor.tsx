@@ -1,31 +1,38 @@
 import React from 'react';
 import { Box } from "@chakra-ui/react";
 import { SandpackCodeEditor, SandpackLayout, SandpackPreview, SandpackProvider } from "@codesandbox/sandpack-react";
-import { useColorMode } from '@docusaurus/theme-common';
+import { nightOwl } from "@codesandbox/sandpack-themes"
 
 import { createFileMap } from "./createFileMap";
+
+type Props = {
+  children: JSX.Element;
+  dependencies: Record<string, string>;
+  isHorizontal: boolean;
+}
 
 const SandpackEditor = ({
   children,
   dependencies = {},
-}: {
-  children: JSX.Element;
-  dependencies: { [key: string]: string };
-}) => {
+  isHorizontal = false,
+}: Props) => {
   const files = createFileMap(children);
-  const { colorMode } = useColorMode();
 
   return (
     <SandpackProvider
       template="react-ts"
       files={files}
-      theme={colorMode === 'dark' ? 'dark' : 'light'}
+      theme={nightOwl}
+
       customSetup={{
         dependencies: {
           '@chakra-ui/react': 'latest',
           '@emotion/styled': 'latest',
           'framer-motion': 'latest',
           '@emotion/react': 'latest',
+          'react-icons': 'latest',
+          "@chakra-ui/anatomy": "latest",
+          "@chakra-ui/styled-system": "latest",
           ...dependencies
         },
       }}
@@ -35,11 +42,12 @@ const SandpackEditor = ({
         sx={{
           '--sp-layout-height': 'auto',
         }}
+        style={{ flexDirection: isHorizontal ? 'row' : 'column-reverse' }}
       >
         <SandpackCodeEditor
           showLineNumbers
           style={{
-            maxHeight: '500px',
+            maxHeight: isHorizontal ? '600px' : '500px',
             minWidth: '400px',
           }}
         />

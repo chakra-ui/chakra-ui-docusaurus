@@ -1,7 +1,8 @@
 ---
-id: badge
 scope: theming
 ---
+
+import Showcase from "../../../../../src/sandpack-contents/component-theming/badge.mdx"
 
 The `Badge` component is a single part component. All of the styling is applied
 directly to the `span` element.
@@ -160,23 +161,5 @@ export const badgeTheme = defineStyleConfig({
 ```
 
 ## Showcase
-<!-- 
-import {
-  App,
-  Index,
-  BadgeTheme,
-} from 'configs/sandpack-contents/component-theming/badge'
 
-<SandpackEmbed
-  files={{
-    '/theme/components/Badge.ts': BadgeTheme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />
