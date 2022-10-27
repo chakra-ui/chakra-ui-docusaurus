@@ -38,25 +38,25 @@ npm install @fontsource/open-sans @fontsource/raleway
 Assign these fonts to `theme.fonts` to use them with Chakra. More details on
 theming [here](/docs/styled-system/customize-theme).
 
-```jsx live=false
-import { extendTheme } from '@chakra-ui/react'
+```tsx
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   fonts: {
     heading: `'Open Sans', sans-serif`,
     body: `'Raleway', sans-serif`,
   },
-})
+});
 
-export default theme
+export default theme;
 ```
 
 Then import the relevant font weights and styles into the same root file you
 import `ChakraProvider` into.
 
-```jsx live=false
-import '@fontsource/raleway/400.css'
-import '@fontsource/open-sans/700.css'
+```tsx
+import '@fontsource/raleway/400.css';
+import '@fontsource/open-sans/700.css';
 
 import {
   ChakraProvider,
@@ -64,8 +64,8 @@ import {
   Stack,
   Heading,
   Text,
-} from '@chakra-ui/react'
-import theme from './theme'
+} from '@chakra-ui/react';
+import theme from './theme';
 
 const App = () => (
   <ChakraProvider theme={theme}>
@@ -85,7 +85,7 @@ const App = () => (
       </Stack>
     </Container>
   </ChakraProvider>
-)
+);
 ```
 
 > - For Create React App, you need to set this up in `index.js`
@@ -109,8 +109,8 @@ double-checked. This can later be used for the `url` selector for the
 Next, we'll define a `Fonts` component that sets up the `@font-face` rules in
 the `styles` prop of `Global`:
 
-```jsx live=false
-import { Global } from '@emotion/react'
+```tsx
+import { Global } from '@emotion/react';
 
 const Fonts = () => (
   <Global
@@ -135,40 +135,40 @@ const Fonts = () => (
       }
       `}
   />
-)
+);
 
-export default Fonts
+export default Fonts;
 ```
 
 Assign these fonts to `theme.fonts` to use them with Chakra. More details on
 theming [here](/docs/styled-system/customize-theme).
 
-```jsx live=false
-import { extendTheme } from '@chakra-ui/react'
+```tsx
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   fonts: {
     heading: `'Heading Font Name', sans-serif`,
     body: `'Body Font Name', sans-serif`,
   },
-})
+});
 
-export default theme
+export default theme;
 ```
 
 Then compose the rest of the project together by importing the `Fonts` component
 and `theme` file.
 
-```jsx live=false
+```tsx
 import {
   ChakraProvider,
   Container,
   Stack,
   Heading,
   Text,
-} from '@chakra-ui/react'
-import Fonts from './fonts'
-import theme from './theme'
+} from '@chakra-ui/react';
+import Fonts from './fonts';
+import theme from './theme';
 
 const App = () => (
   <ChakraProvider theme={theme}>
@@ -189,5 +189,5 @@ const App = () => (
       </Stack>
     </Container>
   </ChakraProvider>
-)
+);
 ```

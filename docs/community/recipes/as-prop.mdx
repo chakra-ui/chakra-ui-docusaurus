@@ -1,7 +1,6 @@
 ---
 title: The as prop and Custom component
-description:
-  'How to get the as prop working properly for your custom components'
+description: 'How to get the as prop working properly for your custom components'
 author: segunadebayo
 ---
 
@@ -12,17 +11,17 @@ need the `as` prop to work as well.
 For example, let's say you create a `Card` component with pre-defined styles
 like this:
 
-```tsx live=false
+```tsx
 const Card = (props: BoxProps) => (
   <Box px='4' py='5' rounded='sm' shadow='lg' {...props} />
-)
+);
 ```
 
 and you need to consume this component in a way that works with the `as` prop,
 like this:
 
-```jsx live=false
-const Usage = () => <Card as='button'>This is a card</Card>
+```tsx
+const Usage = () => <Card as='button'>This is a card</Card>;
 ```
 
 You might run into type errors like this:
@@ -41,12 +40,12 @@ reference properly.
 
 > Note 🚨: You need to use forwardRef from chakra-ui not react.
 
-```tsx live=false
-import { forwardRef, Box, BoxProps } from '@chakra-ui/react'
+```tsx
+import { forwardRef, Box, BoxProps } from '@chakra-ui/react';
 
 const Card = forwardRef<BoxProps, 'div'>((props, ref) => (
   <Box px='4' py='5' rounded='sm' shadow='lg' ref={ref} {...props} />
-))
+));
 ```
 
 ## Option 2: Cast the component as a `ChakraComponent`
@@ -60,14 +59,14 @@ element type, and adds chakra specific style props.
 `ChakraComponent` takes 2 type generic, the element type (like "div", "button",
 etc), and any custom props (like `isOpen`, `isDisabled`, etc)
 
-```tsx live=false
-import { ChakraComponent, Box, BoxProps } from '@chakra-ui/react'
+```tsx
+import { ChakraComponent, Box, BoxProps } from '@chakra-ui/react';
 
-type DivComponent = ChakraComponent<'div', {}>
+type DivComponent = ChakraComponent<'div', {}>;
 
 const Card = ((props: BoxProps) => (
   <Box px='4' py='5' rounded='sm' shadow='lg' {...props} />
-)) as DivComponent
+)) as DivComponent;
 ```
 
 ## Option 3: Use the `chakra` factory function
@@ -79,8 +78,8 @@ Chakra enabled component.
 What you need to do is to call the `chakra` function and pass it any element or
 component type.
 
-```jsx live=false
-import { chakra } from '@chakra-ui/react'
+```tsx
+import { chakra } from '@chakra-ui/react';
 
 const Card = chakra('div', {
   // attach style props
@@ -90,7 +89,7 @@ const Card = chakra('div', {
     rounded: 'sm',
     shadow: 'lg',
   },
-})
+});
 ```
 
 These are the cases you can get the `as` prop working with custom components. At

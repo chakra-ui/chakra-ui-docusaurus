@@ -32,7 +32,7 @@ default theme) to CSS variables internally so you don't have to.
 
 Given a theme object that looks like this:
 
-```jsx live=false
+```tsx
 const theme = {
   fontSizes: {
     lg: '18px',
@@ -43,7 +43,7 @@ const theme = {
       200: '#f7f7f7',
     },
   },
-}
+};
 ```
 
 When you pass this theme to the `ChakraProvider`, we'll automatically generate
@@ -57,15 +57,17 @@ CSS variables that look like:
 }
 ```
 
-> Note: **The generated custom properties are prefixed with `chakra-*`** to
-> avoid conflicts with third party CSS.
+:::info
+The generated custom properties are prefixed with **`chakra-*`** to
+avoid conflicts with third party CSS.
+:::
 
 ## Consuming CSS Variables
 
 When using Chakra's components, we manage the conversion of theme tokens to
 their respective css variable.
 
-```jsx live=false
+```tsx
 // You type this
 <Box color="gray.100" />
 
@@ -75,14 +77,16 @@ their respective css variable.
 }
 ```
 
-> Note: We do this automatically when you pass style props or use the `sx` prop.
+:::note
+We do this automatically when you pass style props or use the `sx` prop.
+:::
 
 ### Styling non-chakra components
 
 In certain scenarios, you might need to style components that are not managed by
 Chakra. In this case, you can use the raw CSS variable values.
 
-```jsx live=false
+```tsx
 // let's say you have an embedded form
 <FormiumForm />
 ```
@@ -98,7 +102,7 @@ You can write custom CSS to style the components
 
 or wrap the component in `<Box/>` and style it with convenience.
 
-```jsx live=false
+```tsx
 <Box sx={{ '.formium': { bg: 'gray.50', color: 'gray.700' } }}>
   <FormiumForm />
 </Box>
@@ -108,13 +112,15 @@ or wrap the component in `<Box/>` and style it with convenience.
 
 By default, Chakra attaches the generated CSS variables to the `:root` element.
 
-> The :root pseudo-class represents the top level of the HTML document.
+:::info
+The `:root` pseudo-class represents the top level of the HTML document.
+:::
 
 To change the root element that Chakra attaches the CSS variables to, pass the
 `cssVarsRoot` prop to `ChakraProvider` and set its value to the css selector of
 the element you want.
 
-```jsx live=false
+```tsx
 <ChakraProvider cssVarsRoot='#app'>
   <App />
 </ChakraProvider>
@@ -122,13 +128,15 @@ the element you want.
 
 ## Creating scoped, theme-aware CSS variables
 
-> This is experimental and might be removed in future versions
+:::caution
+This is experimental and might be removed in future versions
+:::
 
 When using the `sx` prop or the `chakra(...)` factory, you can create variables
 that reference theme tokens. This makes it possible to change property values
 based on breakpoint, or light/dark mode with ease.
 
-```jsx live=false
+```tsx
 <Box
   sx={{
     // "colors.gray.100" is shorthand for `var(--chakra-colors-gray.100)`

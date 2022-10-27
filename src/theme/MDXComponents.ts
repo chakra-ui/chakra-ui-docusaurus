@@ -1,9 +1,11 @@
-import { FrameworkLinks } from "../components/framework-link";
-import MDXComponents from "@theme-original/MDXComponents";
-import SandpackEditor from "@site/src/components/SandpackEditor/SandpackEditor";
+import { FrameworkLinks } from '../components/framework-link';
+import MDXComponents from '@theme-original/MDXComponents';
+import SandpackEditor from '../components/SandpackEditor/SandpackEditor';
+import { Button } from './button';
 
 export default {
   ...MDXComponents,
   SandpackEditor: SandpackEditor,
   FrameworkLinks,
+  Button,
 };

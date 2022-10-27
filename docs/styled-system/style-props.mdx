@@ -17,7 +17,7 @@ each group.
 
 ### Margin and padding
 
-```jsx live=false
+```tsx
 import { Box } from "@chakra-ui/react"
 
 // m={2} refers to the value of `theme.space[2]`
@@ -51,12 +51,14 @@ import { Box } from "@chakra-ui/react"
 | `px`, `paddingX`      | `padding-inline-start` + `padding-inline-end` | `space`   |
 | `py`, `paddingY`      | `padding-top` + `padding-bottom`              | `space`   |
 
-> For `mx` and `px` props, we use `margin-inline-start` and `margin-inline-end`
-> to ensure the generated styles are RTL-friendly
+:::note
+For `mx` and `px` props, we use `margin-inline-start` and `margin-inline-end`
+to ensure the generated styles are RTL-friendly
+:::
 
 ### Color and background color
 
-```jsx live=false
+```tsx
 import { Box } from "@chakra-ui/react"
 
 // picks up a nested color value using dot notation
@@ -82,7 +84,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Gradient
 
-```jsx live=false
+```tsx
 import { Box, Text } from "@chakra-ui/react"
 
 // adding linear gradient and color transitions
@@ -110,7 +112,7 @@ import { Box, Text } from "@chakra-ui/react"
 
 ### Typography
 
-```jsx live=false
+```tsx
 import { Text } from "@chakra-ui/react"
 
 // font-size of `theme.fontSizes.md`
@@ -140,7 +142,7 @@ import { Text } from "@chakra-ui/react"
 
 ### Layout, width and height
 
-```jsx live=false
+```tsx
 import { Box } from "@chakra-ui/react"
 
 // verbose
@@ -177,7 +179,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Flexbox
 
-```jsx live=false
+```tsx
 import { Box, Flex } from "@chakra-ui/react"
 
 // verbose
@@ -191,7 +193,9 @@ import { Box, Flex } from "@chakra-ui/react"
 </Flex>
 ```
 
-> Note: Props in `*` will only work if you use the `Flex` component.
+:::note
+Props in `*` will only work if you use the `Flex` component.
+:::
 
 | Prop                                      | CSS Property      | Theme Key |
 | ----------------------------------------- | ----------------- | --------- |
@@ -214,7 +218,7 @@ import { Box, Flex } from "@chakra-ui/react"
 
 ### Grid Layout
 
-```jsx live=false
+```tsx
 import { Box, Grid } from "@chakra-ui/react"
 
 // verbose
@@ -228,7 +232,9 @@ import { Box, Grid } from "@chakra-ui/react"
 </Grid>
 ```
 
-> Note: Props in `*` will only work if you use the `Grid` component.
+:::note
+Props in `*` will only work if you use the `Grid` component.
+:::
 
 | Prop                                       | CSS Property            | Theme Key |
 | ------------------------------------------ | ----------------------- | --------- |
@@ -247,7 +253,7 @@ import { Box, Grid } from "@chakra-ui/react"
 
 ### Background
 
-```jsx live=false
+```tsx
 import { Box } from "@chakra-ui/react"
 
 // verbose
@@ -276,7 +282,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Borders
 
-```jsx live=false
+```tsx
 <Box border='1px' borderColor='gray.200'>
   Card
 </Box>
@@ -317,7 +323,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Border Radius
 
-```jsx live=false
+```tsx
 import { Button } from "@chakra-ui/react"
 
 // This button will have no right borderRadius
@@ -350,7 +356,7 @@ import { Button } from "@chakra-ui/react"
 
 ### Position
 
-```jsx live=false
+```tsx
 import { Box } from "@chakra-ui/react"
 
 // verbose
@@ -377,7 +383,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Shadow
 
-```jsx live=false
+```tsx
 <SimpleGrid
   bg='gray.50'
   columns={{ sm: 2, md: 4 }}
@@ -420,7 +426,7 @@ import { Box } from "@chakra-ui/react"
 </SimpleGrid>
 ```
 
-```jsx live=false
+```tsx
 <Text textShadow='1px 1px #ff0000' m='6'>
   Text with shadows
 </Text>
@@ -433,7 +439,7 @@ import { Box } from "@chakra-ui/react"
 
 ### Filter
 
-```jsx live=false
+```tsx
 function Filters() {
   const basicBoxStyles = {
     display: 'flex',
@@ -468,10 +474,12 @@ function Filters() {
 }
 ```
 
-> Note: To apply `blur`, `brightness`, `contrast`, `hueRotate`, `invert`,
-> `saturate` props on the element, set `filter` prop value to "auto".
+:::tip
+To apply `blur`, `brightness`, `contrast`, `hueRotate`, `invert`,
+`saturate` props on the element, set `filter` prop value to "auto".
+:::
 
-```jsx live=false
+```tsx
 function BackdropFilters() {
   const outerBoxStyles = {
     boxSize: '250px',
@@ -516,13 +524,17 @@ function BackdropFilters() {
 }
 ```
 
-> 🚨 `backdrop-filter` is not supported in Firefox. It can be enabled by the
-> user, but it is suggested to design a component that looks good with and
-> without this property.
+:::caution
+`backdrop-filter` is not supported in Firefox. It can be enabled by the
+user, but it is suggested to design a component that looks good with and
+without this property.
+:::
 
-> Note: To apply `backdropBlur`, `backdropBrightness`, `backdropContrast`,
-> `backdropHueRotate`, `backdropInvert`, `backdropSaturate` props on the
-> element, set `backdropFilter` prop value to "auto".
+:::tip
+To apply `backdropBlur`, `backdropBrightness`, `backdropContrast`,
+`backdropHueRotate`, `backdropInvert`, `backdropSaturate` props on the
+element, set `backdropFilter` prop value to "auto".
+:::
 
 | Prop                 | CSS Property      | Theme Field |
 | -------------------- | ----------------- | ----------- |
@@ -544,7 +556,7 @@ function BackdropFilters() {
 
 ### Pseudo
 
-```jsx live=false
+```tsx
 import { Button } from "@chakra-ui/react"
 
 // :hover style
@@ -678,7 +690,7 @@ HTML tag or component to be rendered.
 For example, say you are using a `Button` component, and you need to make it a
 link instead. You can compose `a` and `Button` like this:
 
-```jsx live=false
+```tsx
 <Button as='a' target='_blank' variant='outline' href='https://chakra-ui.com'>
   Hello
 </Button>

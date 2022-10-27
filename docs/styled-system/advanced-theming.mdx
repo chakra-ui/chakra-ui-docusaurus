@@ -15,7 +15,7 @@ style object or a function that returns a style object.
 For a single part component like button, badge, etc. The style configuration has
 the following signature:
 
-```tsx live=false
+```tsx
 type StyleInterpolation =
   | StyleObject
   | ((options: StyleOptions) => StyleObject);
@@ -46,7 +46,7 @@ When it comes to multipart components for example tabs or menus etc, that have
 multiple sub-parts, you can also style them based on the color mode. Here's the
 signature:
 
-```tsx live=false
+```tsx
 type StyleInterpolation =
   | { [part: string]: SystemStyleObject }
   | ((options: StyleOptions) => { [part: string]: SystemStyleObject });
@@ -92,11 +92,13 @@ See
 [this guide](/docs/styled-system/customize-theme#scaling-out-your-project)
 for more recommendations on how to structure your theme package.
 
-> Note ⚠️: If you're using TypeScript, you'll want to include some documentation
-> guiding consumers of your theme package to add a `postinstall` script to
-> generate typings for your theme. See the
-> [theme typings](/docs/styled-system/advanced-theming#theme-typings) section
-> for details.
+:::note
+If you're using TypeScript, you'll want to include some documentation
+guiding consumers of your theme package to add a `postinstall` script to
+generate typings for your theme. See the
+[theme typings](/docs/styled-system/advanced-theming#theme-typings) section
+for details.
+:::
 
 ## Theme Typings
 
@@ -137,8 +139,10 @@ chakra-cli tokens <@your-org/chakra-theme-package>
 The theme entrypoint file should export the theme object either as `default`
 export or as named `theme` export.
 
-> Note 🚨: If you delete the `node_modules` directory, you'll need to re-run the
-> command to get proper typings again.
+:::caution
+If you delete the `node_modules` directory, you'll need to re-run the
+command to get proper typings again.
+:::
 
 For convenience, you can add a `postinstall` script to your `package.json`, so
 you don't have to think about this every time you reinstall your dependencies.

@@ -38,16 +38,16 @@ version: 2.0.1
   - Expose `cookieStorageManagerSSR` for users who prefer to manage color mode
     server-side. If you use this, there's no need for the `ColorModeScript`
 
-  ```jsx live=false
+  ```jsx
   function App({ Component, pageProps }) {
     // get the `cookie` from each page `getServerSideProps` return value
     // Note: the implementation is up to you
-    const manager = cookieStorageManagerSSR(pageProps.cookie)
+    const manager = cookieStorageManagerSSR(pageProps.cookie);
     return (
       <ChakraProvider manager={manager}>
         <Component />
       </ChakraProvider>
-    )
+    );
   }
   ```
 
@@ -56,19 +56,19 @@ version: 2.0.1
   Thanks [@segunadebayo](https://github.com/segunadebayo)! - We now provide a
   way to customize the localStorage / cookie storage key
 
-  ```jsx live=false
-  import { createLocalStorageManager } from "@chakra-ui/react"
+  ```tsx
+  import { createLocalStorageManager } from '@chakra-ui/react';
 
-  const manager = createLocalStorageManager("my-key")
+  const manager = createLocalStorageManager('my-key');
 
   // in root
   function App() {
-    return <ChakraProvider colorModeManager={manager} />
+    return <ChakraProvider colorModeManager={manager} />;
   }
 
   // in script
   function Document() {
-    return <ColorModeScript storageKey="my-key" />
+    return <ColorModeScript storageKey='my-key' />;
   }
   ```
 

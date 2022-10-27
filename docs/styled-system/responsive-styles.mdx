@@ -8,8 +8,8 @@ Chakra UI supports responsive styles out of the box. Instead of manually adding
 `@media` queries and adding nested styles throughout your code, Chakra UI allows
 you to provide object and array values to add mobile-first responsive styles.
 
-> We use the `@media(min-width)` media query to ensure your interfaces are
-> mobile-first.
+We use the `@media(min-width)` media query to ensure your interfaces are
+mobile-first.
 
 Responsive syntax relies on the breakpoints defined in the theme object. Chakra
 UI provides default breakpoints, here's what it looks like:
@@ -21,7 +21,7 @@ const breakpoints = {
   lg: '62em',
   xl: '80em',
   '2xl': '96em',
-}
+};
 ```
 
 To make styles responsive, you can use either the array or object syntax.
@@ -33,7 +33,7 @@ is the recommended method.
 
 Let's say you have a `Box` with the following properties:
 
-```jsx live=false
+```tsx
 <Box bg='red.200' w='400px'>
   This is a box
 </Box>
@@ -42,7 +42,7 @@ Let's say you have a `Box` with the following properties:
 To make the `width` or `w` responsive using the array syntax, here's what you
 need to do:
 
-```jsx live=false
+```tsx
 <Box bg='red.200' w={[300, 400, 500]}>
   This is a box
 </Box>
@@ -60,10 +60,10 @@ const breakpoints = {
   lg: '62em',
   xl: '80em',
   '2xl': '96em',
-}
+};
 
 // Internally, we transform to this
-const breakpoints = ['0em', '30em', '48em', '62em', '80em', '96em']
+const breakpoints = ['0em', '30em', '48em', '62em', '80em', '96em'];
 ```
 
 Here's how to interpret this syntax:
@@ -72,8 +72,10 @@ Here's how to interpret this syntax:
 - `400px`: From `30em` upwards
 - `500px`: From `48em` upwards
 
-> To skip certain breakpoints, you can pass `null` to any position in the array
-> to avoid generating unnecessary CSS.
+:::tip
+To skip certain breakpoints, you can pass `null` to any position in the array
+to avoid generating unnecessary CSS.
+:::
 
 ## The Object syntax
 
@@ -82,21 +84,23 @@ undefined alias key will define the base, non-responsive value.
 
 Let's say you have a `Text` that looks like this:
 
-```jsx live=false
+```tsx
 <Text fontSize='40px'>This is a text</Text>
 ```
 
 To make the `fontSize` responsive using the object syntax, here's what you need
 to do:
 
-```jsx live=false
+```tsx
 <Text fontSize={{ base: '24px', md: '40px', lg: '56px' }}>
   This is responsive text
 </Text>
 ```
 
-> **Remember, Chakra UI uses the min-width media query for responsive design**.
-> The breakpoints are: `sm = 30em`, `md = 48em`, `lg = 62em`, `xl = 80em`
+:::note
+**Remember, Chakra UI uses the min-width media query for responsive design**.
+The breakpoints are: `sm = 30em`, `md = 48em`, `lg = 62em`, `xl = 80em`
+:::
 
 Here's how to interpret this syntax:
 
@@ -109,7 +113,7 @@ Here's how to interpret this syntax:
 This works for every style prop in the theme specification, which means you can
 change the style of most properties at a given breakpoint.
 
-```jsx live=false
+```tsx
 <>
   <Box
     height={{
@@ -141,7 +145,7 @@ change the style of most properties at a given breakpoint.
 This shortcut is an alternative to writing media queries out by hand. Given the
 following:
 
-```jsx live=false
+```tsx
 <Box width={[1, 1 / 2, 1 / 4]} />
 ```
 
@@ -175,12 +179,14 @@ application. We recommended using common aliases like `sm`, `md`, `lg`, and
 
 To define custom breakpoints, just pass them as an object into the theme.
 
-> Note: Ensure the css unit of your breakpoints are the same. Use all `px` or
-> all `em`, don't mix them.
+:::note
+Ensure the css unit of your breakpoints are the same. Use all `px` or
+all `em`, don't mix them.
+:::
 
-```jsx live=false
+```tsx
 // 1. Import the utilities
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
 // 2. Update the breakpoints as key-value pairs
 const breakpoints = {
@@ -189,20 +195,22 @@ const breakpoints = {
   lg: '960px',
   xl: '1200px',
   '2xl': '1536px',
-}
+};
 
 // 3. Extend the theme
-const theme = extendTheme({ breakpoints })
+const theme = extendTheme({ breakpoints });
 
 // 4. Now you can use the custom breakpoints
 function Example() {
-  return <Box width={{ base: '100%', sm: '50%', md: '25%' }} />
+  return <Box width={{ base: '100%', sm: '50%', md: '25%' }} />;
 }
 ```
 
-> Note: If you're using **pixels** as breakpoint values make sure to **always**
-> provide a value for the `2xl` breakpoint, which by its default pixels value is
-> **"1536px"**.
+:::note
+If you're using **pixels** as breakpoint values make sure to **always**
+provide a value for the `2xl` breakpoint, which by its default pixels value is
+**"1536px"**.
+:::
 
 ## Demo
 
@@ -210,7 +218,7 @@ Here's a simple example of a marketing page component that uses a stacked layout
 on small screens, and a side-by-side layout on larger screens **(resize your
 browser to see it in action)**:
 
-```jsx
+```tsx
 <Box p={4} display={{ md: 'flex' }}>
   <Box flexShrink={0}>
     <Image

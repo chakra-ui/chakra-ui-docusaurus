@@ -17,14 +17,14 @@ content stays hidden from screen readers and keyboard (via tabbing) when closed.
 > This recipe was inspired by
 > [#2791](https://github.com/chakra-ui/chakra-ui/issues/2791)
 
-```jsx live=false
-import { useDisclosure } from '@chakra-ui/react'
-import { motion } from 'framer-motion'
-import { useState } from 'react'
+```tsx
+import { useDisclosure } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+import { useState } from 'react';
 
 export default function App() {
-  const { getButtonProps, getDisclosureProps, isOpen } = useDisclosure()
-  const [hidden, setHidden] = useState(!isOpen)
+  const { getButtonProps, getDisclosureProps, isOpen } = useDisclosure();
+  const [hidden, setHidden] = useState(!isOpen);
 
   return (
     <div>
@@ -49,7 +49,7 @@ export default function App() {
         welcome home
       </motion.div>
     </div>
-  )
+  );
 }
 ```
 

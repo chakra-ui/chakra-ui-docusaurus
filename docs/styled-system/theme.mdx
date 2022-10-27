@@ -10,7 +10,6 @@ scale, font stacks, breakpoints, border radius values, and more.
 Theming with Chakra UI is based on the
 [Styled System Theme Specification](https://styled-system.com/theme-specification/)
 
-<br></br>
 <ComponentLinks
   github={{ package: 'theme' }}
   npm={{ package: '@chakra-ui/theme' }}
@@ -28,8 +27,7 @@ We recommend adding a palette that ranges from `50` to `900`. Tools like
 [Coolors](https://coolors.co/app) or [Palx](https://palx.jxnblk.com) are
 available to generate these palettes.
 
-```js
-// theme.js
+```ts title="theme.ts"
 export default {
   colors: {
     transparent: 'transparent',
@@ -42,7 +40,7 @@ export default {
     },
     // ...
   },
-}
+};
 ```
 
 Chakra provides a sensible
@@ -59,7 +57,9 @@ inspired by Tailwind CSS, but you can customize it to fit your design.
 
 ### Alphas
 
-> Note: Toggle the site's color mode to see the change in the whiteAlpha colors.
+:::tip
+Toggle the docsite's color mode to see the change in the whiteAlpha colors.
+:::
 
 <ColorWrapper>
   <ColorPalettes color='blackAlpha' />
@@ -136,7 +136,7 @@ To manage Typography options, the theme object supports the following keys:
 - `lineHeights`
 - `letterSpacings`
 
-```js
+```ts
 import { extendTheme } from '@chakra-ui/react'
 
 // example theme
@@ -205,8 +205,10 @@ const theme = extendTheme({
 
 Chakra UI comes with a predefined set of commonly used breakpoints.
 
-> Learn more about
-> [Responsive Styles and Customizing Breakpoints](/docs/styled-system/responsive-styles).
+:::info
+Learn more about
+[Responsive Styles and Customizing Breakpoints](/docs/styled-system/responsive-styles).
+:::
 
 ```js
 import { extendTheme } from '@chakra-ui/react'
@@ -229,7 +231,7 @@ your project. By default these spacing value can be referenced by the `padding`,
 `margin`, and `top`, `left`, `right`, `bottom` styles.
 
 ```js
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
 const spacing = {
   space: {
@@ -267,17 +269,19 @@ const spacing = {
     80: '20rem',
     96: '24rem',
   },
-}
+};
 
-const theme = extendTheme({ ...spacing })
+const theme = extendTheme({ ...spacing });
 ```
 
 By default, Chakra includes a comprehensive numeric spacing scale inspired by
 Tailwind CSS. The values are proportional, so 1 spacing unit is equal to
 `0.25rem`, which translates to `4px` by default in common browsers.
 
-> **Mental model:** If you need a spacing of `40px`, divide it by `4`. That'll
-> give you `10`. Then use it in your component.
+:::tip
+**Mental model:** If you need a spacing of `40px`, divide it by `4`. That'll
+give you `10`. Then use it in your component.
+:::
 
 | Name | Space    | Pixels |                                    |
 | ---- | -------- | ------ | ---------------------------------- |
@@ -424,12 +428,12 @@ parts of the Chakra UI system.
 You can leverage the `extendTheme` function to override a specific theme config
 property.
 
-```jsx live=false
-import { extendTheme } from '@chakra-ui/react'
+```tsx
+import { extendTheme } from '@chakra-ui/react';
 
 const theme = extendTheme({
   config: {
     cssVarPrefix: 'ck',
   },
-})
+});
 ```
