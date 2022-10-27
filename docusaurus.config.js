@@ -26,8 +26,16 @@ const config = {
         logo: {
           alt: 'Chakra UI Logo',
           src: 'img/logo.svg',
+          srcDark: 'img/logo-dark.svg',
         },
         items: [
+          {
+            type: 'doc',
+            docId: 'index',
+            docsPluginId: 'getting-started',
+            position: 'left',
+            label: 'Getting Started',
+          },
           {
             type: 'doc',
             docId: 'index',
@@ -132,6 +140,7 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'getting-started',
         routeBasePath: '/',
         path: './content/getting-started',
         showLastUpdateAuthor: true,
