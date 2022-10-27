@@ -8,6 +8,9 @@ description:
   or action.
 ---
 
+AlertDialog component is used to interrupt the user with a mandatory confirmation
+or action.
+
 ## Import
 
 Chakra UI exports 7 alert dialog related components.
@@ -28,7 +31,7 @@ import {
   AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -40,10 +43,10 @@ Based on
 focus should be placed on the least destructive element when the dialog opens,
 to prevent users from accidentally confirming the destructive action.
 
-```jsx
+```jsx live
 function AlertDialogExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const cancelRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
 
   return (
     <>
@@ -78,7 +81,7 @@ function AlertDialogExample() {
         </AlertDialogOverlay>
       </AlertDialog>
     </>
-  )
+  );
 }
 ```
 
@@ -88,10 +91,10 @@ The `Modal` comes with a scale transition by default but you can change it by
 passing a `motionPreset` prop, and set its value to either `slideInBottom`,
 `slideInRight`, or `scale`.
 
-```jsx
+```jsx live
 function TransitionExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const cancelRef = React.useRef()
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const cancelRef = React.useRef();
 
   return (
     <>
@@ -123,7 +126,7 @@ function TransitionExample() {
         </AlertDialogContent>
       </AlertDialog>
     </>
-  )
+  );
 }
 ```
 
@@ -137,3 +140,11 @@ function TransitionExample() {
   `aria-describedby` attributes.
 - Clicking on the overlay closes the `AlertDialog`.
 - Pressing <kbd>esc</kbd> closes the dialog.
+
+## Props
+
+`AlertDialog` and its components compose the `Modal` component. The only
+exception is that it requires a `leastDestructiveRef` which is similar to the
+`initialFocusRef` of `Modal`.
+
+<PropsTable of='AlertDialog' />
