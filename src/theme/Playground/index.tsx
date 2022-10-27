@@ -73,7 +73,7 @@ const memoizedCreateCacheWithContainer = weakMemoize((container: HTMLElement) =>
   createCache({ container, key: 'showcase' })
 );
 
-const ChakraIFrameProvider = ({ children }) => {
+export const ChakraIFrameProvider = ({ children }) => {
   return (
     <Frame width='100%'>
       <FrameContextConsumer>
