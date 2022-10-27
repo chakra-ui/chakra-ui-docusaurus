@@ -6,6 +6,9 @@ package: '@chakra-ui/layout'
 description: Link is an accessible element for navigation.
 ---
 
+import Showcase from "../../../../src/sandpack-contents/component-theming/link.mdx"
+
+
 ## Imports
 
 ```js
@@ -44,7 +47,7 @@ To use the `Link` with a routing library like Reach Router or React Router, all
 you need to do is pass the `as` prop. It'll replace the rendered `a` tag with
 Reach's `Link`.
 
-```jsx live=false
+```jsx 
 // 1. import { Link as ReachLink } from "@reach/router"
 
 // 2. Then use it like this
@@ -59,7 +62,7 @@ To use the `Link` with Next.js, all you need to do is to wrap `Link` with
 Next.js `Link` component and pass the `passHref` prop. `passHref` Forces Next.js
 `Link` to send the `href` property to its child.
 
-```jsx live=false
+```jsx 
 // 1. import NextLink from "next/link"
 
 // 2. Then use it like this

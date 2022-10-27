@@ -1,7 +1,8 @@
 ---
-id: menu
 scope: theming
 ---
+
+import Showcase from "../../../../src/sandpack-contents/component-theming/menu.mdx"
 
 The `Menu` component is a multipart component. The styling needs to be applied
 to each part specifically.
@@ -298,7 +299,7 @@ The properties that affect the theming of the `Menu` component are:
 - `defineMultiStyleConfig`: a function used to define the style configuration
   for a multipart component.
 
-```jsx live=false
+```jsx 
 import { menuAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
 
@@ -308,7 +309,7 @@ const { definePartsStyle, defineMultiStyleConfig } =
 
 ## Customizing the default theme
 
-```jsx live=false
+```jsx 
 import { menuAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
 
@@ -377,7 +378,7 @@ export const menuTheme = defineMultiStyleConfig({ baseStyle });
 After customizing the input theme, we can import it into our theme file and add
 it in the `components` property:
 
-```jsx live=false
+```jsx 
 import { extendTheme } from "@chakra-ui/react";
 import { menuTheme } from "./components/Menu";
 
@@ -398,7 +399,7 @@ export default theme;
 Let's assume we want to include an extra large menu size. Here's how we can do
 that:
 
-```jsx live=false
+```jsx 
 import { menuAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
@@ -440,7 +441,7 @@ get proper autocomplete in your IDE. You can learn more about the CLI tool
 Let's assume we want to include some custom variants to create a pill-shaped
 menu bar. Here's how we can do that:
 
-```jsx live=false
+```jsx 
 import { menuAnatomy } from '@chakra-ui/anatomy'
 import { createMultiStyleConfigHelpers, defineStyle } from '@chakra-ui/react'
 
@@ -476,7 +477,7 @@ export const menuTheme = defineMultiStyleConfig({ variants })
 Let's assume we want to change the default size and variant of every menu in our
 app. Here's how we can do that:
 
-```jsx live=false
+```jsx 
 import { menuAnatomy } from "@chakra-ui/anatomy";
 import { createMultiStyleConfigHelpers, defineStyle } from "@chakra-ui/react";
 
@@ -495,30 +496,4 @@ export const menuTheme = defineMultiStyleConfig({ defaultProps });
 
 ## Showcase
 
-<!--
-import {
-  App,
-  Index,
-  Theme,
-  Menu,
-  ColorModeSwitcher,
-} from 'configs/sandpack-contents/component-theming/menu'
-
-<SandpackEmbed
-  files={{
-    '/theme/components/Menu.tsx': Menu,
-    '/theme/index.ts': Theme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-    '/ColorModeSwitcher.tsx': {
-      code: ColorModeSwitcher,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
+<Showcase />

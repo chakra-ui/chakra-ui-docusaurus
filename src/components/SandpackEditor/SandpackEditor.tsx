@@ -27,12 +27,13 @@ const SandpackEditor = ({
       customSetup={{
         dependencies: {
           '@chakra-ui/react': 'latest',
-          '@emotion/styled': 'latest',
-          'framer-motion': 'latest',
-          '@emotion/react': 'latest',
-          'react-icons': 'latest',
+          "@chakra-ui/icons": "latest",
           "@chakra-ui/anatomy": "latest",
           "@chakra-ui/styled-system": "latest",
+          '@emotion/styled': 'latest',
+          '@emotion/react': 'latest',
+          'framer-motion': 'latest',
+          'react-icons': 'latest',
           ...dependencies
         },
       }}
