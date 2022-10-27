@@ -31,6 +31,13 @@ const config = {
           {
             type: 'doc',
             docId: 'index',
+            docsPluginId: 'getting-started',
+            position: 'left',
+            label: 'Getting Started',
+          },
+          {
+            type: 'doc',
+            docId: 'index',
             docsPluginId: 'docs',
             position: 'left',
             label: 'Docs',
@@ -132,6 +139,7 @@ const config = {
     [
       '@docusaurus/plugin-content-docs',
       {
+        id: 'getting-started',
         routeBasePath: '/',
         path: './content/getting-started',
         showLastUpdateAuthor: true,
