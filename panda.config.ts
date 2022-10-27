@@ -12,8 +12,7 @@ export default defineConfig({
   // whether to use css reset
   preflight: false,
   // where to look for your css declarations
-  // include: ['./src/**/*.{tsx,jsx}'],
-  include: ['./src/components/framework-link.tsx'],
+  include: ['./src/**/*.{tsx,jsx}'],
   // files to exclude
   exclude: [],
   // The output directory for system

@@ -39,7 +39,7 @@ const accents = cssMap({
 });
 
 const FrameworkLink = (props) => {
-  const { accentColor, href, children, name } = props;
+  const { href, children, name } = props;
   return (
     <a
       className={css({
