@@ -7,6 +7,7 @@ import {
   tokens,
   patterns,
 } from 'css-panda/presets';
+import { colors } from './src/theme/tokens/colors';
 
 export default defineConfig({
   // whether to use css reset
@@ -20,11 +21,16 @@ export default defineConfig({
   jsxFramework: 'react',
   jsxFactory: 'chakra',
   // Add your css conditions here (&:hover, &:focus, etc)
-  conditions,
+  conditions: {
+    ...conditions,
+    dark: '[data-theme="dark"] &',
+  },
   // Add your tokens here
   tokens,
   // Add your semantic tokens here
-  semanticTokens: {},
+  semanticTokens: {
+    colors,
+  },
   // Add your keyframes here (spin, fade, etc)
   keyframes,
   // Add your breakpoints here (sm, md, lg, xl)

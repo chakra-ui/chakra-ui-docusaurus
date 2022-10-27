@@ -13,28 +13,28 @@ import { chakra } from '../../design-system/jsx';
 
 const accents = cssMap({
   'Create React App': {
-    background: '#0AC09D',
+    background: 'cra',
   },
   'Next.js': {
-    background: 'black',
+    background: 'nextjs',
   },
   Gatsby: {
-    background: '#663399',
+    background: 'gatsby',
   },
   RedwoodJS: {
-    background: '#BF4722',
+    background: 'redwood',
   },
   BlitzJS: {
-    background: '#6700EB',
+    background: 'blitzjs',
   },
   Meteor: {
-    background: '#FF6A3E',
+    background: 'meteor',
   },
   Remix: {
-    background: '#121212',
+    background: 'remix',
   },
   Vite: {
-    background: '#C07600',
+    background: 'vite',
   },
 });
 
@@ -90,14 +90,12 @@ const FrameworkLink = (props) => {
 
 export const FrameworkLinks = () => {
   return (
-    <div
-      className={css({
-        display: 'grid',
-        gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-        mt: '12',
-        gap: '40px',
-        fontSize: '6xl',
-      })}
+    <chakra.div
+      display='grid'
+      gridTemplateColumns='repeat(auto-fit, minmax(200px, 1fr))'
+      mt='12'
+      gap='40px'
+      fontSize='6xl'
     >
       <FrameworkLink href='/getting-started/cra-guide' name='Create React App'>
         <CreateReactAppSvg style={{ margin: 'auto' }} />
@@ -130,6 +128,6 @@ export const FrameworkLinks = () => {
       <FrameworkLink href='/getting-started/meteor-guide' name='Meteor'>
         <MeteorSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
-    </div>
+    </chakra.div>
   );
 };

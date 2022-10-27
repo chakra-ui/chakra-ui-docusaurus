@@ -48,7 +48,7 @@
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "18.0.23",
     "@types/react-dom": "18.0.7",
-    "css-panda": "^0.0.0-dev-20221026040851",
+    "css-panda": "^0.0.0-dev-20221027130853",
     "typescript": "^4.8.4"
   },
   "browserslist": {
