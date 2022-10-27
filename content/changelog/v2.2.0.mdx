@@ -50,20 +50,20 @@ version: 2.2.0
   If you're creating a CSR-only app, you can now leverage the `ssr` argument to
   get the correct value on first render.
 
-  ```jsx live=false
-  const [isMobile] = useMediaQuery("(max-width: 768px)", {
+  ```tsx
+  const [isMobile] = useMediaQuery('(max-width: 768px)', {
     // you can now pass `ssr: false`
     ssr: false,
-  })
+  });
 
   const buttonSize = useBreakpointValue(
-    { base: "sm", lg: "md" },
+    { base: 'sm', lg: 'md' },
     // you can now pass `ssr: false`
-    { ssr: false },
-  )
+    { ssr: false }
+  );
 
   // you can now pass `ssr: false`
-  const breakpoint = useBreakpoint({ ssr: false })
+  const breakpoint = useBreakpoint({ ssr: false });
   ```
 
 ### Patch Changes

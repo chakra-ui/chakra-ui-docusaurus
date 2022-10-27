@@ -33,7 +33,7 @@ const theme = {
       },
     },
   },
-}
+};
 
 // 2. Using a function
 // NB: Chakra gives you access to `colorMode` and `theme` in `props`
@@ -50,7 +50,7 @@ const theme = {
       },
     }),
   },
-}
+};
 ```
 
 ## Default styles
@@ -59,7 +59,7 @@ The default Chakra theme provides sensible global styles. Here's what it looks
 like:
 
 ```js
-import { mode } from '@chakra-ui/theme-tools'
+import { mode } from '@chakra-ui/theme-tools';
 
 const styles = {
   global: (props) => ({
@@ -77,11 +77,13 @@ const styles = {
       wordWrap: 'break-word',
     },
   }),
-}
+};
 ```
 
-> **Note 🚨:** `mode(lightMode, darkMode)(props)` function is the same as
-> `props.colorMode === "dark" ? darkMode : lightMode`
+:::tip
+`mode(lightMode, darkMode)(props)` function is the same as
+`props.colorMode === "dark" ? darkMode : lightMode`.
+:::
 
 ## Styling non-Chakra elements globally
 
@@ -93,7 +95,7 @@ elements globally. Here's what you'll do.
 
 ```js
 // 1. Wrap the rendered mdx in a container
-const MDXWrapper = (props) => <div className='mdx-prose' {...props} />
+const MDXWrapper = (props) => <div className='mdx-prose' {...props} />;
 
 // 2. Define global styles
 // PRO TIP: Again, you can also use the function version here
@@ -112,7 +114,7 @@ const theme = {
       },
     },
   },
-}
+};
 
 // 3. That's it! Your app will now read and use the global styles
 ```

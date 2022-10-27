@@ -23,8 +23,8 @@ to the elements on entire page.
 Let's say we want to lock the page to light mode, you can import the `LightMode`
 component and wrap the page within it.
 
-```jsx live=false
-import { LightMode, GlobalStyle } from '@chakra-ui/react'
+```tsx
+import { LightMode, GlobalStyle } from '@chakra-ui/react';
 
 function Page() {
   return (
@@ -32,6 +32,6 @@ function Page() {
       <GlobalStyle />
       {/* rest of your page */}
     </LightMode>
-  )
+  );
 }
 ```

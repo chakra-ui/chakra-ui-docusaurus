@@ -1,7 +1,6 @@
 ---
 title: The `sx` Prop
-description:
-  The sx prop lets you style components inline, using your theme tokens.
+description: The sx prop lets you style components inline, using your theme tokens.
 category: 'features'
 ---
 
@@ -30,7 +29,7 @@ In case you need to set a CSS property that is not listed in the
 
 One such example is the `filter` property:
 
-```jsx
+```tsx
 <Image
   src='http://placekitten.com/200/300'
   alt='a kitten'
@@ -42,7 +41,7 @@ One such example is the `filter` property:
 
 Custom CSS properties can be defined via the `sx` prop as well:
 
-```jsx
+```tsx
 <Box sx={{ '--my-color': '#53c8c4' }}>
   <Heading color='var(--my-color)' size='lg'>
     This uses CSS Custom Properties!
@@ -56,10 +55,12 @@ To create complex, nested selectors, you can use utilize the `&` operator. The
 `&` in selector will get resolved to unique `className` that is assigned the
 component you put `sx` on.
 
-> For the following example you could also use the
-> [`_groupHover` shorthand prop](/docs/styled-system/style-props#pseudo).
+:::tip
+For the following example you could also use the
+[`_groupHover` shorthand prop](/docs/styled-system/style-props#pseudo).
+:::
 
-```jsx
+```tsx
 <Box borderWidth={2} borderColor='purple.500' p={5} className='my-box'>
   <Heading size='lg'>
     Hover the box...
@@ -80,7 +81,7 @@ component you put `sx` on.
 
 ### Custom Media queries
 
-```jsx
+```tsx
 <Box
   sx={{
     '@media print': {

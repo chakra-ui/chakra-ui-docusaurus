@@ -27,9 +27,9 @@ Properties defined in a layer style
 - Box shadow
 - Opacity
 
-```jsx live=false
+```tsx
 // 1. Import `extendTheme`
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
 // 2. Extend the theme with new layer styles
 const theme = extendTheme({
@@ -45,21 +45,23 @@ const theme = extendTheme({
       borderColor: 'orange.500',
     },
   },
-})
+});
 
 // 3. Consume the text styles in your components
 function Example() {
-  return <Box layerStyle='selected'>This is a box</Box>
+  return <Box layerStyle='selected'>This is a box</Box>;
 }
 
 // 4. You can also switch layer styles
 function Example({ isSelected }) {
-  const layerStyle = isSelected ? 'selected' : 'base'
-  return <Box layerStyle={layerStyle}>This is a box</Box>
+  const layerStyle = isSelected ? 'selected' : 'base';
+  return <Box layerStyle={layerStyle}>This is a box</Box>;
 }
 ```
 
-> Layer Styles will not override variant styling.
+:::note
+Layer Styles will not override variant styling.
+:::
 
 ## Text Styles
 
@@ -81,9 +83,9 @@ Properties defined in a text style
 - Text decoration (strikethrough and underline)
 - Text transform (uppercase, lowercase, and capitalization)
 
-```jsx live=false
+```tsx
 // 1. Import `extendTheme`
-import { extendTheme } from '@chakra-ui/react'
+import { extendTheme } from '@chakra-ui/react';
 
 // 2. Define the new text styles
 const theme = extendTheme({
@@ -102,11 +104,11 @@ const theme = extendTheme({
       letterSpacing: '-1%',
     },
   },
-})
+});
 
 // 3. Consume the text styles in your component
 function Example() {
-  return <Box textStyle='h1'>This is a box</Box>
+  return <Box textStyle='h1'>This is a box</Box>;
 }
 ```
 

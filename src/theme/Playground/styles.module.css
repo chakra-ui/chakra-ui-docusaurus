@@ -16,3 +16,13 @@
   padding: 1rem;
   background-color: var(--ifm-pre-background);
 }
+
+.playgroundHeader {
+  padding: 1rem;
+  font: var(--ifm-code-font-size) / var(--ifm-pre-line-height)
+    var(--ifm-font-family-monospace) !important;
+  border-bottom: 1px solid;
+  background-color: rgb(40, 42, 54);
+  border-color: var(--ifm-color-gray-800);
+  color: white;
+}
