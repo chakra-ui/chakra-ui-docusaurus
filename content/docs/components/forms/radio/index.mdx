@@ -1,23 +1,18 @@
----
-id: radio
-category: form
-title: Radio
-package: '@chakra-ui/radio'
-description:
-  Radios are used when only one choice may be selected in a series of options.
----
+# Radio
+
+Radios are used when only one choice may be selected in a series of options.
 
 ## Import
 
 ```js
-import { Radio, RadioGroup } from '@chakra-ui/react'
+import { Radio, RadioGroup } from '@chakra-ui/react';
 ```
 
 ### Usage
 
-```jsx
+```jsx live
 function RadioExample() {
-  const [value, setValue] = React.useState('1')
+  const [value, setValue] = React.useState('1');
   return (
     <RadioGroup onChange={setValue} value={value}>
       <Stack direction='row'>
@@ -26,7 +21,7 @@ function RadioExample() {
         <Radio value='3'>Third</Radio>
       </Stack>
     </RadioGroup>
-  )
+  );
 }
 ```
 
@@ -35,7 +30,7 @@ function RadioExample() {
 You can override the `colorScheme` of the Radio to any color key specified in
 `theme.colors`.
 
-```jsx
+```jsx live
 <RadioGroup defaultValue='2'>
   <Stack spacing={5} direction='row'>
     <Radio colorScheme='red' value='1'>
@@ -52,7 +47,7 @@ You can override the `colorScheme` of the Radio to any color key specified in
 
 The checkbox comes with 3 sizes.
 
-```jsx
+```jsx live
 <Stack>
   <Radio size='sm' name='1' colorScheme='red'>
     Radio
@@ -68,7 +63,7 @@ The checkbox comes with 3 sizes.
 
 ### Disabled radios
 
-```jsx
+```jsx live
 <RadioGroup defaultValue='1'>
   <Stack>
     <Radio value='1' isDisabled>
@@ -82,7 +77,7 @@ The checkbox comes with 3 sizes.
 
 ### Horizontal alignment
 
-```jsx
+```jsx live
 <RadioGroup defaultValue='1'>
   <Stack spacing={4} direction='row'>
     <Radio value='1' isDisabled>
@@ -96,7 +91,7 @@ The checkbox comes with 3 sizes.
 
 ### Invalid Radio
 
-```jsx
+```jsx live
 <Radio isInvalid>Radio</Radio>
 ```
 
@@ -122,10 +117,10 @@ hooks to see more detail about their uses.
 ```jsx manual=true
 // 1. Create a component that consumes the `useRadio` hook
 function RadioCard(props) {
-  const { getInputProps, getCheckboxProps } = useRadio(props)
+  const { getInputProps, getCheckboxProps } = useRadio(props);
 
-  const input = getInputProps()
-  const checkbox = getCheckboxProps()
+  const input = getInputProps();
+  const checkbox = getCheckboxProps();
 
   return (
     <Box as='label'>
@@ -150,36 +145,36 @@ function RadioCard(props) {
         {props.children}
       </Box>
     </Box>
-  )
+  );
 }
 
 // Step 2: Use the `useRadioGroup` hook to control a group of custom radios.
 function Example() {
-  const options = ['react', 'vue', 'svelte']
+  const options = ['react', 'vue', 'svelte'];
 
   const { getRootProps, getRadioProps } = useRadioGroup({
     name: 'framework',
     defaultValue: 'react',
     onChange: console.log,
-  })
+  });
 
-  const group = getRootProps()
+  const group = getRootProps();
 
   return (
     <HStack {...group}>
       {options.map((value) => {
-        const radio = getRadioProps({ value })
+        const radio = getRadioProps({ value });
         return (
           <RadioCard key={value} {...radio}>
             {value}
           </RadioCard>
-        )
+        );
       })}
     </HStack>
-  )
+  );
 }
 
-render(<Example />)
+render(<Example />);
 ```
 
 ### Note about `name` prop
@@ -188,7 +183,7 @@ We recommend passing the `name` prop to the `RadioGroup` component, instead of
 passing it to each `Radio` component. By default, the `name` prop of the
 RadioGroup takes precedence.
 
-```jsx 
+```jsx
 // Do this ✅
 <RadioGroup name="form-name">
   <Radio>Radio 1</Radio>
@@ -201,3 +196,7 @@ RadioGroup takes precedence.
   <Radio name="form-name">Radio 2</Radio>
 </RadioGroup>
 ```
+
+## Props
+
+<PropsTable of='Radio' />
