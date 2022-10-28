@@ -6,6 +6,7 @@
 
 @import "./components/navbar.css";
 @import "./components/sidebar.css";
+@import "./components/toc.css";
 
 /* You can override the default Infima variables here. */
 :root {
