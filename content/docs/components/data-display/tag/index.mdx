@@ -1,11 +1,7 @@
----
-id: tag
-title: Tag
-category: 'data-display'
-package: '@chakra-ui/tag'
-description: "Tag component is used for items that need to be labeled, categorized, or
-organized using keywords that describe them."
----
+# Tag
+
+Tag component is used for items that need to be labeled, categorized, or
+organized using keywords that describe them.
 
 ## Import
 
@@ -24,16 +20,16 @@ import {
   TagLeftIcon,
   TagRightIcon,
   TagCloseButton,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Usage
 
-```jsx
+```jsx live
 <Tag>Sample Tag</Tag>
 ```
 
-```jsx
+```jsx live
 <HStack spacing={4}>
   {['sm', 'md', 'lg'].map((size) => (
     <Tag size={size} key={size} variant='solid' colorScheme='teal'>
@@ -45,7 +41,7 @@ import {
 
 ## With left icon
 
-```jsx
+```jsx live
 <HStack spacing={4}>
   {['sm', 'md', 'lg'].map((size) => (
     <Tag size={size} key={size} variant='subtle' colorScheme='cyan'>
@@ -58,7 +54,7 @@ import {
 
 ## With right icon
 
-```jsx
+```jsx live
 <HStack spacing={4}>
   {['sm', 'md', 'lg'].map((size) => (
     <Tag size={size} key={size} variant='outline' colorScheme='blue'>
@@ -71,7 +67,7 @@ import {
 
 ## With close button
 
-```jsx
+```jsx live
 <HStack spacing={4}>
   {['sm', 'md', 'lg'].map((size) => (
     <Tag
@@ -90,7 +86,7 @@ import {
 
 ## With custom element
 
-```jsx
+```jsx live
 <Tag size='lg' colorScheme='red' borderRadius='full'>
   <Avatar
     src='https://bit.ly/sage-adebayo'
@@ -102,3 +98,7 @@ import {
   <TagLabel>Segun</TagLabel>
 </Tag>
 ```
+
+## Props
+
+<PropsTable of='Tag' />
