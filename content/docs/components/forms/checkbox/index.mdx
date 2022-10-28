@@ -1,28 +1,23 @@
----
-id: checkbox
-category: form
-title: Checkbox
-package: '@chakra-ui/checkbox'
-description:
-  Checkbox component is used in forms when a user needs to select multiple
-  values from several options.
----
+# Checkbox
+
+Checkbox component is used in forms when a user needs to select multiple
+values from several options.
 
 ## Import
 
 ```js
-import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
+import { Checkbox, CheckboxGroup } from '@chakra-ui/react';
 ```
 
 ## Usage
 
-```jsx
+```jsx live
 <Checkbox defaultChecked>Checkbox</Checkbox>
 ```
 
 ### Disabled Checkbox
 
-```jsx
+```jsx live
 <Stack spacing={5} direction='row'>
   <Checkbox isDisabled>Checkbox</Checkbox>
   <Checkbox isDisabled defaultChecked>
@@ -36,7 +31,7 @@ import { Checkbox, CheckboxGroup } from '@chakra-ui/react'
 You can override the color scheme of the `Checkbox` to any color key specified
 in `theme.colors`.
 
-```jsx
+```jsx live
 <Stack spacing={5} direction='row'>
   <Checkbox colorScheme='red' defaultChecked>
     Checkbox
@@ -52,7 +47,7 @@ in `theme.colors`.
 Pass the `size` prop to change the size of the `Checkbox`. Values can be either
 `sm`, `md` or `lg`.
 
-```jsx
+```jsx live
 <Stack spacing={[1, 5]} direction={['column', 'row']}>
   <Checkbox size='sm' colorScheme='red'>
     Checkbox
@@ -68,7 +63,7 @@ Pass the `size` prop to change the size of the `Checkbox`. Values can be either
 
 ### Invalid Checkbox
 
-```jsx
+```jsx live
 <Checkbox isInvalid>Checkbox</Checkbox>
 ```
 
@@ -77,7 +72,7 @@ Pass the `size` prop to change the size of the `Checkbox`. Values can be either
 We added the `spacing` prop to customize the spacing between the `Checkbox` and
 label text.
 
-```jsx 
+```jsx
 <Checkbox spacing='1rem'>Option</Checkbox>
 ```
 
@@ -86,7 +81,7 @@ label text.
 You can customize the color and size of the check icon by passing the
 `iconColor` and `iconSize` prop.
 
-```jsx 
+```jsx
 <Checkbox iconColor='blue.400' iconSize='1rem'>
   Option
 </Checkbox>
@@ -94,12 +89,12 @@ You can customize the color and size of the check icon by passing the
 
 ### Indeterminate
 
-```jsx
+```jsx live
 function IndeterminateExample() {
-  const [checkedItems, setCheckedItems] = React.useState([false, false])
+  const [checkedItems, setCheckedItems] = React.useState([false, false]);
 
-  const allChecked = checkedItems.every(Boolean)
-  const isIndeterminate = checkedItems.some(Boolean) && !allChecked
+  const allChecked = checkedItems.every(Boolean);
+  const isIndeterminate = checkedItems.some(Boolean) && !allChecked;
 
   return (
     <>
@@ -125,7 +120,7 @@ function IndeterminateExample() {
         </Checkbox>
       </Stack>
     </>
-  )
+  );
 }
 ```
 
@@ -136,17 +131,17 @@ function IndeterminateExample() {
  * 1. Create a custom icon that accepts 2 props: `isIndeterminate` and `isChecked`
  */
 function CustomIcon(props) {
-  const { isIndeterminate, isChecked, ...rest } = props
+  const { isIndeterminate, isChecked, ...rest } = props;
 
   const d = isIndeterminate
     ? 'M12,0A12,12,0,1,0,24,12,12.013,12.013,0,0,0,12,0Zm0,19a1.5,1.5,0,1,1,1.5-1.5A1.5,1.5,0,0,1,12,19Zm1.6-6.08a1,1,0,0,0-.6.917,1,1,0,1,1-2,0,3,3,0,0,1,1.8-2.75A2,2,0,1,0,10,9.255a1,1,0,1,1-2,0,4,4,0,1,1,5.6,3.666Z'
-    : 'M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z'
+    : 'M0,12a1.5,1.5,0,0,0,1.5,1.5h8.75a.25.25,0,0,1,.25.25V22.5a1.5,1.5,0,0,0,3,0V13.75a.25.25,0,0,1,.25-.25H22.5a1.5,1.5,0,0,0,0-3H13.75a.25.25,0,0,1-.25-.25V1.5a1.5,1.5,0,0,0-3,0v8.75a.25.25,0,0,1-.25.25H1.5A1.5,1.5,0,0,0,0,12Z';
 
   return (
     <Icon viewBox='0 0 24 24' {...rest}>
       <path fill='currentColor' d={d} />
     </Icon>
-  )
+  );
 }
 
 function CustomCheckbox() {
@@ -154,10 +149,10 @@ function CustomCheckbox() {
     <Checkbox icon={<CustomIcon />} colorScheme='cyan'>
       Hello world
     </Checkbox>
-  )
+  );
 }
 
-render(<CustomCheckbox />)
+render(<CustomCheckbox />);
 ```
 
 ### CheckboxGroup
@@ -187,3 +182,25 @@ The `useCheckboxGroup` hook is exported with state management logic for use in
 creating tailor-made checkbox group component for your application. Read more
 about the `useCheckboxGroup` hook
 [here](/docs/styled-system/component-hooks/use-checkbox-group).
+
+## Props
+
+### Checkbox Props
+
+<PropsTable of='Checkbox' />
+
+### CheckboxGroup Props
+
+<PropsTable of='CheckboxGroup' />
+
+#### Shared Style Props
+
+The following style props can be set on `CheckboxGroup` and they will be
+forwarded to all children `Checkbox` components.
+
+| Name        | Type              | Default | Description                                                                                                           |
+| ----------- | ----------------- | ------- | --------------------------------------------------------------------------------------------------------------------- |
+| colorScheme | `string`          |         | The color of the checkbox when it is checked. This should be one of the color keys in the theme (e.g."green", "red"). |
+| children    | `React.ReactNode` |         | The content of the checkbox group.                                                                                    |
+| size        | `sm`, `md`, `lg`  | `md`    | The size of the checkbox.                                                                                             |
+| variant     | `string`          |         | The `variant` of the checkbox.                                                                                        |
