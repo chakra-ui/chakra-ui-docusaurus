@@ -12,6 +12,9 @@ import NavbarLogo from "@theme/Navbar/Logo";
 import NavbarSearch from "@theme/Navbar/Search";
 import styles from "./styles.module.css";
 import IconNavbarItem from "../../../components/Navbar/IconNavbarItem";
+import GithubIcon from "../../../../static/img/github.svg";
+import DiscordIcon from "../../../../static/img/discord.svg";
+
 function useNavbarItems() {
   // TODO temporary casting until ThemeConfig type is improved
   return useThemeConfig().navbar.items;
@@ -58,17 +61,19 @@ export default function NavbarContent() {
           )}
           <NavbarColorModeToggle className={styles.colorModeToggle} />
           <IconNavbarItem
-            alt="Github Logo"
-            src="img/github.svg"
+            className="social_icon"
             href="https://github.com/chakra-ui/chakra-ui"
             target="_blank"
-          />
+          >
+            <GithubIcon />
+          </IconNavbarItem>
           <IconNavbarItem
-            alt="Discord Logo"
-            src="img/discord.svg"
+            className="social_icon"
             href="https://discord.gg/chakra-ui"
             target="_blank"
-          />
+          >
+            <DiscordIcon />
+          </IconNavbarItem>
         </>
       }
     />

@@ -4,6 +4,9 @@
  * work well for content-centric websites.
  */
 
+@import "./components/navbar.css";
+@import "./components/sidebar.css";
+
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #319795;
@@ -13,6 +16,8 @@
   --ifm-color-primary-light: #36a6a4;
   --ifm-color-primary-lighter: #38aeab;
   --ifm-color-primary-lightest: #42c2bf;
+  --doc-sidebar-width: 17.5rem !important;
+  --ifm-toc-border-color: var(--ifm-color-emphasis-100)
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
@@ -25,9 +30,4 @@
   --ifm-color-primary-lighter: #32d8b4;
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
-}
-
-.sidebar_category_header:first-child > a{
-  padding-top: 1rem;
-  color: var(--ifm-color-primary);
 }

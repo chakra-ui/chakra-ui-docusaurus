@@ -1,3 +1,6 @@
 {
-  "label": "Frameworks"
+  "label": "Frameworks",
+  "collapsed": false,
+  "position": 20,
+  "className": "sidebar_category_wrapper"
 }

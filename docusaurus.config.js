@@ -39,7 +39,7 @@ const config = {
           {
             to: "/docs/introduction",
             position: "left",
-            label: "Docs",
+            label: "Reference",
             items: [
               {
                 type: "doc",
