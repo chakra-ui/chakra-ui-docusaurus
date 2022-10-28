@@ -1,15 +1,11 @@
----
-id: icon-button
-category: form
-title: Icon Button
-package: '@chakra-ui/button'
-description: Icon button renders an icon within in a button.
----
+# Icon Button
+
+Icon button renders an icon within in a button.
 
 ## Import
 
 ```js
-import { IconButton } from '@chakra-ui/react'
+import { IconButton } from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -18,7 +14,7 @@ IconButton composes the `Button` component except that it renders only an icon.
 Since `IconButton` only renders an icon, you must pass the `aria-label` prop, so
 screen readers can give meaning to the button.
 
-```jsx
+```jsx live
 <IconButton aria-label='Search database' icon={<SearchIcon />} />
 ```
 
@@ -27,7 +23,7 @@ screen readers can give meaning to the button.
 The `IconButton` component accepts most of the props from the `Button`
 component, so we can use `colorScheme` prop to change the color of the button.
 
-```jsx
+```jsx live
 <IconButton
   colorScheme='blue'
   aria-label='Search database'
@@ -40,7 +36,7 @@ component, so we can use `colorScheme` prop to change the color of the button.
 Like the `Button component`, pass the `size` prop to change the size of the
 button.
 
-```jsx
+```jsx live
 <IconButton
   colorScheme='teal'
   aria-label='Call Segun'
@@ -54,7 +50,7 @@ button.
 Like the `Button` component, pass the `variant` prop to change the style of the
 button.
 
-```jsx
+```jsx live
 <IconButton
   variant='outline'
   colorScheme='teal'
@@ -69,7 +65,7 @@ You can also use icons from popular libraries like
 [react-icons](https://react-icons.github.io/react-icons/) and just pass it into
 the button.
 
-```jsx
+```jsx live
 <IconButton
   variant='outline'
   colorScheme='teal'
@@ -78,3 +74,7 @@ the button.
   icon={<MdPhone />}
 />
 ```
+
+## Props
+
+<PropsTable of='IconButton' />

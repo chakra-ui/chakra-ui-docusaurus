@@ -1,22 +1,17 @@
----
-id: progress
-category: feedback
-title: Progress
-package: '@chakra-ui/progress'
-description:
-  Progress is used to display the progress status for a task that takes a long
-  time or consists of several steps.
----
+# Progress
+
+Progress is used to display the progress status for a task that takes a long
+time or consists of several steps.
 
 ## Import
 
 ```js
-import { Progress } from '@chakra-ui/react'
+import { Progress } from '@chakra-ui/react';
 ```
 
 ## Usage
 
-```jsx
+```jsx live
 <Progress value={80} />
 ```
 
@@ -25,7 +20,7 @@ import { Progress } from '@chakra-ui/react'
 You can add `hasStripe` prop to any progress bar to apply a stripe via a CSS
 gradient over the progress bar’s background color.
 
-```jsx
+```jsx live
 <Progress hasStripe value={64} />
 ```
 
@@ -36,7 +31,7 @@ There are two ways you can increase the height of the progress bar:
 - You can add `size` prop to increase the height of the progress bar.
 - You can also use the `height` prop to manually set a height.
 
-```jsx
+```jsx live
 <Stack spacing={5}>
   <Progress colorScheme='green' size='sm' value={20} />
   <Progress colorScheme='green' size='md' value={20} />
@@ -50,7 +45,7 @@ There are two ways you can increase the height of the progress bar:
 You can add `colorScheme` prop to any progress bar to apply any color that
 exists in the `theme`.
 
-```jsx
+```jsx live
 <Progress value={20} size='xs' colorScheme='pink' />
 ```
 
@@ -58,7 +53,7 @@ exists in the `theme`.
 
 To show an animated progress, pass the `isIndeterminate` prop.
 
-```jsx
+```jsx live
 <Progress size='xs' isIndeterminate />
 ```
 
@@ -67,3 +62,7 @@ To show an animated progress, pass the `isIndeterminate` prop.
 - `Progress` has a `role` set to `progressbar` to denote that it is a progress.
 - `Progress` has `aria-valuenow` set to the percentage completion value passed
   to the component, to ensure the progress percent is visible to screen readers.
+
+## Props
+
+<PropsTable of='Progress' />

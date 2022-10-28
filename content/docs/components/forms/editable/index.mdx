@@ -1,13 +1,8 @@
----
-id: editable
-category: form
-title: Editable
-package: '@chakra-ui/editable'
-description:
-  EditableText is used for inline renaming of some text. It appears as normal UI
-  text but transforms into a text input field when the user clicks or focuses on
-  it.
----
+# Editable
+
+EditableText is used for inline renaming of some text. It appears as normal UI
+text but transforms into a text input field when the user clicks or focuses on
+it.
 
 ## Import
 
@@ -26,7 +21,7 @@ import {
   EditableInput,
   EditableTextarea,
   EditablePreview,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -35,7 +30,7 @@ The editable's text input and preview inherits all font styling from the root
 `Editable` container in order to make the edit and read view transition
 seamless.
 
-```jsx
+```jsx live
 // Click the text to edit
 <Editable defaultValue='Take some chakra'>
   <EditablePreview />
@@ -45,7 +40,7 @@ seamless.
 
 ### Usage with textarea
 
-```jsx
+```jsx live
 // Click the text to edit
 <Editable defaultValue='Take some chakra'>
   <EditablePreview />
@@ -60,7 +55,7 @@ mode. We use the render prop pattern to provide access to the internal state of
 the component. You may want to customize the `EditableInput` as well. This can
 be achieved by using a custom `Input` component in the `as` prop.
 
-```jsx
+```jsx live
 function CustomControlsExample() {
   /* Here's a custom control */
   function EditableControls() {
@@ -69,7 +64,7 @@ function CustomControlsExample() {
       getSubmitButtonProps,
       getCancelButtonProps,
       getEditButtonProps,
-    } = useEditableControls()
+    } = useEditableControls();
 
     return isEditing ? (
       <ButtonGroup justifyContent='center' size='sm'>
@@ -80,7 +75,7 @@ function CustomControlsExample() {
       <Flex justifyContent='center'>
         <IconButton size='sm' icon={<EditIcon />} {...getEditButtonProps()} />
       </Flex>
-    )
+    );
   }
 
   return (
@@ -95,7 +90,7 @@ function CustomControlsExample() {
       <Input as={EditableInput} />
       <EditableControls />
     </Editable>
-  )
+  );
 }
 ```
 
@@ -103,3 +98,9 @@ function CustomControlsExample() {
 
 Please see the [recipe](/community/recipes/atlaskit-editable) for a styled
 example.
+
+## Props
+
+### Editable Props
+
+<PropsTable of='Editable' />

@@ -1,12 +1,7 @@
----
-id: table
-title: Table
-category: 'data-display'
-package: '@chakra-ui/table'
-description:
-  'Table component is used to organize and display data efficiently. It renders
-  a `<table>` element by default'
----
+# Table
+
+Table component is used to organize and display data efficiently. It renders
+a `<table>` element by default'
 
 ## Import
 
@@ -21,7 +16,7 @@ import {
   Td,
   TableCaption,
   TableContainer,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Table Container
@@ -55,7 +50,7 @@ The default variant is `simple`
 
 ### Simple Table
 
-```jsx
+```jsx live
 <TableContainer>
   <Table variant='simple'>
     <TableCaption>Imperial to metric conversion factors</TableCaption>
@@ -96,7 +91,7 @@ The default variant is `simple`
 
 ### Striped Table
 
-```jsx
+```jsx live
 <TableContainer>
   <Table variant='striped' colorScheme='teal'>
     <TableCaption>Imperial to metric conversion factors</TableCaption>
@@ -140,7 +135,7 @@ The default variant is `simple`
 The table component is available in 3 sizes: `sm`, `md`, `lg`. The default size
 is `md`.
 
-```jsx
+```jsx live
 <TableContainer>
   <Table size='sm'>
     <Thead>
@@ -177,3 +172,21 @@ is `md`.
   </Table>
 </TableContainer>
 ```
+
+## Props
+
+### Table
+
+<PropsTable of='Table' />
+
+### Td
+
+<PropsTable of='Td' />
+
+### Th
+
+<PropsTable of='Th' />
+
+### TableCaption
+
+<PropsTable of='TableCaption' />

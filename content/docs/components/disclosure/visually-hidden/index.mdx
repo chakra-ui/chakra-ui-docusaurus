@@ -1,12 +1,7 @@
----
-id: visually-hidden
-title: Visually Hidden
-category: 'disclosure'
-package: '@chakra-ui/visually-hidden'
-description:
-  'VisuallyHidden is a common technique used in web accessibility to hide
-  content from the visual client, but keep it readable for screen readers.'
----
+# Visually Hidden
+
+VisuallyHidden is a common technique used in web accessibility to hide
+content from the visual client, but keep it readable for screen readers.
 
 ## Import
 
@@ -17,7 +12,7 @@ screen. `VisuallyHiddenInput`: Visually hidden input component used for
 designing custom input components using the html `input` as a proxy
 
 ```js
-import { VisuallyHidden, VisuallyHiddenInput } from '@chakra-ui/react'
+import { VisuallyHidden, VisuallyHiddenInput } from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -32,7 +27,7 @@ function Example() {
       <VisuallyHidden>Checkmark</VisuallyHidden>
       <CheckIcon />
     </Button>
-  )
+  );
 }
 ```
 
@@ -45,7 +40,7 @@ function Example() {
       <Heading>Title and description</Heading>
       <VisuallyHidden>This will be hidden</VisuallyHidden>
     </Box>
-  )
+  );
 }
 ```
 
@@ -59,10 +54,10 @@ function Example() {
     <VisuallyHiddenInput
       defaultChecked
       onChange={(event) => {
-        console.log(event.target.checked)
+        console.log(event.target.checked);
       }}
     />
-  )
+  );
 }
 ```
 
@@ -70,3 +65,11 @@ function Example() {
 
 `VisuallyHidden` has all the styles necessary to hide it from visual clients,
 but keep it for screen readers.
+
+## Props
+
+`VisuallyHidden` components doesn't have any custom props.
+
+| Name       | Type              | Description                       |
+| ---------- | ----------------- | --------------------------------- |
+| `children` | `React.ReactNode` | The content to be hidden visually |

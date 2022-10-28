@@ -1,8 +1,6 @@
----
-scope: theming
----
+# Theming
 
-import Showcase from "../../../../examples/component-theming/textarea.mdx";
+import Showcase from '../../../../examples/component-theming/textarea.mdx';
 
 The `Textarea` component is a single part component. All of the styling is applied directly to the textarea element.
 
@@ -24,18 +22,18 @@ The properties that affect the theming of the `Textarea` component are:
   single part component.
 
 ```jsx
-import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 ```
 
 ## Customizing the default theme
 
 ```jsx
-import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const outline = defineStyle({
-  border: "2px dashed", // change the appearance of the border
+  border: '2px dashed', // change the appearance of the border
   borderRadius: 0, // remove the border radius
-  fontWeight: "semibold", // change the font weight
+  fontWeight: 'semibold', // change the font weight
 });
 
 export const textareaTheme = defineStyleConfig({
@@ -47,8 +45,8 @@ After the customization of the textarea theme, we can import it in our theme fil
 it in the `components` property:
 
 ```jsx
-import { extendTheme } from "@chakra-ui/react";
-import { textareaTheme } from "./components/textarea";
+import { extendTheme } from '@chakra-ui/react';
+import { textareaTheme } from './components/textarea';
 
 export const theme = extendTheme({
   components: { Textarea: textareaTheme },

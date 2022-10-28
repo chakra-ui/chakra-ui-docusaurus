@@ -1,8 +1,6 @@
----
-scope: theming
----
+# Theming
 
-import Showcase from "../../../../examples/component-theming/button.mdx";
+import Showcase from '../../../../examples/component-theming/button.mdx';
 
 The `Button` component is a single part component. All of the styling is applied
 directly to the `button` element.
@@ -26,18 +24,18 @@ The properties that affect the theming of the `Button` component are:
   single part component.
 
 ```jsx
-import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 ```
 
 ## Customizing the default theme
 
 ```jsx
-import { defineStyle, defineStyleConfig } from "@chakra-ui/react";
+import { defineStyle, defineStyleConfig } from '@chakra-ui/react';
 
 const outline = defineStyle({
-  border: "2px dashed", // change the appearance of the border
+  border: '2px dashed', // change the appearance of the border
   borderRadius: 0, // remove the border radius
-  fontWeight: "semibold", // change the font weight
+  fontWeight: 'semibold', // change the font weight
 });
 
 export const buttonTheme = defineStyleConfig({
@@ -49,8 +47,8 @@ After customizing the button theme, we can import it in our theme file and add
 it in the `components` property:
 
 ```jsx
-import { extendTheme } from "@chakra-ui/react";
-import { buttonTheme } from "./components/button";
+import { extendTheme } from '@chakra-ui/react';
+import { buttonTheme } from './components/button';
 
 export const theme = extendTheme({
   components: { Button: buttonTheme },
@@ -140,7 +138,7 @@ export const theme = extendTheme({
 Then, we can use the custom color scale as the color scheme for the button:
 
 ```jsx
-<Button colorScheme="brand">...</Button>
+<Button colorScheme='brand'>...</Button>
 ```
 
 ## Changing the default properties

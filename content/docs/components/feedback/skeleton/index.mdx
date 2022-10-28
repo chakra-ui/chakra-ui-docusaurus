@@ -1,22 +1,18 @@
----
-id: skeleton
-category: feedback
-title: Skeleton
-description: Skeleton is used to display the loading state of some component.
-package: '@chakra-ui/skeleton'
----
+# Skeleton
+
+Skeleton is used to display the loading state of some component.
 
 ## Import
 
 ```js
-import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react'
+import { Skeleton, SkeletonCircle, SkeletonText } from '@chakra-ui/react';
 ```
 
 ## Usage
 
 You can use it as a standalone component.
 
-```jsx
+```jsx live
 <Stack>
   <Skeleton height='20px' />
   <Skeleton height='20px' />
@@ -26,7 +22,7 @@ You can use it as a standalone component.
 
 Or to wrap another component to take the same height and width.
 
-```jsx
+```jsx live
 <Skeleton>
   <div>contents wrapped</div>
   <div>won't be visible</div>
@@ -35,25 +31,25 @@ Or to wrap another component to take the same height and width.
 
 Useful when fetching remote data.
 
-```js 
-import { Box } from '@chakra-ui/react'
+```js
+import { Box } from '@chakra-ui/react';
 
 function Card() {
-  const { data, loading, error } = useRemoteData()
-  if (error) return <Box children='error' />
+  const { data, loading, error } = useRemoteData();
+  if (error) return <Box children='error' />;
   return (
     <Box>
       <Skeleton isLoaded={!loading}>
         <Heading>{data.title}</Heading>
       </Skeleton>
     </Box>
-  )
+  );
 }
 ```
 
 ### Circle and Text Skeleton
 
-```jsx
+```jsx live
 <Box padding='6' boxShadow='lg' bg='white'>
   <SkeletonCircle size='10' />
   <SkeletonText mt='4' noOfLines={4} spacing='4' />
@@ -64,7 +60,7 @@ function Card() {
 
 You can change the animation color with `startColor` and `endColor`.
 
-```jsx
+```jsx live
 <Skeleton startColor='pink.500' endColor='orange.500' height='20px' />
 ```
 
@@ -72,7 +68,7 @@ You can change the animation color with `startColor` and `endColor`.
 
 You can prevent the skeleton from rendering using the `isLoaded` prop.
 
-```jsx
+```jsx live
 <Skeleton isLoaded>
   <span>Chakra ui is cool</span>
 </Skeleton>
@@ -88,9 +84,9 @@ is `0.4` seconds.
 This requires the `isLoaded` prop, and the animation is best visible when the
 `isLoaded` prop is toggled to `true`.
 
-```jsx
+```jsx live
 function Example() {
-  const [isLoaded, setIsLoaded] = React.useState(false)
+  const [isLoaded, setIsLoaded] = React.useState(false);
   return (
     <Stack padding={4} spacing={1}>
       <Skeleton height='40px' isLoaded={isLoaded}>
@@ -119,6 +115,10 @@ function Example() {
         <Button onClick={() => setIsLoaded((v) => !v)}>toggle</Button>
       </Box>
     </Stack>
-  )
+  );
 }
 ```
+
+## Props
+
+<PropsTable of='Skeleton' />

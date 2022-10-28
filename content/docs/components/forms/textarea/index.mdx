@@ -1,36 +1,31 @@
----
-id: textarea
-category: form
-title: Textarea
-package: '@chakra-ui/textarea'
-description:
-  'The Textarea component allows you to easily create multi-line text inputs.'
----
+# Textarea
+
+The Textarea component allows you to easily create multi-line text inputs.
 
 <carbon-ad></carbon-ad>
 
 ## Import
 
 ```js
-import { Textarea } from '@chakra-ui/react'
+import { Textarea } from '@chakra-ui/react';
 ```
 
 ### Usage
 
-```jsx
+```jsx live
 <Textarea placeholder='Here is a sample placeholder' />
 ```
 
 ### Controlled Textarea
 
-```jsx
+```jsx live
 function Example() {
-  let [value, setValue] = React.useState('')
+  let [value, setValue] = React.useState('');
 
   let handleInputChange = (e) => {
-    let inputValue = e.target.value
-    setValue(inputValue)
-  }
+    let inputValue = e.target.value;
+    setValue(inputValue);
+  };
   return (
     <>
       <Text mb='8px'>Value: {value}</Text>
@@ -41,7 +36,7 @@ function Example() {
         size='sm'
       />
     </>
-  )
+  );
 }
 ```
 
@@ -49,9 +44,9 @@ function Example() {
 
 You can add `resize` prop to change the `Textarea` resize behavior.
 
-```jsx
+```jsx live
 function ResizeExample() {
-  const [resize, setResize] = React.useState('horizontal')
+  const [resize, setResize] = React.useState('horizontal');
 
   return (
     <>
@@ -69,19 +64,24 @@ function ResizeExample() {
         resize={resize}
       />
     </>
-  )
+  );
 }
 ```
 
 ### Disabled Textarea
 
-```jsx
+```jsx live
 <Textarea isDisabled placeholder='Here is a sample placeholder' />
 ```
 
 ### Invalid Textarea
 
-```jsx
+```jsx live
 <Textarea isInvalid placeholder='Here is a sample placeholder' />
 ```
 
+## Props
+
+The Textarea composes the [Input](/docs/components/form/input) component.
+
+<PropsTable of='Textarea' />

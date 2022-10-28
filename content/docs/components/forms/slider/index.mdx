@@ -1,11 +1,6 @@
----
-id: slider
-category: form
-title: Slider
-package: '@chakra-ui/slider'
-description:
-  'The Slider is used to allow users to make selections from a range of values.'
----
+# Slider
+
+The Slider is used to allow users to make selections from a range of values.
 
 ## Import
 
@@ -26,7 +21,7 @@ import {
   SliderFilledTrack,
   SliderThumb,
   SliderMark,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -38,7 +33,7 @@ or applying image filters.
 > **Note:** We recommend adding a `aria-label` or `aria-labelledby` prop to
 > provide an accessible label for the Slider.
 
-```jsx
+```jsx live
 <Slider aria-label='slider-ex-1' defaultValue={30}>
   <SliderTrack>
     <SliderFilledTrack />
@@ -49,7 +44,7 @@ or applying image filters.
 
 ### Changing the slider color scheme
 
-```jsx
+```jsx live
 <Slider aria-label='slider-ex-2' colorScheme='pink' defaultValue={30}>
   <SliderTrack>
     <SliderFilledTrack />
@@ -60,7 +55,7 @@ or applying image filters.
 
 ### Changing the slider orientation
 
-```jsx
+```jsx live
 <Slider
   aria-label='slider-ex-3'
   defaultValue={30}
@@ -79,7 +74,7 @@ or applying image filters.
 `Slider` component was designed to be composed to make it easy for you to
 customize its styles.
 
-```jsx
+```jsx live
 <Slider aria-label='slider-ex-4' defaultValue={30}>
   <SliderTrack bg='red.100'>
     <SliderFilledTrack bg='tomato' />
@@ -95,7 +90,7 @@ customize its styles.
 Discrete sliders allow you to snap to predefined sets of values. This can be
 accomplished using the `step` prop.
 
-```jsx
+```jsx live
 <Slider defaultValue={60} min={0} max={300} step={30}>
   <SliderTrack bg='red.100'>
     <Box position='relative' right={10} />
@@ -111,13 +106,13 @@ You can have custom labels and marks by using `SliderMark` component
 
 ```jsx
 function SliderMarkExample() {
-  const [sliderValue, setSliderValue] = useState(50)
+  const [sliderValue, setSliderValue] = useState(50);
 
   const labelStyles = {
     mt: '2',
     ml: '-2.5',
     fontSize: 'sm',
-  }
+  };
 
   return (
     <Box pt={6} pb={2}>
@@ -148,7 +143,7 @@ function SliderMarkExample() {
         <SliderThumb />
       </Slider>
     </Box>
-  )
+  );
 }
 ```
 
@@ -156,8 +151,8 @@ And you can also use `Tooltip` with `SliderThumb`
 
 ```jsx
 function SliderThumbWithTooltip() {
-  const [sliderValue, setSliderValue] = React.useState(5)
-  const [showTooltip, setShowTooltip] = React.useState(false)
+  const [sliderValue, setSliderValue] = React.useState(5);
+  const [showTooltip, setShowTooltip] = React.useState(false);
   return (
     <Slider
       id='slider'
@@ -192,7 +187,7 @@ function SliderThumbWithTooltip() {
         <SliderThumb />
       </Tooltip>
     </Slider>
-  )
+  );
 }
 ```
 
@@ -202,7 +197,7 @@ Dragging the slider can trigger lots of updates and the user might only be
 interested in the final result after sliding is complete. You can use
 `onChangeEnd` for this.
 
-```jsx 
+```jsx
 <Slider aria-label='slider-ex-5' onChangeEnd={(val) => console.log(val)}>
   <SliderTrack>
     <SliderFilledTrack />
@@ -217,7 +212,7 @@ By default `SliderThumb` will receive focus whenever `value` changes. You can
 opt-out of this behavior by setting the value of `focusThumbOnChange` to
 `false`. This is normally used with a "controlled" slider value.
 
-```jsx 
+```jsx
 <Slider aria-label='slider-ex-5' value={value} focusThumbOnChange={false}>
   <SliderTrack>
     <SliderFilledTrack />
@@ -230,3 +225,27 @@ opt-out of this behavior by setting the value of `focusThumbOnChange` to
 
 We've exported the `useSlider` hook to help users manage and build custom slider
 UIs.
+
+## Props
+
+### Slider Props
+
+The `Slider` component wraps all its children in the [Box](/docs/layout/box)
+component, so you can pass all `Box` props to change its style.
+
+<PropsTable of='Slider' />
+
+### SliderThumb Props
+
+`SliderThumb` composes [Box](/docs/layout/box) so you can pass all `Box` props
+to change its style.
+
+### SliderFilledTrack Props
+
+`SliderFilledTrack` composes [Box](/docs/layout/box) so you can pass all `Box`
+props to change its style.
+
+### SliderTrack Props
+
+`SliderTrack` composes [Box](/docs/layout/box) so you can pass all `Box` props
+to change its style.
