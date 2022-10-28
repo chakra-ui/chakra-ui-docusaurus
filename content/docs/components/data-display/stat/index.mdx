@@ -1,11 +1,6 @@
----
-id: stat
-title: Stat
-category: 'data-display'
-package: '@chakra-ui/stat'
-description:
-  As the name implies, the `Stat` component is used to display some statistics.
----
+# Stat
+
+As the name implies, the `Stat` component is used to display some statistics.
 
 ## Import
 
@@ -17,12 +12,12 @@ import {
   StatHelpText,
   StatArrow,
   StatGroup,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Basic Usage
 
-```jsx
+```jsx live
 <Stat>
   <StatLabel>Collected Fees</StatLabel>
   <StatNumber>£0.00</StatNumber>
@@ -32,7 +27,7 @@ import {
 
 ### Stat with Indicator
 
-```jsx
+```jsx live
 <StatGroup>
   <Stat>
     <StatLabel>Sent</StatLabel>
@@ -53,3 +48,12 @@ import {
   </Stat>
 </StatGroup>
 ```
+
+## Props
+
+- `StatLabel`, `StatHelpText`, `StatNumber` composes
+  [Text](/docs/components/typography/text) component.
+- `StatArrow` composes [Icon](/icon) component.
+- `Stat` and `StatGroup` composes [Box](/docs/components/layout/box) component.
+
+<PropsTable of='Stat' />

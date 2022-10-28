@@ -2,11 +2,16 @@
 id: modal
 category: overlay
 title: Modal
-package: '@chakra-ui/modal'
+package: "@chakra-ui/modal"
 description:
   A modal is a dialog that focuses the user's attention exclusively on an
   information via a window that is overlaid on primary content.
 ---
+
+# Modal
+
+A modal is a dialog that focuses the user's attention exclusively on an
+information via a window that is overlaid on primary content.
 
 ## Import
 
@@ -29,7 +34,7 @@ import {
   ModalFooter,
   ModalBody,
   ModalCloseButton,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 ```
 
 ## Usage
@@ -42,7 +47,7 @@ When the modal opens:
 
 ```jsx
 function BasicUsage() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
@@ -57,15 +62,15 @@ function BasicUsage() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant='ghost'>Secondary Action</Button>
+            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -77,12 +82,12 @@ closes.
 
 ```jsx
 function ReturnFocus() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const finalRef = React.useRef(null)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const finalRef = React.useRef(null);
 
   return (
     <>
-      <Box ref={finalRef} tabIndex={-1} aria-label='Focus moved to this box'>
+      <Box ref={finalRef} tabIndex={-1} aria-label="Focus moved to this box">
         Some other content that'll receive focus on close.
       </Box>
 
@@ -99,15 +104,15 @@ function ReturnFocus() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant='ghost'>Secondary Action</Button>
+            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -119,7 +124,7 @@ behind the modal. Chakra does this by default but you can set
 
 ```jsx
 function BasicUsage() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -131,22 +136,22 @@ function BasicUsage() {
           <ModalHeader>Modal Title</ModalHeader>
           <ModalCloseButton />
           <ModalBody>
-            <Text fontWeight='bold' mb='1rem'>
+            <Text fontWeight="bold" mb="1rem">
               You can scroll the content behind the modal
             </Text>
             <Lorem count={2} />
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant='ghost'>Secondary Action</Button>
+            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -168,10 +173,10 @@ Chakra provides 2 props for this use case:
 
 ```jsx
 function InitialFocus() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
-  const initialRef = React.useRef(null)
-  const finalRef = React.useRef(null)
+  const initialRef = React.useRef(null);
+  const finalRef = React.useRef(null);
 
   return (
     <>
@@ -193,17 +198,17 @@ function InitialFocus() {
           <ModalBody pb={6}>
             <FormControl>
               <FormLabel>First name</FormLabel>
-              <Input ref={initialRef} placeholder='First name' />
+              <Input ref={initialRef} placeholder="First name" />
             </FormControl>
 
             <FormControl mt={4}>
               <FormLabel>Last name</FormLabel>
-              <Input placeholder='Last name' />
+              <Input placeholder="Last name" />
             </FormControl>
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button colorScheme="blue" mr={3}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
@@ -211,7 +216,7 @@ function InitialFocus() {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -222,7 +227,7 @@ By default, the modal closes when you click its overlay. You can set
 
 ```jsx
 function ManualClose() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -238,7 +243,7 @@ function ManualClose() {
           </ModalBody>
 
           <ModalFooter>
-            <Button colorScheme='blue' mr={3}>
+            <Button colorScheme="blue" mr={3}>
               Save
             </Button>
             <Button onClick={onClose}>Cancel</Button>
@@ -246,7 +251,7 @@ function ManualClose() {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -261,7 +266,7 @@ pass the `isCentered` prop.
 
 ```jsx
 function VerticallyCenter() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
 
   return (
     <>
@@ -281,7 +286,7 @@ function VerticallyCenter() {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -293,7 +298,7 @@ passing a `motionPreset` prop, and set its value to either `slideInBottom`,
 
 ```jsx
 function TransitionExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const { isOpen, onOpen, onClose } = useDisclosure();
   return (
     <>
       <Button onClick={onOpen}>Open Modal</Button>
@@ -301,7 +306,7 @@ function TransitionExample() {
         isCentered
         onClose={onClose}
         isOpen={isOpen}
-        motionPreset='slideInBottom'
+        motionPreset="slideInBottom"
       >
         <ModalOverlay />
         <ModalContent>
@@ -311,15 +316,15 @@ function TransitionExample() {
             <Lorem count={2} />
           </ModalBody>
           <ModalFooter>
-            <Button colorScheme='blue' mr={3} onClick={onClose}>
+            <Button colorScheme="blue" mr={3} onClick={onClose}>
               Close
             </Button>
-            <Button variant='ghost'>Secondary Action</Button>
+            <Button variant="ghost">Secondary Action</Button>
           </ModalFooter>
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -334,16 +339,16 @@ If the content within the modal overflows beyond the viewport, you can use the
 
 ```jsx
 function ScrollingExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [scrollBehavior, setScrollBehavior] = React.useState('inside')
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [scrollBehavior, setScrollBehavior] = React.useState("inside");
 
-  const btnRef = React.useRef(null)
+  const btnRef = React.useRef(null);
   return (
     <>
       <RadioGroup value={scrollBehavior} onChange={setScrollBehavior}>
-        <Stack direction='row'>
-          <Radio value='inside'>inside</Radio>
-          <Radio value='outside'>outside</Radio>
+        <Stack direction="row">
+          <Radio value="inside">inside</Radio>
+          <Radio value="outside">outside</Radio>
         </Stack>
       </RadioGroup>
 
@@ -370,7 +375,7 @@ function ScrollingExample() {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -381,15 +386,15 @@ Pass the `size` prop if you need to adjust the size of the modal. Values can be
 
 ```jsx
 function SizeExample() {
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [size, setSize] = React.useState('md')
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [size, setSize] = React.useState("md");
 
   const handleSizeClick = (newSize) => {
-    setSize(newSize)
-    onOpen()
-  }
+    setSize(newSize);
+    onOpen();
+  };
 
-  const sizes = ['xs', 'sm', 'md', 'lg', 'xl', 'full']
+  const sizes = ["xs", "sm", "md", "lg", "xl", "full"];
 
   return (
     <>
@@ -415,7 +420,7 @@ function SizeExample() {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -455,38 +460,38 @@ Modal by using this property.
 function BackdropExample() {
   const OverlayOne = () => (
     <ModalOverlay
-      bg='blackAlpha.300'
-      backdropFilter='blur(10px) hue-rotate(90deg)'
+      bg="blackAlpha.300"
+      backdropFilter="blur(10px) hue-rotate(90deg)"
     />
-  )
+  );
 
   const OverlayTwo = () => (
     <ModalOverlay
-      bg='none'
-      backdropFilter='auto'
-      backdropInvert='80%'
-      backdropBlur='2px'
+      bg="none"
+      backdropFilter="auto"
+      backdropInvert="80%"
+      backdropBlur="2px"
     />
-  )
+  );
 
-  const { isOpen, onOpen, onClose } = useDisclosure()
-  const [overlay, setOverlay] = React.useState(<OverlayOne />)
+  const { isOpen, onOpen, onClose } = useDisclosure();
+  const [overlay, setOverlay] = React.useState(<OverlayOne />);
 
   return (
     <>
       <Button
         onClick={() => {
-          setOverlay(<OverlayOne />)
-          onOpen()
+          setOverlay(<OverlayOne />);
+          onOpen();
         }}
       >
         Use Overlay one
       </Button>
       <Button
-        ml='4'
+        ml="4"
         onClick={() => {
-          setOverlay(<OverlayTwo />)
-          onOpen()
+          setOverlay(<OverlayTwo />);
+          onOpen();
         }}
       >
         Use Overlay two
@@ -505,7 +510,7 @@ function BackdropExample() {
         </ModalContent>
       </Modal>
     </>
-  )
+  );
 }
 ```
 
@@ -530,3 +535,15 @@ function BackdropExample() {
 - The `ModalContent` has `aria-modal` set to `true`.
 - The `ModalContent` has `aria-labelledby` set to the `id` of the `ModalHeader`.
 - The `ModalContent` has `aria-describedby` set to the `id` of the `ModalBody`.
+
+## Props
+
+### Modal Props
+
+<PropsTable of="Modal" />
+
+### Other components
+
+- `ModalOverlay`, `ModalHeader`, `ModalFooter` and `ModalBody` composes `Box`
+  component.
+- `ModalCloseButton` composes `CloseButton`.

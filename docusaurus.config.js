@@ -71,43 +71,6 @@ const config = {
           { to: "/changelog", label: "Changelog", position: "left" },
         ],
       },
-      footer: {
-        style: "light",
-        links: [
-          {
-            title: "Docs",
-            items: [
-              {
-                label: "Tutorial",
-                to: "/docs/intro",
-              },
-            ],
-          },
-          {
-            title: "Community",
-            items: [
-              {
-                label: "Discord",
-                href: "https://discord.gg/chakra-ui",
-              },
-              {
-                label: "Twitter",
-                href: "https://twitter.com/chakra-ui",
-              },
-            ],
-          },
-          {
-            title: "More",
-            items: [
-              {
-                label: "GitHub",
-                href: "https://github.com/chakra-ui/chakra-ui",
-              },
-            ],
-          },
-        ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
-      },
       algolia: {
         indexName: "chakra-ui",
         apiKey: "df1dcc41f7b8e5d68e73dd56d1e19701",
