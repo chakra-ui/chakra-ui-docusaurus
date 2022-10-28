@@ -1,4 +1,3 @@
-import React from 'react';
 import clsx from 'clsx';
 import useIsBrowser from '@docusaurus/useIsBrowser';
 import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
@@ -73,7 +72,7 @@ const memoizedCreateCacheWithContainer = weakMemoize((container: HTMLElement) =>
   createCache({ container, key: 'showcase' })
 );
 
-const ChakraIFrameProvider = ({ children }) => {
+export const ChakraIFrameProvider = ({ children }) => {
   return (
     <Frame width='100%'>
       <FrameContextConsumer>

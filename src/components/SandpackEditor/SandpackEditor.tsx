@@ -1,32 +1,44 @@
 import React from 'react';
-import { Box } from "@chakra-ui/react";
-import { SandpackCodeEditor, SandpackLayout, SandpackPreview, SandpackProvider } from "@codesandbox/sandpack-react";
-import { useColorMode } from '@docusaurus/theme-common';
+import { Box } from '@chakra-ui/react';
+import {
+  SandpackCodeEditor,
+  SandpackLayout,
+  SandpackPreview,
+  SandpackProvider,
+} from '@codesandbox/sandpack-react';
+import { nightOwl } from '@codesandbox/sandpack-themes';
 
-import { createFileMap } from "./createFileMap";
+import { createFileMap } from './createFileMap';
+
+type Props = {
+  children: JSX.Element;
+  dependencies: Record<string, string>;
+  isHorizontal: boolean;
+};
 
 const SandpackEditor = ({
   children,
   dependencies = {},
-}: {
-  children: JSX.Element;
-  dependencies: { [key: string]: string };
-}) => {
+  isHorizontal = false,
+}: Props) => {
   const files = createFileMap(children);
-  const { colorMode } = useColorMode();
 
   return (
     <SandpackProvider
-      template="react-ts"
+      template='react-ts'
       files={files}
-      theme={colorMode === 'dark' ? 'dark' : 'light'}
+      theme={nightOwl}
       customSetup={{
         dependencies: {
           '@chakra-ui/react': 'latest',
+          '@chakra-ui/icons': 'latest',
+          '@chakra-ui/anatomy': 'latest',
+          '@chakra-ui/styled-system': 'latest',
           '@emotion/styled': 'latest',
-          'framer-motion': 'latest',
           '@emotion/react': 'latest',
-          ...dependencies
+          'framer-motion': 'latest',
+          'react-icons': 'latest',
+          ...dependencies,
         },
       }}
     >
@@ -35,18 +47,16 @@ const SandpackEditor = ({
         sx={{
           '--sp-layout-height': 'auto',
         }}
+        style={{ flexDirection: isHorizontal ? 'row' : 'column-reverse' }}
       >
         <SandpackCodeEditor
           showLineNumbers
           style={{
-            maxHeight: '500px',
+            maxHeight: isHorizontal ? '600px' : '500px',
             minWidth: '400px',
           }}
         />
-        <Box
-          as={SandpackPreview}
-          minHeight='350px'
-        />
+        <Box as={SandpackPreview} minHeight='350px' />
       </Box>
     </SandpackProvider>
   );

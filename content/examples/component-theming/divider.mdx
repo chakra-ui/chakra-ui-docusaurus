@@ -1,0 +1,105 @@
+<SandpackEditor>
+
+```tsx divider-theme.tsx
+import { defineStyle, defineStyleConfig } from "@chakra-ui/styled-system"
+
+const brandPrimary = defineStyle({
+    borderWidth: '3px',
+    borderStyle: 'dashed',
+    borderColor: 'orange.500',
+
+    // let's also provide dark mode alternatives
+    _dark: {
+        borderColor: 'orange.300',
+    }
+})
+
+const xl = defineStyle({
+    borderWidth: "10px",
+    borderStyle: "solid",
+    borderRadius: 20,
+})
+
+const thick = defineStyle({
+    borderWidth: '5px', // change the appearance of the border
+    borderStyle: "solid",
+    borderRadius: 10, // set border radius to 10
+    borderColor: "orange.500",
+    _dark: {
+      borderColor: "orange.300",
+    }
+})
+
+export const dividerTheme = defineStyleConfig({
+    thick,
+    sizes: {
+        "xl": xl
+    },
+    variants: {
+        brand: brandPrimary,
+        "thick": thick
+    },
+})
+```
+
+``` tsx divider.tsx
+import { Box, SimpleGrid, IconButton, Center, Divider, useColorMode } from "@chakra-ui/react";
+import { FaMoon, FaSun } from "react-icons/fa";
+
+const DividerPreview = () => {
+    const { toggleColorMode, colorMode } = useColorMode();
+    return (
+        <Box position="relative" h="100vh">
+            <SimpleGrid gap={12} p={12} columns={2}>
+              <Divider variant="thick" />
+              <Center height="50px">
+                <Divider orientation="vertical" variant="thick" />
+              </Center>
+              <Divider variant="brand" />
+              <Center height="50px">
+                <Divider orientation="vertical" variant="brand" />
+              </Center>
+              <Divider size="xl" />
+              <Center height="50px">
+                <Divider orientation="vertical" size="xl" />
+              </Center>
+            </SimpleGrid>
+            <IconButton
+                aria-label="toggle theme"
+                rounded="full"
+                size="xs"
+                position="absolute"
+                bottom={4}
+                left={4}
+                onClick={toggleColorMode} icon={colorMode === "dark" ? <FaSun /> : <FaMoon />}
+            />
+        </Box>
+    );
+}
+
+export default DividerPreview;
+```
+
+```tsx App.tsx
+import { ChakraProvider, extendTheme } from "@chakra-ui/react";
+import Divider from "./divider";
+import { dividerTheme } from "./divider-theme";
+
+const theme = extendTheme({
+  components: {
+    Divider: dividerTheme,
+  }
+});
+
+const App = () => {
+  return (
+    <ChakraProvider theme={theme}>
+      <Divider />
+    </ChakraProvider>
+  );
+}
+
+export default App;
+```
+
+</SandpackEditor>
