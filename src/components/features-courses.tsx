@@ -17,6 +17,7 @@ export const CourseBanner = ({
     href={href}
     borderRadius='lg'
     overflow='hidden'
+    lineHeight='0px'
     hover={{ boxShadow: 'lg', textDecoration: 'none!' }}
   >
     <chakra.img src={image} alt={title} objectFit='contain' />
