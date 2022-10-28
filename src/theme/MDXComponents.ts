@@ -4,6 +4,7 @@ import SandpackEditor from '../components/SandpackEditor/SandpackEditor';
 import { PropsTable } from '../components/PropsTable/props-table';
 import { FeaturesCourses } from '../components/features-courses';
 import { JoinCommunityCards } from '../components/community-cards';
+import { InlineCode } from '../components/code';
 
 export default {
   ...MDXComponents,
@@ -12,4 +13,5 @@ export default {
   PropsTable,
   FeaturesCourses,
   JoinCommunityCards,
+  code: InlineCode,
 };
