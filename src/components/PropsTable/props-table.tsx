@@ -1,27 +1,21 @@
-import * as React from "react";
-import * as ComponentProps from "@chakra-ui/props-docs";
-import {
-  Code,
-  Flex,
-  HStack,
-  Stack,
-  chakra,
-  theme,
-  Link,
-  ChakraProvider,
-} from "@chakra-ui/react";
-import { isObject, isString } from "@chakra-ui/utils";
-import MDXComponents from "../../theme/MDXComponents";
-import { convertBackticksToInlineCode } from "./convert-backticks-to-inline-code";
-import { ChakraIFrameProvider } from "../../theme/Playground";
+import * as React from 'react';
+import * as ComponentProps from '@chakra-ui/props-docs';
+import { theme } from '@chakra-ui/react';
+import { isObject, isString } from '@chakra-ui/utils';
+
+import { css } from '../../../design-system/css';
+import { chakra } from '../../../design-system/jsx';
+import MDXComponents from '../../theme/MDXComponents';
+import { convertBackticksToInlineCode } from './convert-backticks-to-inline-code';
+import { InlineCode } from '../code';
 
 /**
  * A map of components that use foreign theme key.
  * The key is name of the component and value is the theme key it uses.
  */
 const themeComponentKeyAliases = {
-  AlertDialog: "Modal",
-  IconButton: "Button",
+  AlertDialog: 'Modal',
+  IconButton: 'Button',
 };
 
 export type PropsTableProps = {
@@ -40,9 +34,28 @@ export type PropsTableProps = {
   only?: string[] | null;
 };
 
+const rowStyles = css({
+  minWidth: '100',
+  width: {
+    base: '35%',
+    md: '20%',
+  },
+  fontSize: '0.9em',
+  textAlign: 'start',
+  fontWeight: '500',
+  padding: '4px 16px 4px 16px',
+  whiteSpace: 'nowrap',
+  verticalAlign: 'baseline',
+});
+
+const cellStyles = css({
+  padding: '4px 0px 4px 8px',
+  width: '100%',
+});
+
 export const PropsTable = ({
   of,
-  omit = ["layerStyle", "noOfLines", "textStyle", "orientation", "styleConfig"],
+  omit = ['layerStyle', 'noOfLines', 'textStyle', 'orientation', 'styleConfig'],
   only,
 }: PropsTableProps) => {
   const propList = React.useMemo(
@@ -59,81 +72,86 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
   }
 
   return (
-    <ChakraProvider resetCSS={false}>
-      <Stack overflowX="auto" spacing="16" my="10">
-        {propList.map((prop) => (
+    <chakra.div
+      display='flex'
+      flexDirection='column'
+      overflowX='auto'
+      gap='16'
+      my='10'
+    >
+      {propList.map((prop) => (
+        <chakra.div
+          key={prop.name}
+          width='full'
+          fontSize='0.95em'
+          borderCollapse='collapse'
+        >
           <chakra.div
-            key={prop.name}
-            css={{
-              width: "100%",
-              fontSize: "0.95em",
-              borderCollapse: "collapse",
-              ".row": {
-                minWidth: 100,
-                width: "20%",
-                fontSize: "0.9em",
-                textAlign: "start",
-                fontWeight: 500,
-                padding: "4px 16px 4px 16px",
-                whiteSpace: "nowrap",
-                verticalAlign: "baseline",
-              },
-              ".cell": {
-                padding: "4px 0px 4px 8px",
-                width: "100%",
-              },
-            }}
+            textAlign='start'
+            fontSize='1em'
+            paddingBottom='4'
+            marginBottom='2'
+            borderBottom='1px solid'
+            borderBottomColor={{ base: 'gray.100', dark: 'gray.300' }}
           >
-            <chakra.div css={{ textAlign: "start", fontSize: "1em" }}>
-              <chakra.h3
-                css={{
-                  fontSize: "0.8em",
-                  paddingBottom: 4,
-                  marginBottom: 16,
-                  borderBottomWidth: 1,
-                }}
-              >
-                <HStack>
-                  <Code colorScheme="purple">{prop.name}</Code>
-                  {prop.required && <Code colorScheme="red">required</Code>}
-                </HStack>
-              </chakra.h3>
-            </chakra.div>
-            <div>
-              {prop.description && (
-                <Flex>
-                  <div className="row">Description</div>
-                  <div className="cell">
-                    <p>{convertBackticksToInlineCode(prop.description)}</p>
-                  </div>
-                </Flex>
-              )}
-              <Flex>
-                <div className="row">Type</div>
-                <div className="cell">
-                  <MDXComponents.code>{prop.type}</MDXComponents.code>
-                </div>
-              </Flex>
-              {prop.defaultValue && (
-                <Flex>
-                  <div className="row">Default</div>
-                  <div className="cell">
-                    <MDXComponents.code>{prop.defaultValue}</MDXComponents.code>
-                  </div>
-                </Flex>
-              )}
-            </div>
+            <chakra.h3
+              fontSize='0.8em'
+              marginBottom='16'
+              margin='0'
+              padding='0'
+            >
+              <chakra.div display='flex' gap='1'>
+                {/* TODO: Figure out how to generate static css using style props */}
+                <InlineCode
+                  className={css({
+                    background: 'purple.300',
+                    color: 'green.500',
+                  })}
+                >
+                  {prop.name}
+                </InlineCode>
+                {prop.required && (
+                  <InlineCode colorScheme='red'>required</InlineCode>
+                )}
+              </chakra.div>
+            </chakra.h3>
           </chakra.div>
-        ))}
-      </Stack>
-    </ChakraProvider>
+          <div>
+            {prop.description && (
+              <chakra.div display='flex'>
+                <div className={rowStyles}>Description</div>
+                <div className={cellStyles}>
+                  <chakra.p margin='0'>
+                    {convertBackticksToInlineCode(prop.description)}
+                  </chakra.p>
+                </div>
+              </chakra.div>
+            )}
+            <chakra.div display='flex'>
+              <div className={rowStyles}>Type</div>
+              <div className={cellStyles}>
+                <MDXComponents.code>{prop.type}</MDXComponents.code>
+              </div>
+            </chakra.div>
+            {prop.defaultValue && (
+              <chakra.div display='flex'>
+                <div className={rowStyles}>Default</div>
+                <div className={cellStyles}>
+                  <MDXComponents.code>{prop.defaultValue}</MDXComponents.code>
+                </div>
+              </chakra.div>
+            )}
+          </div>
+        </chakra.div>
+      ))}
+    </chakra.div>
   );
 };
 
 const TYPE_GENERIC_THEMEABLE = [
-  "string",
-  "string | (string & {})",
-  "(string & {})",
+  'string',
+  'string | (string & {})',
+  '(string & {})',
 ];
 
 const isGenericThemeable = (type: string) =>
@@ -141,23 +159,23 @@ const isGenericThemeable = (type: string) =>
 
 const omitGenericThemeableType = (type: string) =>
   type
-    .split(" | ")
+    .split(' | ')
     .filter((type) => isGenericThemeable(type))
-    .join(" | ") || type;
+    .join(' | ') || type;
 
 function toLiteralStringType(strings: string[]) {
   return (
     strings
       .map((s) => `"${s}"`)
-      .join(" | ")
-      .trim() || "string"
+      .join(' | ')
+      .trim() || 'string'
   );
 }
 
 function isColorScheme(value: unknown): value is Record<string, string> {
   return (
     isObject(value) &&
-    ["50", "100", "200", "300", "400", "600", "700", "800", "900"].every((k) =>
+    ['50', '100', '200', '300', '400', '600', '700', '800', '900'].every((k) =>
       isString(value[k])
     )
   );
@@ -174,10 +192,10 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
   const featNotImplemented = (feat: string) => (
     <>
       {feat} for <MDXComponents.code>{of}</MDXComponents.code> are not
-      implemented in the default theme. You can{" "}
-      <Link href="/docs/styled-system/theming/customize-theme#customizing-component-styles">
+      implemented in the default theme. You can{' '}
+      <chakra.a href='/docs/styled-system/theming/customize-theme#customizing-component-styles'>
         extend the theme
-      </Link>{" "}
+      </chakra.a>{' '}
       to implement them.
     </>
   );
@@ -205,37 +223,37 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
         type: type.name,
       };
 
-      if (name === "size") {
+      if (name === 'size') {
         const defaultSize = componentTheme?.defaultProps?.size;
         const sizes = componentTheme?.sizes;
 
         if (sizes) {
           prop.type = toLiteralStringType(Object.keys(sizes));
         } else {
-          prop.description = featNotImplemented("Sizes");
+          prop.description = featNotImplemented('Sizes');
         }
 
         if (defaultSize != null) {
           prop.defaultValue = `"${defaultSize}"`;
         } else {
-          prop.type = "string";
+          prop.type = 'string';
         }
 
         if (isGenericThemeable(prop.type)) {
-          prop.type = "string";
+          prop.type = 'string';
         } else {
           prop.type = omitGenericThemeableType(prop.type);
         }
       }
 
-      if (name === "variant") {
+      if (name === 'variant') {
         const defaultVariant = componentTheme?.defaultProps?.variant;
         const variants = componentTheme?.variants;
 
         if (variants) {
           prop.type = toLiteralStringType(Object.keys(variants));
         } else {
-          prop.description = featNotImplemented("Variants");
+          prop.description = featNotImplemented('Variants');
         }
 
         if (defaultVariant != null) {
@@ -243,13 +261,13 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
         }
 
         if (!defaultVariant) {
-          prop.type = "string";
+          prop.type = 'string';
         } else {
           prop.type = omitGenericThemeableType(prop.type);
         }
       }
 
-      if (name === "colorScheme") {
+      if (name === 'colorScheme') {
         prop.type = omitGenericThemeableType(prop.type);
 
         const defaultColorScheme = componentTheme?.defaultProps?.colorScheme;
@@ -261,7 +279,7 @@ function makePropsTable({ of, omit, only }: MakePropsTableOptions) {
           prop.defaultValue = `"${defaultColorScheme}"`;
           prop.type = toLiteralStringType(colorSchemes);
         } else {
-          prop.description = featNotImplemented("Color Schemes");
+          prop.description = featNotImplemented('Color Schemes');
         }
       }
 
