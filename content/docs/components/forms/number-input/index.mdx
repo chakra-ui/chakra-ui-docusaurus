@@ -1,12 +1,7 @@
----
-id: number-input
-category: form
-title: Number Input
-package: '@chakra-ui/number-input'
-description:
-  The NumberInput component is similar to the Input component, but it has
-  controls for incrementing or decrementing numeric values.
----
+# Number Input
+
+The NumberInput component is similar to the Input component, but it has
+controls for incrementing or decrementing numeric values.
 
 ## Import
 
@@ -25,7 +20,7 @@ import {
   NumberInputStepper,
   NumberIncrementStepper,
   NumberDecrementStepper,
-} from '@chakra-ui/react'
+} from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -35,7 +30,7 @@ The NumberInput component follows the
 for the spin button widget. It is composed of smaller components to give you
 control of the styling of each part.
 
-```jsx
+```jsx live
 <NumberInput>
   <NumberInputField />
   <NumberInputStepper>
@@ -58,7 +53,7 @@ range.
 > . If they do not match your requirements you can use other `Number` properties
 > as `min` or `max`.
 
-```jsx
+```jsx live
 <NumberInput defaultValue={15} min={10} max={20}>
   <NumberInputField />
   <NumberInputStepper>
@@ -74,7 +69,7 @@ Pass the `step` prop to change the step size when you increment or decrement the
 value. By default, the value is rounded to match the number of decimals in the
 `step`.
 
-```jsx
+```jsx live
 <NumberInput step={5} defaultValue={15} min={10} max={30}>
   <NumberInputField />
   <NumberInputStepper>
@@ -90,7 +85,7 @@ In some cases, you might need the value to be rounded to specific decimal
 points. Simply pass the `precision` prop and set it to the number of decimal
 points.
 
-```jsx
+```jsx live
 <NumberInput defaultValue={15} precision={2} step={0.2}>
   <NumberInputField />
   <NumberInputStepper>
@@ -111,7 +106,7 @@ To disable this behavior, pass `clampValueOnBlur` and set to `false`.
 > In this example, try to type a value greater than the max. It won't reset the
 > value on blur.
 
-```jsx
+```jsx live
 <NumberInput defaultValue={15} max={30} clampValueOnBlur={false}>
   <NumberInputField />
   <NumberInputStepper>
@@ -131,7 +126,7 @@ support this use case.
 > out of range. Out of range means that the `value` is great than `max` or less
 > than `min`.
 
-```jsx
+```jsx live
 <NumberInput
   defaultValue={15}
   max={10}
@@ -148,12 +143,12 @@ support this use case.
 
 ### Formatting and Parsing the value
 
-```jsx
+```jsx live
 function Example() {
-  const format = (val) => `$` + val
-  const parse = (val) => val.replace(/^\$/, '')
+  const format = (val) => `$` + val;
+  const parse = (val) => val.replace(/^\$/, '');
 
-  const [value, setValue] = React.useState('1.53')
+  const [value, setValue] = React.useState('1.53');
 
   return (
     <NumberInput
@@ -167,7 +162,7 @@ function Example() {
         <NumberDecrementStepper />
       </NumberInputStepper>
     </NumberInput>
-  )
+  );
 }
 ```
 
@@ -176,7 +171,7 @@ function Example() {
 Like the `Input` component, you can pass the `size` prop to change the size of
 the input.
 
-```jsx
+```jsx live
 <Stack shouldWrapChildren direction='row'>
   <NumberInput size='xs' maxW={16} defaultValue={15} min={10}>
     <NumberInputField />
@@ -217,7 +212,7 @@ the input.
 You can change the style of any part of the components using style props. You
 can also change the icons used in the steppers.
 
-```jsx
+```jsx live
 <NumberInput size='sm' defaultValue={15} min={10}>
   <NumberInputField focusBorderColor='red.200' />
   <NumberInputStepper>
@@ -244,10 +239,10 @@ We recommend disabling `focusThumbOnChange` on the `Slider`, so the
 
 Here's an example of how to do that:
 
-```jsx
+```jsx live
 function SliderInput() {
-  const [value, setValue] = React.useState(0)
-  const handleChange = (value) => setValue(value)
+  const [value, setValue] = React.useState(0);
+  const handleChange = (value) => setValue(value);
 
   return (
     <Flex>
@@ -270,7 +265,7 @@ function SliderInput() {
         <SliderThumb fontSize='sm' boxSize='32px' children={value} />
       </Slider>
     </Flex>
-  )
+  );
 }
 ```
 
@@ -279,7 +274,7 @@ function SliderInput() {
 Sometimes, you might need to create a mobile version of the number input. Here's
 how you can leverage the `useNumberInput` hook to build one.
 
-```jsx
+```jsx live
 function HookUsage() {
   const { getInputProps, getIncrementButtonProps, getDecrementButtonProps } =
     useNumberInput({
@@ -288,11 +283,11 @@ function HookUsage() {
       min: 1,
       max: 6,
       precision: 2,
-    })
+    });
 
-  const inc = getIncrementButtonProps()
-  const dec = getDecrementButtonProps()
-  const input = getInputProps()
+  const inc = getIncrementButtonProps();
+  const dec = getDecrementButtonProps();
+  const input = getInputProps();
 
   return (
     <HStack maxW='320px'>
@@ -300,7 +295,7 @@ function HookUsage() {
       <Input {...input} />
       <Button {...dec}>-</Button>
     </HStack>
-  )
+  );
 }
 ```
 
@@ -310,7 +305,7 @@ The `NumberInput` component supports the ability to increment or decrement
 values using the mouse wheel events. To activate this, pass the
 `allowMouseWheel` prop.
 
-```jsx
+```jsx live
 function MouseWheelExample() {
   return (
     <NumberInput allowMouseWheel>
@@ -320,7 +315,7 @@ function MouseWheelExample() {
         <NumberDecrementStepper />
       </NumberInputStepper>
     </NumberInput>
-  )
+  );
 }
 ```
 
@@ -348,3 +343,26 @@ function MouseWheelExample() {
   <kbd>⬆</kbd> will update the value by `0.1 * step`.
 - Long pressing the up and down stepper buttons will update the value at
   intervals.
+
+## Props
+
+### NumberInput Props
+
+NumberInput composes `Flex` with some additional props listed below.
+
+<PropsTable of='NumberInput' />
+
+### NumberInputField Props
+
+`NumberInputField` composes `Input` so you can pass all `Input` props. If you
+want to change the size, pass the `size` prop to the `NumberInput` component
+instead, as [demonstrated above](#changing-the-size-of-the-input).
+
+### NumberInputStepper Props
+
+`NumberInputStepper` composes `Flex` so you can pass all `Flex` props.
+
+### NumberDecrementStepper and NumberIncrementStepper Props
+
+`NumberDecrementStepper` and `NumberIncrementStepper` composes the `Box` props
+so you can pass all `Box` props.
