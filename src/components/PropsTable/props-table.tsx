@@ -92,7 +92,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
             paddingBottom='4'
             marginBottom='2'
             borderBottom='1px solid'
-            borderBottomColor={{ base: 'gray.100', dark: 'gray.300' }}
+            borderBottomColor={{ base: 'gray.100', dark: 'gray.700' }}
           >
             <chakra.h3
               fontSize='0.8em'
@@ -104,8 +104,10 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
                 {/* TODO: Figure out how to generate static css using style props */}
                 <InlineCode
                   className={css({
-                    background: 'purple.300',
-                    color: 'green.500',
+                    background: { base: 'purple.100', dark: 'purple.900' },
+                    color: { base: 'purple.800', dark: 'purple.200' },
+                    fontWeight: 'normal',
+                    fontSize: 'sm',
                   })}
                 >
                   {prop.name}
