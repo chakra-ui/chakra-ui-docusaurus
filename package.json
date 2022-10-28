@@ -45,10 +45,12 @@
     "react-table": "^7.8.0"
   },
   "devDependencies": {
+    "@babel/preset-react": "^7.18.6",
     "@docusaurus/module-type-aliases": "2.1.0",
     "@tsconfig/docusaurus": "^1.0.6",
     "@types/react": "18.0.23",
     "@types/react-dom": "18.0.7",
+    "css-panda": "^0.0.0-dev-20221027133350",
     "typescript": "^4.8.4"
   },
   "browserslist": {
