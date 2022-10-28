@@ -1,0 +1,104 @@
+{
+  "members": [
+    {
+      "login": "segunadebayo",
+      "avatar_url": "https://avatars.githubusercontent.com/u/6916170?v=4",
+      "url": "https://github.com/segunadebayo",
+      "blog": "https://twitter.com/thesegunadebayo",
+      "name": "Segun Adebayo",
+      "bio": "Building @chakra-ui ⚡️. Design Systems and UI Engineer",
+      "twitter_username": "thesegunadebayo",
+      "location": "Dubai, United Arab Emirates"
+    },
+    {
+      "login": "carwack",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16015740?v=4",
+      "url": "https://github.com/carwack",
+      "blog": "",
+      "name": "Sybren W",
+      "bio": null,
+      "twitter_username": "Carwack",
+      "location": null
+    },
+    {
+      "login": "codebender828",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21237954?v=4",
+      "url": "https://github.com/codebender828",
+      "blog": "https://jbakebwa.dev",
+      "name": "Jonathan Bakebwa",
+      "bio": "Building @chakra-ui/vue  |\r\nCo-founder, Software Engineer, rct.ai",
+      "twitter_username": "codebender828",
+      "location": "Beijing Institute of Technology, Beijing, CN"
+    },
+    {
+      "login": "cschroeter",
+      "avatar_url": "https://avatars.githubusercontent.com/u/1846056?v=4",
+      "url": "https://github.com/cschroeter",
+      "blog": "https://cschroeter.net",
+      "name": "Christian Schröter",
+      "bio": "Happy Hacking ✌️",
+      "twitter_username": null,
+      "location": "Landau, Germany"
+    },
+    {
+      "login": "estheragbaje",
+      "avatar_url": "https://avatars.githubusercontent.com/u/53586167?v=4",
+      "url": "https://github.com/estheragbaje",
+      "blog": "https://estheragbaje.dev/",
+      "name": "Esther Agbaje",
+      "bio": "Developer Relations Engineer",
+      "twitter_username": "_estheragbaje",
+      "location": "UAE"
+    },
+    {
+      "login": "koca",
+      "avatar_url": "https://avatars.githubusercontent.com/u/342666?v=4",
+      "url": "https://github.com/koca",
+      "blog": "http://mesut.dev",
+      "name": "Mesut Koca",
+      "bio": "Core @chakra-ui\r\nSenior Frontend Developer \r\n#JS #VUE",
+      "twitter_username": "imesutkoca",
+      "location": null
+    },
+    {
+      "login": "nikolovlazar",
+      "avatar_url": "https://avatars.githubusercontent.com/u/5396211?v=4",
+      "url": "https://github.com/nikolovlazar",
+      "blog": "https://nikolovlazar.com",
+      "name": "Lazar Nikolov",
+      "bio": "Developer Advocate @getsentry.\r\nCore @chakra-ui.\r\nInstructor @eggheadio.\r\nSWE, content creator, OSS Advocate.",
+      "twitter_username": "NikolovLazar",
+      "location": "Skopje, North Macedonia"
+    },
+    {
+      "login": "noobinthisgame",
+      "avatar_url": "https://avatars.githubusercontent.com/u/21695702?v=4",
+      "url": "https://github.com/noobinthisgame",
+      "blog": "https://johann-ehlers.eu/",
+      "name": "Johann Ehlers",
+      "bio": "Full-Stack dev with a strong affinity for React, Chakra UI, Typescript and AWS.",
+      "twitter_username": "noobinthisgame",
+      "location": "Darmstadt, Germany"
+    },
+    {
+      "login": "Shyrro",
+      "avatar_url": "https://avatars.githubusercontent.com/u/10008963?v=4",
+      "url": "https://github.com/Shyrro",
+      "blog": "",
+      "name": "Sahmane Zakaria",
+      "bio": null,
+      "twitter_username": "TheDumbThinker",
+      "location": "France"
+    },
+    {
+      "login": "TimKolberger",
+      "avatar_url": "https://avatars.githubusercontent.com/u/16899513?v=4",
+      "url": "https://github.com/TimKolberger",
+      "blog": "https://kolberger.eu",
+      "name": "Tim Kolberger",
+      "bio": "DevOps Engineer at DB Systel | maintainer @chakra-ui |\r\n[React, nodeJS, GraphQL, ...❤️]",
+      "twitter_username": "TimKolberger",
+      "location": "Wiesbaden, Germany"
+    }
+  ]
+}

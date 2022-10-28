@@ -7,7 +7,7 @@ import {
   tokens,
   patterns,
 } from 'css-panda/presets';
-import { colors } from './src/theme/tokens/colors';
+import { colors } from './src/panda/tokens/colors';
 
 export default defineConfig({
   // whether to use css reset

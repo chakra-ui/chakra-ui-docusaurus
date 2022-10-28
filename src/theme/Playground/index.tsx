@@ -8,7 +8,7 @@ import { CacheProvider } from '@emotion/react';
 import weakMemoize from '@emotion/weak-memoize';
 import Frame, { FrameContextConsumer } from 'react-frame-component';
 import createCache from '@emotion/cache';
-import { theme } from '../chakra-theme';
+import { theme } from '../../panda/chakra-theme';
 
 function Header({ children }: { children: React.ReactNode }) {
   return <div className={clsx(styles.playgroundHeader)}>{children}</div>;
