@@ -1,17 +1,12 @@
----
-id: toast
-category: feedback
-title: Toast
-package: '@chakra-ui/toast'
-description:
-  'The toast component is used to give feedback to users after an action has
-  taken place.'
----
+# Toast
+
+The toast component is used to give feedback to users after an action has
+taken place.
 
 ## Import
 
 ```js
-import { useToast } from '@chakra-ui/react'
+import { useToast } from '@chakra-ui/react';
 ```
 
 ## Usage
@@ -23,9 +18,9 @@ Toasts can be configured to appear at either the top or the bottom of an
 application window, and it is possible to have more than one toast onscreen at a
 time.
 
-```jsx
+```jsx live
 function ToastExample() {
-  const toast = useToast()
+  const toast = useToast();
   return (
     <Button
       onClick={() =>
@@ -40,7 +35,7 @@ function ToastExample() {
     >
       Show Toast
     </Button>
-  )
+  );
 }
 ```
 
@@ -51,9 +46,9 @@ function ToastExample() {
 
 Display a custom component instead of the default Toast UI.
 
-```jsx
+```jsx live
 function CustomToastExample() {
-  const toast = useToast()
+  const toast = useToast();
   return (
     <Button
       onClick={() =>
@@ -69,7 +64,7 @@ function CustomToastExample() {
     >
       Show Toast
     </Button>
-  )
+  );
 }
 ```
 
@@ -78,14 +73,14 @@ function CustomToastExample() {
 Toasts can be closed imperatively, individually (via the `close` instance
 method) or all together (via the `closeAll` instance method).
 
-```jsx
+```jsx live
 function ClosingToastExample() {
-  const toast = useToast()
-  const toastIdRef = React.useRef()
+  const toast = useToast();
+  const toastIdRef = React.useRef();
 
   function close() {
     if (toastIdRef.current) {
-      toast.close(toastIdRef.current)
+      toast.close(toastIdRef.current);
     }
   }
 
@@ -93,11 +88,11 @@ function ClosingToastExample() {
     // you may optionally pass an object of positions to exclusively close
     // keeping other positions opened
     // e.g. `{ positions: ['bottom'] }`
-    toast.closeAll()
+    toast.closeAll();
   }
 
   function addToast() {
-    toastIdRef.current = toast({ description: 'some text' })
+    toastIdRef.current = toast({ description: 'some text' });
   }
 
   return (
@@ -114,7 +109,7 @@ function ClosingToastExample() {
         Close all toasts
       </Button>
     </Wrap>
-  )
+  );
 }
 ```
 
@@ -123,19 +118,19 @@ function ClosingToastExample() {
 Toasts' options can be updated, by passing an `id` and the new `options` to the
 `update` instance method.
 
-```jsx
+```jsx live
 function UpdatingToastExample() {
-  const toast = useToast()
-  const toastIdRef = React.useRef()
+  const toast = useToast();
+  const toastIdRef = React.useRef();
 
   function update() {
     if (toastIdRef.current) {
-      toast.update(toastIdRef.current, { description: 'new text' })
+      toast.update(toastIdRef.current, { description: 'new text' });
     }
   }
 
   function addToast() {
-    toastIdRef.current = toast({ description: 'some text' })
+    toastIdRef.current = toast({ description: 'some text' });
   }
 
   return (
@@ -148,7 +143,7 @@ function UpdatingToastExample() {
         Update last toast
       </Button>
     </Stack>
-  )
+  );
 }
 ```
 
@@ -156,10 +151,10 @@ function UpdatingToastExample() {
 
 You can use `status` to change the color of your toasts.
 
-```jsx
+```jsx live
 function ToastStatusExample() {
-  const toast = useToast()
-  const statuses = ['success', 'error', 'warning', 'info']
+  const toast = useToast();
+  const statuses = ['success', 'error', 'warning', 'info'];
 
   return (
     <Wrap>
@@ -179,7 +174,7 @@ function ToastStatusExample() {
         </WrapItem>
       ))}
     </Wrap>
-  )
+  );
 }
 ```
 
@@ -188,10 +183,10 @@ function ToastStatusExample() {
 `Toast` uses the same variants as the
 [`Alert`](https://chakra-ui.com/docs/components/feedback/alert) component.
 
-```jsx
+```jsx live
 function ToastVariantsExample() {
-  const toast = useToast()
-  const variants = ['solid', 'subtle', 'left-accent', 'top-accent']
+  const toast = useToast();
+  const variants = ['solid', 'subtle', 'left-accent', 'top-accent'];
 
   return (
     <Wrap>
@@ -211,7 +206,7 @@ function ToastVariantsExample() {
         </WrapItem>
       ))}
     </Wrap>
-  )
+  );
 }
 ```
 
@@ -220,7 +215,7 @@ function ToastVariantsExample() {
 The `toast` function now exposes a `containerStyle` property you can use to
 override the default styles for the toast container.
 
-```jsx
+```jsx live
 function Example() {
   // Via instantiation
   const toast = useToast({
@@ -230,7 +225,7 @@ function Example() {
       width: '800px',
       maxWidth: '100%',
     },
-  })
+  });
   // Or via trigger
   // Style here will overwrite the entire style above
   return (
@@ -240,12 +235,12 @@ function Example() {
           containerStyle: {
             border: '20px solid red',
           },
-        })
+        });
       }}
     >
       Click me to show toast with custom container style.
     </Button>
-  )
+  );
 }
 ```
 
@@ -253,9 +248,9 @@ function Example() {
 
 Using the `position` prop you can adjust where your toast will be popup from.
 
-```jsx
+```jsx live
 function PositionExample() {
-  const toast = useToast()
+  const toast = useToast();
   const positions = [
     'top',
     'top-right',
@@ -263,7 +258,7 @@ function PositionExample() {
     'bottom',
     'bottom-right',
     'bottom-left',
-  ]
+  ];
 
   return (
     <Wrap>
@@ -283,7 +278,7 @@ function PositionExample() {
         </WrapItem>
       ))}
     </Wrap>
-  )
+  );
 }
 ```
 
@@ -293,10 +288,10 @@ In some cases you might need to prevent duplicate of specific toasts. To achieve
 you need to pass an `id` and use the `toast.isActive` method to determine when
 to call `toast(...)`.
 
-```jsx 
+```jsx
 function PreventDuplicateExample() {
-  const toast = useToast()
-  const id = 'test-toast'
+  const toast = useToast();
+  const id = 'test-toast';
   return (
     <Button
       onClick={() => {
@@ -304,13 +299,13 @@ function PreventDuplicateExample() {
           toast({
             id,
             title: 'Hey! You can create a duplicate toast',
-          })
+          });
         }
       }}
     >
       Click me!
     </Button>
-  )
+  );
 }
 ```
 
@@ -324,19 +319,19 @@ Components.
 > causing the font size of your page to shift when the toast is open.
 
 ```tsx
-import * as ReactDOM from 'react-dom/client'
-import { createStandaloneToast } from '@chakra-ui/toast'
+import * as ReactDOM from 'react-dom/client';
+import { createStandaloneToast } from '@chakra-ui/toast';
 
-const { ToastContainer, toast } = createStandaloneToast()
+const { ToastContainer, toast } = createStandaloneToast();
 
 // render the ToastContainer in your React root
-const rootElement = document.getElementById('root')
+const rootElement = document.getElementById('root');
 ReactDOM.createRoot(yourRootElement).render(
   <>
     <App />
     <ToastContainer />
-  </>,
-)
+  </>
+);
 
 toast({
   title: 'An error occurred.',
@@ -344,5 +339,9 @@ toast({
   status: 'error',
   duration: 9000,
   isClosable: true,
-})
+});
 ```
+
+## Props
+
+<PropsTable of='useToast' />
