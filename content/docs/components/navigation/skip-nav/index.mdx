@@ -1,14 +1,6 @@
----
-id: skip-nav
-category: navigation
-title: Skip Nav
-package: '@chakra-ui/skip-nav'
-description:
-  Skip Nav Link allows keyboard users to skip to the main content of the page.
----
+# Skip Nav
 
-Skip Navigation link and destination container for screen readers and keyboard
-users.
+Skip Nav Link allows keyboard users to skip to the main content of the page.
 
 Per WebAim.org on
 [WCAG 2.4.1 (Bypass Blocks - Level A)](https://webaim.org/standards/wcag/checklist#sc2.4.1),
@@ -22,16 +14,14 @@ links are the most common skipped.
 > who primarily use a keyboard.
 
 <ComponentLinks
-  github={{ package: 'skip-nav' }}
-  npm={{ package: '@chakra-ui/skip-nav' }}
+  github={{ package: "skip-nav" }}
+  npm={{ package: "@chakra-ui/skip-nav" }}
 />
-
-<carbon-ad></carbon-ad>
 
 ## Imports
 
 ```js
-import { SkipNavLink, SkipNavContent } from '@chakra-ui/skip-nav'
+import { SkipNavLink, SkipNavContent } from "@chakra-ui/skip-nav";
 ```
 
 ## Usage
@@ -52,7 +42,7 @@ either be a self-closing component, or wrap the main content.
 > `id="custom-id"` renders `href="#custom-id"` in `SkipNavLink` and
 > `id="custom-id"` in `SkipNavContent`.
 
-```jsx 
+```jsx
 <>
   // If you want to make it the first element the user encounters
   <SkipNavLink>Skip to content</SkipNavLink>
@@ -76,3 +66,8 @@ You can see these components in action on this page!
    in the upper left.
 4. Hitting `Enter` on the link will take you to the top of the docs content.
 
+## Props
+
+The `SkipNavLink` component composes the `Box` component and renders an `a`.
+
+The `SkipNavContent` component composes the `Box` component and renders a `div`.

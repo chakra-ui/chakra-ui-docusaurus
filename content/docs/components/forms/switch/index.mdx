@@ -6,25 +6,23 @@ The `Switch` component is used as an alternative for the
 [Checkbox](/docs/components/form/checkbox) component. You can switch between
 enabled or disabled states.
 
-<carbon-ad></carbon-ad>
-
 `Switch` must always be accompanied by a label, and follows the same keyboard
 workflow as a `Checkbox`.
 
 ## Import
 
 ```js
-import { Switch } from '@chakra-ui/react';
+import { Switch } from "@chakra-ui/react";
 ```
 
 ## Usage
 
 ```jsx live
-<FormControl display='flex' alignItems='center'>
-  <FormLabel htmlFor='email-alerts' mb='0'>
+<FormControl display="flex" alignItems="center">
+  <FormLabel htmlFor="email-alerts" mb="0">
     Enable email alerts?
   </FormLabel>
-  <Switch id='email-alerts' />
+  <Switch id="email-alerts" />
 </FormControl>
 ```
 
@@ -33,10 +31,10 @@ import { Switch } from '@chakra-ui/react';
 Pass the `size` prop to change the size of the `Switch`.
 
 ```jsx live
-<Stack align='center' direction='row'>
-  <Switch size='sm' />
-  <Switch size='md' />
-  <Switch size='lg' />
+<Stack align="center" direction="row">
+  <Switch size="sm" />
+  <Switch size="md" />
+  <Switch size="lg" />
 </Stack>
 ```
 
@@ -46,9 +44,9 @@ You can change the checked background color of the `Switch` by passing the
 `colorScheme` prop.
 
 ```jsx live
-<Stack direction='row'>
-  <Switch colorScheme='red' />
-  <Switch colorScheme='teal' size='lg' />
+<Stack direction="row">
+  <Switch colorScheme="red" />
+  <Switch colorScheme="teal" size="lg" />
 </Stack>
 ```
 
@@ -59,26 +57,26 @@ the styles, except for the `isInvalid` and the `isRequired` prop.
 
 ```jsx live
 <FormControl as={SimpleGrid} columns={{ base: 2, lg: 4 }}>
-  <FormLabel htmlFor='isChecked'>isChecked:</FormLabel>
-  <Switch id='isChecked' isChecked />
+  <FormLabel htmlFor="isChecked">isChecked:</FormLabel>
+  <Switch id="isChecked" isChecked />
 
-  <FormLabel htmlFor='isDisabled'>isDisabled:</FormLabel>
-  <Switch id='isDisabled' isDisabled defaultChecked />
+  <FormLabel htmlFor="isDisabled">isDisabled:</FormLabel>
+  <Switch id="isDisabled" isDisabled defaultChecked />
 
-  <FormLabel htmlFor='isFocusable'>isFocusable:</FormLabel>
-  <Switch id='isFocusable' isFocusable isDisabled />
+  <FormLabel htmlFor="isFocusable">isFocusable:</FormLabel>
+  <Switch id="isFocusable" isFocusable isDisabled />
 
-  <FormLabel htmlFor='isInvalid'>isInvalid:</FormLabel>
-  <Switch id='isInvalid' isInvalid />
+  <FormLabel htmlFor="isInvalid">isInvalid:</FormLabel>
+  <Switch id="isInvalid" isInvalid />
 
-  <FormLabel htmlFor='isReadOnly'>isReadOnly:</FormLabel>
-  <Switch id='isReadOnly' isReadOnly />
+  <FormLabel htmlFor="isReadOnly">isReadOnly:</FormLabel>
+  <Switch id="isReadOnly" isReadOnly />
 
-  <FormLabel htmlFor='isRequired'>isRequired:</FormLabel>
-  <Switch id='isRequired' isRequired />
+  <FormLabel htmlFor="isRequired">isRequired:</FormLabel>
+  <Switch id="isRequired" isRequired />
 </FormControl>
 ```
 
 ## Props
 
-<PropsTable of='Switch' />
+<PropsTable of="Switch" />

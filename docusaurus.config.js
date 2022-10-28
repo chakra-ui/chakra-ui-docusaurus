@@ -43,7 +43,7 @@ const config = {
             items: [
               {
                 type: "doc",
-                docId: "components/disclosure/accordion/index",
+                docId: "components/index",
                 docsPluginId: "docs",
                 label: "Components",
               },

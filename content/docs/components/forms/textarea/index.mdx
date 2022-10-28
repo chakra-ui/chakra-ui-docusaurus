@@ -2,25 +2,23 @@
 
 The Textarea component allows you to easily create multi-line text inputs.
 
-<carbon-ad></carbon-ad>
-
 ## Import
 
 ```js
-import { Textarea } from '@chakra-ui/react';
+import { Textarea } from "@chakra-ui/react";
 ```
 
 ### Usage
 
 ```jsx live
-<Textarea placeholder='Here is a sample placeholder' />
+<Textarea placeholder="Here is a sample placeholder" />
 ```
 
 ### Controlled Textarea
 
 ```jsx live
 function Example() {
-  let [value, setValue] = React.useState('');
+  let [value, setValue] = React.useState("");
 
   let handleInputChange = (e) => {
     let inputValue = e.target.value;
@@ -28,12 +26,12 @@ function Example() {
   };
   return (
     <>
-      <Text mb='8px'>Value: {value}</Text>
+      <Text mb="8px">Value: {value}</Text>
       <Textarea
         value={value}
         onChange={handleInputChange}
-        placeholder='Here is a sample placeholder'
-        size='sm'
+        placeholder="Here is a sample placeholder"
+        size="sm"
       />
     </>
   );
@@ -46,21 +44,21 @@ You can add `resize` prop to change the `Textarea` resize behavior.
 
 ```jsx live
 function ResizeExample() {
-  const [resize, setResize] = React.useState('horizontal');
+  const [resize, setResize] = React.useState("horizontal");
 
   return (
     <>
       <RadioGroup defaultValue={resize} onChange={setResize} mb={6}>
-        <Stack direction='row' spacing={5}>
-          <Radio value='horizontal'>Horizontal</Radio>
-          <Radio value='vertical'>Vertical</Radio>
-          <Radio value='none'>None</Radio>
+        <Stack direction="row" spacing={5}>
+          <Radio value="horizontal">Horizontal</Radio>
+          <Radio value="vertical">Vertical</Radio>
+          <Radio value="none">None</Radio>
         </Stack>
       </RadioGroup>
 
       <Textarea
-        placeholder='Here is a sample placeholder'
-        size='sm'
+        placeholder="Here is a sample placeholder"
+        size="sm"
         resize={resize}
       />
     </>
@@ -71,17 +69,17 @@ function ResizeExample() {
 ### Disabled Textarea
 
 ```jsx live
-<Textarea isDisabled placeholder='Here is a sample placeholder' />
+<Textarea isDisabled placeholder="Here is a sample placeholder" />
 ```
 
 ### Invalid Textarea
 
 ```jsx live
-<Textarea isInvalid placeholder='Here is a sample placeholder' />
+<Textarea isInvalid placeholder="Here is a sample placeholder" />
 ```
 
 ## Props
 
 The Textarea composes the [Input](/docs/components/form/input) component.
 
-<PropsTable of='Textarea' />
+<PropsTable of="Textarea" />
