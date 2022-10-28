@@ -1,8 +1,4 @@
----
-scope: theming
----
-
-import Showcase from "../../../../examples/component-theming/divider.mdx";
+# Theming
 
 The `Divider` component is a single part component. All of the styling is
 applied directly to the `chakra.hr` element.
@@ -132,25 +128,6 @@ export const dividerTheme = defineStyleConfig({
 
 ## Showcase
 
+import Showcase from "../../../../examples/component-theming/divider.mdx";
+
 <Showcase />
-
-<!--
-import {
-  App,
-  Index,
-  DividerTheme,
-} from 'configs/sandpack-contents/component-theming/divider'
-
-<SandpackEmbed
-  files={{
-    '/theme/components/Divider.ts': DividerTheme,
-    '/App.tsx': App,
-    '/index.tsx': {
-      code: Index,
-      hidden: true,
-    },
-  }}
-  dependencies={{
-    'react-icons': '^4.4.0',
-  }}
-/> -->
