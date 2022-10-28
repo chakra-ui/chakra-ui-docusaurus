@@ -1,11 +1,11 @@
 ---
 title: Atlaskit editable
 description: A well styled editable inspired by the Atlaskit inline edit component
-tags: ['editable', 'inline-edit', 'component']
+tags: ["editable", "inline-edit", "component"]
 author: Jacob Marshall (github.com/jacobhq)
 ---
 
-This example features a tweaked UI, a hover color with dark mode support, and a tooltip. As you can see, we can change the input by setting the `as` prop. This design is inspired by the [Atlassian inline edit](https://atlassian.design/components/inline-edit/examples) component. Read more about the editable [here](/docs/form/editable).
+This example features a tweaked UI, a hover color with dark mode support, and a tooltip. As you can see, we can change the input by setting the `as` prop. This design is inspired by the [Atlassian inline edit](https://atlassian.design/components/inline-edit/examples) component. Read more about the editable [here](/docs/components/forms/editable).
 
 Here are the imports required:
 
@@ -23,8 +23,8 @@ import {
   Editable,
   Tooltip,
   EditableInput,
-} from '@chakra-ui/react';
-import { CheckIcon, CloseIcon } from '@chakra-ui/icons';
+} from "@chakra-ui/react";
+import { CheckIcon, CloseIcon } from "@chakra-ui/icons";
 ```
 
 ```tsx
@@ -39,7 +39,7 @@ function App() {
     } = useEditableControls();
 
     return isEditing ? (
-      <ButtonGroup justifyContent='end' size='sm' w='full' spacing={2} mt={2}>
+      <ButtonGroup justifyContent="end" size="sm" w="full" spacing={2} mt={2}>
         <IconButton icon={<CheckIcon />} {...getSubmitButtonProps()} />
         <IconButton
           icon={<CloseIcon boxSize={3} />}
@@ -51,16 +51,16 @@ function App() {
 
   return (
     <Editable
-      defaultValue='Rasengan ⚡️'
+      defaultValue="Rasengan ⚡️"
       isPreviewFocusable={true}
       selectAllOnFocus={false}
     >
-      <Tooltip label='Click to edit'>
+      <Tooltip label="Click to edit">
         <EditablePreview
           py={2}
           px={4}
           _hover={{
-            background: useColorModeValue('gray.100', 'gray.700'),
+            background: useColorModeValue("gray.100", "gray.700"),
           }}
         />
       </Tooltip>
