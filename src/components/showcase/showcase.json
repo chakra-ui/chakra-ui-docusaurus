@@ -1,0 +1,122 @@
+[
+  {
+    "name": "Chakra UI Pro",
+    "url": "https://pro.chakra-ui.com",
+    "image": "img/showcases/Chakra-UI-Pro.jpg"
+  },
+  {
+    "name": "Ethereum",
+    "url": "https://ethereum.org/",
+    "image": "img/showcases/ethereum.jpg"
+  },
+  {
+    "name": "Planet.com",
+    "url": "https://planet.com/",
+    "image": "img/showcases/planet.jpg"
+  },
+  {
+    "name": "yubo",
+    "url": "https://yubo.live/",
+    "image": "img/showcases/yubo.jpg"
+  },
+  {
+    "name": "Saas UI",
+    "url": "https://saas-ui.dev",
+    "image": "img/showcases/Saas-UI.jpg"
+  },
+  {
+    "name": "Typebot",
+    "url": "https://typebot.io",
+    "image": "img/showcases/Typebot.jpg"
+  },
+  {
+    "name": "Snappify",
+    "url": "https://snappify.io/",
+    "image": "img/showcases/Snappify.jpg"
+  },
+  {
+    "name": "Supa Palette Website",
+    "url": "https://supa-palette.com",
+    "image": "img/showcases/Supa-Palette-Website.jpg"
+  },
+  {
+    "name": "thirdweb",
+    "url": "https://thirdweb.com/",
+    "image": "img/showcases/thirdweb.jpg"
+  },
+  {
+    "name": "Razorpay",
+    "url": "https://razorpay.com",
+    "image": "img/showcases/Razorpay.jpg"
+  },
+  {
+    "name": "World Economic Forum",
+    "url": "https://weforum.org/",
+    "image": "img/showcases/weforum.jpg"
+  },
+  {
+    "name": "iFixit",
+    "url": "https://ifixit.com/",
+    "image": "img/showcases/ifixit.jpg"
+  },
+  {
+    "name": "BrandBird",
+    "url": "https://brandbird.app",
+    "image": "img/showcases/BrandBird.jpg"
+  },
+  {
+    "name": "June",
+    "url": "https://june.so",
+    "image": "img/showcases/June.jpg"
+  },
+  {
+    "name": "Clerk",
+    "url": "https://clerk.dev",
+    "image": "img/showcases/Clerk.jpg"
+  },
+  {
+    "name": "StockX",
+    "url": "https://stockx.com",
+    "image": "img/showcases/StockX.jpg"
+  },
+  {
+    "name": "MockRocket",
+    "url": "https://mockrocket.io/",
+    "image": "img/showcases/MockRocket.jpg"
+  },
+  {
+    "name": "Apollo Odyssey",
+    "url": "https://www.apollographql.com/tutorials/",
+    "image": "img/showcases/Apollo-Odyssey.jpg"
+  },
+  {
+    "name": "Stately.ai",
+    "url": "https://stately.ai/registry/new",
+    "image": "img/showcases/Stately.jpg"
+  },
+  {
+    "name": "Horizon UI",
+    "url": "https://horizon-ui.com/horizon-ui-chakra/",
+    "image": "img/showcases/Horizon-UI.jpg"
+  },
+  {
+    "name": "Life Pro Tips",
+    "url": "https://lifeprotips.com/",
+    "image": "img/showcases/Life-Pro-Tips.jpg"
+  },
+  {
+    "name": "UI Foundations",
+    "url": "https://www.uifoundations.com/",
+    "image": "img/showcases/UI-Foundations.jpg"
+  },
+  {
+    "name": "Tweetpik",
+    "url": "https://tweetpik.com",
+    "image": "img/showcases/Tweetpik.jpg"
+  },
+  {
+    "name": "Bitwarden",
+    "url": "https://bitwarden.com",
+    "image": "img/showcases/Bitwarden.jpg"
+  }
+]
