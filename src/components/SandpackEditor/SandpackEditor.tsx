@@ -1,15 +1,20 @@
 import React from 'react';
-import { Box } from "@chakra-ui/react";
-import { SandpackCodeEditor, SandpackLayout, SandpackPreview, SandpackProvider } from "@codesandbox/sandpack-react";
-import { nightOwl } from "@codesandbox/sandpack-themes"
+import { Box } from '@chakra-ui/react';
+import {
+  SandpackCodeEditor,
+  SandpackLayout,
+  SandpackPreview,
+  SandpackProvider,
+} from '@codesandbox/sandpack-react';
+import { nightOwl } from '@codesandbox/sandpack-themes';
 
-import { createFileMap } from "./createFileMap";
+import { createFileMap } from './createFileMap';
 
 type Props = {
   children: JSX.Element;
   dependencies: Record<string, string>;
   isHorizontal: boolean;
-}
+};
 
 const SandpackEditor = ({
   children,
@@ -20,21 +25,20 @@ const SandpackEditor = ({
 
   return (
     <SandpackProvider
-      template="react-ts"
+      template='react-ts'
       files={files}
       theme={nightOwl}
-
       customSetup={{
         dependencies: {
           '@chakra-ui/react': 'latest',
-          "@chakra-ui/icons": "latest",
-          "@chakra-ui/anatomy": "latest",
-          "@chakra-ui/styled-system": "latest",
+          '@chakra-ui/icons': 'latest',
+          '@chakra-ui/anatomy': 'latest',
+          '@chakra-ui/styled-system': 'latest',
           '@emotion/styled': 'latest',
           '@emotion/react': 'latest',
           'framer-motion': 'latest',
           'react-icons': 'latest',
-          ...dependencies
+          ...dependencies,
         },
       }}
     >
@@ -52,10 +56,7 @@ const SandpackEditor = ({
             minWidth: '400px',
           }}
         />
-        <Box
-          as={SandpackPreview}
-          minHeight='350px'
-        />
+        <Box as={SandpackPreview} minHeight='350px' />
       </Box>
     </SandpackProvider>
   );
