@@ -10,12 +10,12 @@
 /* You can override the default Infima variables here. */
 :root {
   --ifm-color-primary: #319795;
-  --ifm-color-primary-dark: #2c7a7b;
-  --ifm-color-primary-darker: #285e61;
-  --ifm-color-primary-darkest: #234e52;
-  --ifm-color-primary-light: #38b2ac;
-  --ifm-color-primary-lighter: #4fd1c5;
-  --ifm-color-primary-lightest: #81e6d9;
+  --ifm-color-primary-dark: #2c8886;
+  --ifm-color-primary-darker: #2a807f;
+  --ifm-color-primary-darkest: #226a68;
+  --ifm-color-primary-light: #36a6a4;
+  --ifm-color-primary-lighter: #38aeab;
+  --ifm-color-primary-lightest: #42c2bf;
   --doc-sidebar-width: 17.5rem !important;
   --ifm-toc-border-color: var(--ifm-color-emphasis-100);
 }

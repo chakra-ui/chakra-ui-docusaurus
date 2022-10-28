@@ -1,11 +1,6 @@
----
-id: list
-title: List
-category: 'data-display'
-package: '@chakra-ui/layout'
-description:
-  'List is used to display list items. It renders a <ul> element by default.'
----
+# List
+
+List is used to display list items. It renders a `<ul>` element by default.
 
 ## Import
 
@@ -16,7 +11,7 @@ import {
   ListIcon,
   OrderedList,
   UnorderedList,
-} from '@chakra-ui/react'
+} from "@chakra-ui/react";
 ```
 
 ## Unordered List
@@ -50,21 +45,32 @@ font size of the list item.
 ```jsx
 <List spacing={3}>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={MdCheckCircle} color="green.500" />
     Lorem ipsum dolor sit amet, consectetur adipisicing elit
   </ListItem>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={MdCheckCircle} color="green.500" />
     Assumenda, quia temporibus eveniet a libero incidunt suscipit
   </ListItem>
   <ListItem>
-    <ListIcon as={MdCheckCircle} color='green.500' />
+    <ListIcon as={MdCheckCircle} color="green.500" />
     Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
   </ListItem>
   {/* You can also use custom icons from react-icons */}
   <ListItem>
-    <ListIcon as={MdSettings} color='green.500' />
+    <ListIcon as={MdSettings} color="green.500" />
     Quidem, ipsam illum quis sed voluptatum quae eum fugit earum
   </ListItem>
 </List>
 ```
+
+## Props
+
+### List Props
+
+<PropsTable of="List" />
+
+### List Item Props
+
+`ListItem` composes [Box](/docs/components/layout/box) so you can pass all style
+and pseudo style props.

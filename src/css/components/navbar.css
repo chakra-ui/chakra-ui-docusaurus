@@ -27,4 +27,16 @@
 .navbar__item.social_icon:hover {
   color: var(--ifm-font-color-base);
   opacity: 0.8;
+
+  /* var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem*/
 }
+
+.dropdown > .navbar__link::after {
+  background: var(--ifm-menu-link-sublist-icon) 50% / 1.25rem 1.25rem;
+  height: 1.25rem;
+  width: 1.25rem;
+  border: none;
+  transform: rotate(180deg);
+  top: 5px;
+}
+

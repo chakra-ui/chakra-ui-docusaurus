@@ -1,15 +1,11 @@
----
-id: divider
-title: Divider
-category: 'data-display'
-package: '@chakra-ui/layout'
-description: Dividers are used to visually separate content in a list or group.
----
+# Divider
+
+Dividers are used to visually separate content in a list or group.
 
 ## Import
 
 ```js
-import { Divider } from '@chakra-ui/react'
+import { Divider } from "@chakra-ui/react";
 ```
 
 ## Usage
@@ -26,23 +22,27 @@ tag.
 Pass the `orientation` prop and set it to either `horizontal` or `vertical`.
 
 ```jsx
-<Divider orientation='horizontal' />
+<Divider orientation="horizontal" />
 ```
 
 If the vertical orientation is used, make sure that the parent element is
 assigned a height.
 
 ```jsx
-<Center height='50px'>
-  <Divider orientation='vertical' />
+<Center height="50px">
+  <Divider orientation="vertical" />
 </Center>
 ```
 
 ## Composition
 
 ```jsx
-<Stack direction='row' h='100px' p={4}>
-  <Divider orientation='vertical' />
+<Stack direction="row" h="100px" p={4}>
+  <Divider orientation="vertical" />
   <Text>Chakra UI</Text>
 </Stack>
 ```
+
+## Props
+
+<PropsTable of="Divider" />
