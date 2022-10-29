@@ -1,5 +1,6 @@
 {
   "label": "Layout",
   "collapsible": false,
-  "className": "sidebar_category_header"
+  "className": "sidebar_category_header",
+  "position": 1
 }

@@ -1,8 +1,6 @@
----
-title: Default Theme
-description: The default chakra theme tokens
-category: 'theming'
----
+# Theme
+
+<!-- TODO Fix color palettes -->
 
 The theme object is where you define your application's color palette, type
 scale, font stacks, breakpoints, border radius values, and more.
@@ -11,8 +9,8 @@ Theming with Chakra UI is based on the
 [Styled System Theme Specification](https://styled-system.com/theme-specification/)
 
 <ComponentLinks
-  github={{ package: 'theme' }}
-  npm={{ package: '@chakra-ui/theme' }}
+  github={{ package: "theme" }}
+  npm={{ package: "@chakra-ui/theme" }}
 />
 
 ## Colors
@@ -30,13 +28,13 @@ available to generate these palettes.
 ```ts title="theme.ts"
 export default {
   colors: {
-    transparent: 'transparent',
-    black: '#000',
-    white: '#fff',
+    transparent: "transparent",
+    black: "#000",
+    white: "#fff",
     gray: {
-      50: '#f7fafc',
+      50: "#f7fafc",
       // ...
-      900: '#171923',
+      900: "#171923",
     },
     // ...
   },
@@ -50,9 +48,8 @@ inspired by Tailwind CSS, but you can customize it to fit your design.
 ### Black & White
 
 <ColorWrapper>
-  <ColorPalette color='black' name='Black' />
-  <ColorPalette color='white' name='White' />
-  <div />
+  <ColorPalette color="black" name="Black" />
+  <ColorPalette color="white" name="White" />
 </ColorWrapper>
 
 ### Alphas
@@ -62,68 +59,68 @@ Toggle the docsite's color mode to see the change in the whiteAlpha colors.
 :::
 
 <ColorWrapper>
-  <ColorPalettes color='blackAlpha' />
-  <ColorPalettes color='whiteAlpha' />
+  <ColorPalettes color="blackAlpha" />
+  <ColorPalettes color="whiteAlpha" />
 </ColorWrapper>
 
 ### Gray
 
 <ColorWrapper>
-  <ColorPalettes color='gray' />
+  <ColorPalettes color="gray" />
 </ColorWrapper>
 
 ### Red
 
 <ColorWrapper>
-  <ColorPalettes color='red' />
+  <ColorPalettes color="red" />
 </ColorWrapper>
 
 ### Orange
 
 <ColorWrapper>
-  <ColorPalettes color='orange' />
+  <ColorPalettes color="orange" />
 </ColorWrapper>
 
 ### Yellow
 
 <ColorWrapper>
-  <ColorPalettes color='yellow' />
+  <ColorPalettes color="yellow" />
 </ColorWrapper>
 
 ### Green
 
 <ColorWrapper>
-  <ColorPalettes color='green' />
+  <ColorPalettes color="green" />
 </ColorWrapper>
 
 ### Teal
 
 <ColorWrapper>
-  <ColorPalettes color='teal' />
+  <ColorPalettes color="teal" />
 </ColorWrapper>
 
 ### Blue
 
 <ColorWrapper>
-  <ColorPalettes color='blue' />
+  <ColorPalettes color="blue" />
 </ColorWrapper>
 
 ### Cyan
 
 <ColorWrapper>
-  <ColorPalettes color='cyan' />
+  <ColorPalettes color="cyan" />
 </ColorWrapper>
 
 ### Purple
 
 <ColorWrapper>
-  <ColorPalettes color='purple' />
+  <ColorPalettes color="purple" />
 </ColorWrapper>
 
 ### Pink
 
 <ColorWrapper>
-  <ColorPalettes color='pink' />
+  <ColorPalettes color="pink" />
 </ColorWrapper>
 
 ## Typography
@@ -231,43 +228,43 @@ your project. By default these spacing value can be referenced by the `padding`,
 `margin`, and `top`, `left`, `right`, `bottom` styles.
 
 ```js
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
 const spacing = {
   space: {
-    px: '1px',
-    0.5: '0.125rem',
-    1: '0.25rem',
-    1.5: '0.375rem',
-    2: '0.5rem',
-    2.5: '0.625rem',
-    3: '0.75rem',
-    3.5: '0.875rem',
-    4: '1rem',
-    5: '1.25rem',
-    6: '1.5rem',
-    7: '1.75rem',
-    8: '2rem',
-    9: '2.25rem',
-    10: '2.5rem',
-    12: '3rem',
-    14: '3.5rem',
-    16: '4rem',
-    20: '5rem',
-    24: '6rem',
-    28: '7rem',
-    32: '8rem',
-    36: '9rem',
-    40: '10rem',
-    44: '11rem',
-    48: '12rem',
-    52: '13rem',
-    56: '14rem',
-    60: '15rem',
-    64: '16rem',
-    72: '18rem',
-    80: '20rem',
-    96: '24rem',
+    px: "1px",
+    0.5: "0.125rem",
+    1: "0.25rem",
+    1.5: "0.375rem",
+    2: "0.5rem",
+    2.5: "0.625rem",
+    3: "0.75rem",
+    3.5: "0.875rem",
+    4: "1rem",
+    5: "1.25rem",
+    6: "1.5rem",
+    7: "1.75rem",
+    8: "2rem",
+    9: "2.25rem",
+    10: "2.5rem",
+    12: "3rem",
+    14: "3.5rem",
+    16: "4rem",
+    20: "5rem",
+    24: "6rem",
+    28: "7rem",
+    32: "8rem",
+    36: "9rem",
+    40: "10rem",
+    44: "11rem",
+    48: "12rem",
+    52: "13rem",
+    56: "14rem",
+    60: "15rem",
+    64: "16rem",
+    72: "18rem",
+    80: "20rem",
+    96: "24rem",
   },
 };
 
@@ -283,40 +280,40 @@ Tailwind CSS. The values are proportional, so 1 spacing unit is equal to
 give you `10`. Then use it in your component.
 :::
 
-| Name | Space    | Pixels |                                    |
-| ---- | -------- | ------ | ---------------------------------- |
-| px   | 1px      | 1px    | <Box bg="pink.200" h="4" w="px"/>  |
-| 0.5  | 0.125rem | 2px    | <Box bg="pink.200" h="4" w="0.5"/> |
-| 1    | 0.25rem  | 4px    | <Box bg="pink.200" h="4" w="1"/>   |
-| 1.5  | 0.375rem | 6px    | <Box bg="pink.200" h="4" w="1.5"/> |
-| 2    | 0.5rem   | 8px    | <Box bg="pink.200" h="4" w="2"/>   |
-| 2.5  | 0.625rem | 10px   | <Box bg="pink.200" h="4" w="2.5"/> |
-| 3    | 0.75rem  | 12px   | <Box bg="pink.200" h="4" w="3"/>   |
-| 3.5  | 0.875rem | 14px   | <Box bg="pink.200" h="4" w="3.5"/> |
-| 4    | 1rem     | 16px   | <Box bg="pink.200" h="4" w="4"/>   |
-| 5    | 1.25rem  | 20px   | <Box bg="pink.200" h="4" w="5"/>   |
-| 6    | 1.5rem   | 24px   | <Box bg="pink.200" h="4" w="6"/>   |
-| 7    | 1.75rem  | 28px   | <Box bg="pink.200" h="4" w="7"/>   |
-| 8    | 2rem     | 32px   | <Box bg="pink.200" h="4" w="8"/>   |
-| 9    | 2.25rem  | 36px   | <Box bg="pink.200" h="4" w="9"/>   |
-| 10   | 2.5rem   | 40px   | <Box bg="pink.200" h="4" w="10"/>  |
-| 12   | 3rem     | 48px   | <Box bg="pink.200" h="4" w="12"/>  |
-| 14   | 3.5rem   | 56px   | <Box bg="pink.200" h="4" w="14"/>  |
-| 16   | 4rem     | 64px   | <Box bg="pink.200" h="4" w="16"/>  |
-| 20   | 5rem     | 80px   | <Box bg="pink.200" h="4" w="20"/>  |
-| 24   | 6rem     | 96px   | <Box bg="pink.200" h="4" w="24"/>  |
-| 28   | 7rem     | 112px  | <Box bg="pink.200" h="4" w="28"/>  |
-| 32   | 8rem     | 128px  | <Box bg="pink.200" h="4" w="32"/>  |
-| 36   | 9rem     | 144px  | <Box bg="pink.200" h="4" w="36"/>  |
-| 40   | 10rem    | 160px  | <Box bg="pink.200" h="4" w="40"/>  |
-| 44   | 11rem    | 176px  | <Box bg="pink.200" h="4" w="44"/>  |
-| 48   | 12rem    | 192px  | <Box bg="pink.200" h="4" w="48"/>  |
-| 56   | 14rem    | 224px  | <Box bg="pink.200" h="4" w="56"/>  |
-| 60   | 15rem    | 240px  | <Box bg="pink.200" h="4" w="60"/>  |
-| 64   | 16rem    | 256px  | <Box bg="pink.200" h="4" w="64"/>  |
-| 72   | 18rem    | 288px  | <Box bg="pink.200" h="4" w="72"/>  |
-| 80   | 20rem    | 320px  | <Box bg="pink.200" h="4" w="80"/>  |
-| 96   | 24rem    | 384px  | <Box bg="pink.200" h="4" w="96"/>  |
+| Name | Space    | Pixels |                                        |
+| ---- | -------- | ------ | -------------------------------------- |
+| px   | 1px      | 1px    | <ColorBox bg="red.200" h="4" w="px"/>  |
+| 0.5  | 0.125rem | 2px    | <ColorBox bg="red.200" h="4" w="0.5"/> |
+| 1    | 0.25rem  | 4px    | <ColorBox bg="red.200" h="4" w="1"/>   |
+| 1.5  | 0.375rem | 6px    | <ColorBox bg="red.200" h="4" w="1.5"/> |
+| 2    | 0.5rem   | 8px    | <ColorBox bg="red.200" h="4" w="2"/>   |
+| 2.5  | 0.625rem | 10px   | <ColorBox bg="red.200" h="4" w="2.5"/> |
+| 3    | 0.75rem  | 12px   | <ColorBox bg="red.200" h="4" w="3"/>   |
+| 3.5  | 0.875rem | 14px   | <ColorBox bg="red.200" h="4" w="3.5"/> |
+| 4    | 1rem     | 16px   | <ColorBox bg="red.200" h="4" w="4"/>   |
+| 5    | 1.25rem  | 20px   | <ColorBox bg="red.200" h="4" w="5"/>   |
+| 6    | 1.5rem   | 24px   | <ColorBox bg="red.200" h="4" w="6"/>   |
+| 7    | 1.75rem  | 28px   | <ColorBox bg="red.200" h="4" w="7"/>   |
+| 8    | 2rem     | 32px   | <ColorBox bg="red.200" h="4" w="8"/>   |
+| 9    | 2.25rem  | 36px   | <ColorBox bg="red.200" h="4" w="9"/>   |
+| 10   | 2.5rem   | 40px   | <ColorBox bg="red.200" h="4" w="10"/>  |
+| 12   | 3rem     | 48px   | <ColorBox bg="red.200" h="4" w="12"/>  |
+| 14   | 3.5rem   | 56px   | <ColorBox bg="red.200" h="4" w="14"/>  |
+| 16   | 4rem     | 64px   | <ColorBox bg="red.200" h="4" w="16"/>  |
+| 20   | 5rem     | 80px   | <ColorBox bg="red.200" h="4" w="20"/>  |
+| 24   | 6rem     | 96px   | <ColorBox bg="red.200" h="4" w="24"/>  |
+| 28   | 7rem     | 112px  | <ColorBox bg="red.200" h="4" w="28"/>  |
+| 32   | 8rem     | 128px  | <ColorBox bg="red.200" h="4" w="32"/>  |
+| 36   | 9rem     | 144px  | <ColorBox bg="red.200" h="4" w="36"/>  |
+| 40   | 10rem    | 160px  | <ColorBox bg="red.200" h="4" w="40"/>  |
+| 44   | 11rem    | 176px  | <ColorBox bg="red.200" h="4" w="44"/>  |
+| 48   | 12rem    | 192px  | <ColorBox bg="red.200" h="4" w="48"/>  |
+| 56   | 14rem    | 224px  | <ColorBox bg="red.200" h="4" w="56"/>  |
+| 60   | 15rem    | 240px  | <ColorBox bg="red.200" h="4" w="60"/>  |
+| 64   | 16rem    | 256px  | <ColorBox bg="red.200" h="4" w="64"/>  |
+| 72   | 18rem    | 288px  | <ColorBox bg="red.200" h="4" w="72"/>  |
+| 80   | 20rem    | 320px  | <ColorBox bg="red.200" h="4" w="80"/>  |
+| 96   | 24rem    | 384px  | <ColorBox bg="red.200" h="4" w="96"/>  |
 
 ## Sizes
 
@@ -429,11 +426,11 @@ You can leverage the `extendTheme` function to override a specific theme config
 property.
 
 ```tsx
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   config: {
-    cssVarPrefix: 'ck',
+    cssVarPrefix: "ck",
   },
 });
 ```

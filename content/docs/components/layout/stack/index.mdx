@@ -1,18 +1,12 @@
----
-id: stack
-category: layout
-title: Stack
-package: '@chakra-ui/layout'
-description:
-  Stack is a layout component used to group elements together and apply a space
-  between them.
-video: 'https://youtu.be/6Az4Yd6f8RA'
----
+# Stack
+
+Stack is a layout component used to group elements together and apply a space
+between them.
 
 ## Import
 
 ```js
-import { Stack, HStack, VStack } from '@chakra-ui/react'
+import { Stack, HStack, VStack } from "@chakra-ui/react";
 ```
 
 - VStack: used to stack elements in the vertical direction
@@ -29,15 +23,15 @@ To stack elements in horizontal or vertical direction only, use the `HStack` or
 `VStack` components. You can also use the `Stack` component as well and pass the
 `direction` prop.
 
-```jsx
-<HStack spacing='24px'>
-  <Box w='40px' h='40px' bg='yellow.200'>
+```jsx live
+<HStack spacing="24px">
+  <Box w="40px" h="40px" bg="yellow.200">
     1
   </Box>
-  <Box w='40px' h='40px' bg='tomato'>
+  <Box w="40px" h="40px" bg="tomato">
     2
   </Box>
-  <Box w='40px' h='40px' bg='pink.100'>
+  <Box w="40px" h="40px" bg="pink.100">
     3
   </Box>
 </HStack>
@@ -48,15 +42,15 @@ To stack elements in horizontal or vertical direction only, use the `HStack` or
 You can pass responsive values to the `Stack` component to change stack
 direction and/or spacing between elements.
 
-```jsx
-<Stack direction={['column', 'row']} spacing='24px'>
-  <Box w='40px' h='40px' bg='yellow.200'>
+```jsx live
+<Stack direction={["column", "row"]} spacing="24px">
+  <Box w="40px" h="40px" bg="yellow.200">
     1
   </Box>
-  <Box w='40px' h='40px' bg='tomato'>
+  <Box w="40px" h="40px" bg="tomato">
     2
   </Box>
-  <Box w='40px' h='40px' bg='pink.100'>
+  <Box w="40px" h="40px" bg="pink.100">
     3
   </Box>
 </Stack>
@@ -68,19 +62,19 @@ In some scenarios, you may want to add dividers between stacked elements. Pass
 the `divider` prop and set its value to the `StackDivider` or any custom React
 element.
 
-```jsx
+```jsx live lg
 <VStack
-  divider={<StackDivider borderColor='gray.200' />}
+  divider={<StackDivider borderColor="gray.200" />}
   spacing={4}
-  align='stretch'
+  align="stretch"
 >
-  <Box h='40px' bg='yellow.200'>
+  <Box h="40px" bg="yellow.200">
     1
   </Box>
-  <Box h='40px' bg='tomato'>
+  <Box h="40px" bg="tomato">
     2
   </Box>
-  <Box h='40px' bg='pink.100'>
+  <Box h="40px" bg="pink.100">
     3
   </Box>
 </VStack>
@@ -93,32 +87,28 @@ Pass the `direction` and set it to `row`. Optionally, you can use `align` and
 
 #### Feature Cards with Stack Component
 
-```jsx manual=true
-function Feature({ title, desc, ...rest }) {
-  return (
-    <Box p={5} shadow='md' borderWidth='1px' {...rest}>
-      <Heading fontSize='xl'>{title}</Heading>
+```jsx live lg
+function CustomStack() {
+  const Feature = ({ title, desc, ...rest }) => (
+    <Box p={5} shadow="md" borderWidth="1px" {...rest}>
+      <Heading fontSize="xl">{title}</Heading>
       <Text mt={4}>{desc}</Text>
     </Box>
-  )
-}
+  );
 
-function StackEx() {
   return (
-    <Stack spacing={8} direction='row'>
+    <Stack spacing={8} direction="row">
       <Feature
-        title='Plan Money'
-        desc='The future can be even brighter but a goal without a plan is just a wish'
+        title="Plan Money"
+        desc="The future can be even brighter but a goal without a plan is just a wish"
       />
       <Feature
-        title='Save Money'
-        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process'
+        title="Save Money"
+        desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
       />
     </Stack>
-  )
+  );
 }
-
-render(<StackEx />)
 ```
 
 #### Feature Cards with HStack Component
@@ -127,32 +117,28 @@ In the example following, we can notice that for the `HStack` component, we
 don't need the direction props, since this component is specifically for
 horizontally stacking items.
 
-```jsx manual=true
-function Feature({ title, desc, ...rest }) {
-  return (
-    <Box p={5} shadow='md' borderWidth='1px' {...rest}>
-      <Heading fontSize='xl'>{title}</Heading>
+```jsx live lg
+function CustomStack() {
+  const Feature = ({ title, desc, ...rest }) => (
+    <Box p={5} shadow="md" borderWidth="1px" {...rest}>
+      <Heading fontSize="xl">{title}</Heading>
       <Text mt={4}>{desc}</Text>
     </Box>
-  )
-}
+  );
 
-function StackEx() {
   return (
     <HStack spacing={8}>
       <Feature
-        title='Plan Money'
-        desc='The future can be even brighter but a goal without a plan is just a wish'
+        title="Plan Money"
+        desc="The future can be even brighter but a goal without a plan is just a wish"
       />
       <Feature
-        title='Save Money'
-        desc='You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process'
+        title="Save Money"
+        desc="You deserve good things. With a whooping 10-15% interest rate per annum, grow your savings on your own terms with our completely automated process"
       />
     </HStack>
-  )
+  );
 }
-
-render(<StackEx />)
 ```
 
 ### Notes on Stack vs Flex
@@ -161,3 +147,7 @@ The `Stack` component and the `Flex` component have their children spaced out
 evenly but the **key** difference is that the `Stack` won't span the entire
 width of the container whereas the `Flex` will. Another thing to note is that
 the items in both `Stack` and `Flex` are aligned in the center by default.
+
+## Props
+
+<PropsTable of="Stack" />

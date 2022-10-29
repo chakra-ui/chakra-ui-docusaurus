@@ -1,7 +1,7 @@
-import { isObject } from '@chakra-ui/utils';
-import MDXComponents from '../../theme/MDXComponents';
-import * as React from 'react';
-import { InlineCode } from '../code';
+import { isObject } from "@chakra-ui/utils";
+import MDXComponents from "../../theme/MDXComponents";
+import * as React from "react";
+import { InlineCode } from "../code";
 
 /**
  * Replace the code blocks wrapped in backticks
@@ -12,7 +12,7 @@ function toInlineCode(input: string) {
   return input
     .split(/(`\w+`)/)
     .map((chunk) =>
-      chunk.startsWith('`') && chunk.endsWith('`') ? (
+      chunk.startsWith("`") && chunk.endsWith("`") ? (
         <InlineCode key={chunk}>{chunk.slice(1, -1)}</InlineCode>
       ) : (
         chunk
@@ -21,6 +21,6 @@ function toInlineCode(input: string) {
 }
 
 export function convertBackticksToInlineCode(input?: string | JSX.Element) {
-  if (!input) return '';
+  if (!input) return "";
   return isObject(input) ? input : toInlineCode(input);
 }

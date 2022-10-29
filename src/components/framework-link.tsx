@@ -7,34 +7,34 @@ import {
   RedwoodSvg,
   RemixSvg,
   ViteSvg,
-} from './framework-svg';
-import { css, cssMap, cx } from '../../design-system/css';
-import { chakra } from '../../design-system/jsx';
+} from "./framework-svg";
+import { css, cssMap, cx } from "../../design-system/css";
+import { chakra } from "../../design-system/jsx";
 
 const accents = cssMap({
-  'Create React App': {
-    background: 'cra',
+  "Create React App": {
+    background: "cra",
   },
-  'Next.js': {
-    background: 'nextjs',
+  "Next.js": {
+    background: "nextjs",
   },
   Gatsby: {
-    background: 'gatsby',
+    background: "gatsby",
   },
   RedwoodJS: {
-    background: 'redwood',
+    background: "redwood",
   },
   BlitzJS: {
-    background: 'blitzjs',
+    background: "blitzjs",
   },
   Meteor: {
-    background: 'meteor',
+    background: "meteor",
   },
   Remix: {
-    background: 'remix',
+    background: "remix",
   },
   Vite: {
-    background: 'vite',
+    background: "vite",
   },
 });
 
@@ -43,43 +43,43 @@ const FrameworkLink = (props) => {
   return (
     <a
       className={css({
-        bg: 'white',
-        display: 'block',
-        shadow: 'md',
-        textDecoration: 'none',
-        borderRadius: 'xl',
-        overflow: 'hidden',
-        transform: 'auto',
-        transition: 'all 0.1s ease-in-out',
+        bg: "white",
+        display: "block",
+        shadow: "md",
+        textDecoration: "none",
+        borderRadius: "xl",
+        overflow: "hidden",
+        transform: "auto",
+        transition: "all 0.1s ease-in-out",
         hover: {
-          textDecoration: 'none',
-          translateY: '-4px',
-          shadow: 'md',
+          textDecoration: "none",
+          translateY: "-4px",
+          shadow: "md",
         },
       })}
       href={href}
     >
       <div
         className={css({
-          pt: '4',
-          display: 'flex',
-          flexDirection: 'column',
-          alignItems: 'center',
+          pt: "4",
+          display: "flex",
+          flexDirection: "column",
+          alignItems: "center",
         })}
       >
         {children}
         <div
           className={cx(
             css({
-              mt: '4',
-              py: '1',
-              color: 'white',
-              width: 'full',
+              mt: "4",
+              py: "1",
+              color: "white",
+              width: "full",
             }),
             accents(name)
           )}
         >
-          <chakra.p textAlign='center' fontSize='sm' fontWeight='bold' mb='0'>
+          <chakra.p textAlign="center" fontSize="sm" fontWeight="bold" mb="0">
             {name}
           </chakra.p>
         </div>
@@ -91,42 +91,42 @@ const FrameworkLink = (props) => {
 export const FrameworkLinks = () => {
   return (
     <chakra.div
-      display='grid'
-      gridTemplateColumns='repeat(auto-fit, minmax(200px, 1fr))'
-      mt='12'
-      gap='40px'
-      fontSize='6xl'
+      display="grid"
+      gridTemplateColumns="repeat(auto-fit, minmax(200px, 1fr))"
+      mt="12"
+      gap="40px"
+      fontSize="6xl"
     >
-      <FrameworkLink href='/getting-started/cra-guide' name='Create React App'>
-        <CreateReactAppSvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/cra-guide" name="Create React App">
+        <CreateReactAppSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/nextjs-guide' name='Next.js'>
-        <NextjsSvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/nextjs-guide" name="Next.js">
+        <NextjsSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/gatsby-guide' name='Gatsby'>
-        <GatsbySvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/gatsby-guide" name="Gatsby">
+        <GatsbySvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/blitzjs-guide' name='BlitzJS'>
-        <BlitzSvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/blitzjs-guide" name="BlitzJS">
+        <BlitzSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/redwoodjs-guide' name='RedwoodJS'>
-        <RedwoodSvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/redwoodjs-guide" name="RedwoodJS">
+        <RedwoodSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/remix-guide' name='Remix'>
-        <RemixSvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/remix-guide" name="Remix">
+        <RemixSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/vite-guide' name='Vite'>
-        <ViteSvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/vite-guide" name="Vite">
+        <ViteSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/meteor-guide' name='Meteor'>
-        <MeteorSvg style={{ margin: 'auto' }} />
+      <FrameworkLink href="/meteor-guide" name="Meteor">
+        <MeteorSvg style={{ margin: "auto" }} />
       </FrameworkLink>
     </chakra.div>
   );

@@ -84,17 +84,17 @@ const config = {
     }),
 
   themes: [
-    "@docusaurus/theme-search-algolia",
-    "@docusaurus/theme-live-codeblock",
-  ],
-
-  plugins: [
     [
       "@docusaurus/theme-classic",
       {
         customCss: require.resolve("./src/css/custom.css"),
       },
     ],
+    "@docusaurus/theme-search-algolia",
+    "@docusaurus/theme-live-codeblock",
+  ],
+
+  plugins: [
     [
       "@docusaurus/plugin-content-blog",
       {

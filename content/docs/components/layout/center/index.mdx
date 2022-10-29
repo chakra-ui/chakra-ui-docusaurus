@@ -1,15 +1,11 @@
----
-id: center
-category: layout
-title: Center
-package: '@chakra-ui/layout'
-description: Center is a layout component that centers its child within itself.
----
+# Center
+
+Center is a layout component that centers its child within itself.
 
 ## Import
 
 ```js
-import { Center, Square, Circle } from '@chakra-ui/react'
+import { Center, Square, Circle } from "@chakra-ui/react";
 ```
 
 - **Center:** centers its child given `width` and `height`
@@ -21,8 +17,8 @@ import { Center, Square, Circle } from '@chakra-ui/react'
 Put any child element inside it, give it any `width` or/and `height`, it'll
 ensure the child is centered.
 
-```jsx
-<Center bg='tomato' h='100px' color='white'>
+```jsx live
+<Center bg="tomato" h="100px" color="white">
   This is the Center
 </Center>
 ```
@@ -31,13 +27,13 @@ ensure the child is centered.
 
 Center can be used to create frames around icons or numbers.
 
-```jsx
+```jsx live sm
 <HStack>
-  <Center w='40px' h='40px' bg='tomato' color='white'>
+  <Center w="40px" h="40px" bg="tomato" color="white">
     <PhoneIcon />
   </Center>
-  <Center w='40px' h='40px' bg='tomato' color='white'>
-    <Box as='span' fontWeight='bold' fontSize='lg'>
+  <Center w="40px" h="40px" bg="tomato" color="white">
+    <Box as="span" fontWeight="bold" fontSize="lg">
       1
     </Box>
   </Center>
@@ -49,13 +45,17 @@ Center can be used to create frames around icons or numbers.
 To reduce boilerplate, we've exported `Square` and `Circle` components that
 automatically centers its children given the `size`.
 
-```jsx
+```jsx live sm
 <HStack>
-  <Circle size='40px' bg='tomato' color='white'>
+  <Circle size="40px" bg="tomato" color="white">
     <PhoneIcon />
   </Circle>
-  <Square size='40px' bg='purple.700' color='white'>
+  <Square size="40px" bg="purple.700" color="white">
     <PhoneIcon />
   </Square>
 </HStack>
 ```
+
+## Props
+
+`Center` inherits all props from the `Box` component.

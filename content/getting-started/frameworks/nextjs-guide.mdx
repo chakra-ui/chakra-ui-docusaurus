@@ -1,28 +1,24 @@
 ---
 title: Getting Started with Nextjs
 description: A guide for installing Chakra UI with Nextjs projects
-tags: ['nextjs']
+tags: ["nextjs"]
 author: estheragbaje
 category: frameworks
 sidebar_position: 20
 ---
 
-<Box mt={3}>
-  <AspectRatio ratio={16 / 8.84}>
-    <VideoPlayer
-      width='100%'
-      height='100%'
-      url='https://www.youtube.com/watch?v=wI2vqXsjsIo'
-      config={{
-        youtube: {
-          playerVars: {
-            controls: true,
-          },
-        },
-      }}
-    />
-  </AspectRatio>
-</Box>
+<VideoPlayer
+  width="100%"
+  height="100%"
+  url="https://www.youtube.com/watch?v=wI2vqXsjsIo"
+  config={{
+    youtube: {
+      playerVars: {
+        controls: true,
+      },
+    },
+  }}
+/>
 
 ### Installation
 
@@ -46,7 +42,7 @@ wrap the `Component` with the `ChakraProvider`:
 
 ```tsx
 // pages/_app.js
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider } from "@chakra-ui/react";
 
 function MyApp({ Component, pageProps }) {
   return (
@@ -68,17 +64,17 @@ Chakra UI provides an `extendTheme` function that deep merges the default theme
 with your customizations.
 
 ```tsx title="pages/_app.js"
-import { ChakraProvider } from '@chakra-ui/react';
+import { ChakraProvider } from "@chakra-ui/react";
 
 // 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
   brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
   },
 };
 
@@ -114,13 +110,13 @@ that will be passed to the `<script>` tag.
 :::
 
 ```tsx {14} title="pages/_document.js"
-import { ColorModeScript } from '@chakra-ui/react';
-import { Html, Head, Main, NextScript } from 'next/document';
-import theme from './theme';
+import { ColorModeScript } from "@chakra-ui/react";
+import { Html, Head, Main, NextScript } from "next/document";
+import theme from "./theme";
 
 export default function Document() {
   return (
-    <Html lang='en'>
+    <Html lang="en">
       <Head />
       <body>
         {/* 👇 Here's the script */}
