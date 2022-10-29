@@ -1,27 +1,25 @@
-import clsx from 'clsx';
-import useIsBrowser from '@docusaurus/useIsBrowser';
-import { LiveProvider, LiveEditor, LiveError, LivePreview } from 'react-live';
-import { usePrismTheme } from '@docusaurus/theme-common';
-import styles from './styles.module.css';
-import { chakra, ChakraProvider } from '@chakra-ui/react';
-import { CacheProvider } from '@emotion/react';
-import weakMemoize from '@emotion/weak-memoize';
-import Frame, { FrameContextConsumer } from 'react-frame-component';
-import createCache from '@emotion/cache';
-import { theme } from '../../panda/chakra-theme';
+import useIsBrowser from "@docusaurus/useIsBrowser";
+import { LiveProvider, LiveEditor, LiveError, LivePreview } from "react-live";
+import { usePrismTheme } from "@docusaurus/theme-common";
+import styles from "./styles.module.css";
+import { chakra } from "@chakra-ui/react";
+import { ChakraIFrameProvider } from "../../components/ChakraIFrameProvider";
 
 function Header({ children }: { children: React.ReactNode }) {
-  return <div className={clsx(styles.playgroundHeader)}>{children}</div>;
+  return <div className={styles.playgroundHeader}>{children}</div>;
 }
 
 function Result() {
   return (
-    <>
-      <chakra.div className={styles.playgroundPreview}>
-        <LivePreview />
-        <LiveError />
-      </chakra.div>
-    </>
+    <chakra.div
+      display="flex"
+      justifyContent="center"
+      alignItems="center"
+      padding="1rem"
+    >
+      <LivePreview />
+      <LiveError />
+    </chakra.div>
   );
 }
 
@@ -43,7 +41,6 @@ function ThemedLiveEditor({ title }) {
 export default function Playground({ children, transformCode, ...props }) {
   const prismTheme = usePrismTheme();
 
-  // const isNotLive = props.metastring.includes('') || props.metastring.indexOf('live') === -1;
   const { title } = props;
 
   return (
@@ -54,38 +51,11 @@ export default function Playground({ children, transformCode, ...props }) {
         theme={prismTheme}
         {...props}
       >
-        <>
-          <ChakraIFrameProvider>
-            <Result />
-          </ChakraIFrameProvider>
-          <ThemedLiveEditor
-            // isLive={!isNotLive}
-            title={title?.replaceAll('"', '')}
-          />
-        </>
+        <ChakraIFrameProvider>
+          <Result />
+        </ChakraIFrameProvider>
+        <ThemedLiveEditor title={title?.replaceAll('"', "")} />
       </LiveProvider>
     </div>
   );
 }
-
-const memoizedCreateCacheWithContainer = weakMemoize((container: HTMLElement) =>
-  createCache({ container, key: 'showcase' })
-);
-
-export const ChakraIFrameProvider = ({ children }) => {
-  return (
-    <Frame width='100%'>
-      <FrameContextConsumer>
-        {({ document }) => {
-          return document ? (
-            <CacheProvider
-              value={memoizedCreateCacheWithContainer(document.head)}
-            >
-              <ChakraProvider theme={theme}>{children}</ChakraProvider>
-            </CacheProvider>
-          ) : null;
-        }}
-      </FrameContextConsumer>
-    </Frame>
-  );
-};
