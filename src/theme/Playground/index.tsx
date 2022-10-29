@@ -38,10 +38,22 @@ function ThemedLiveEditor({ title }) {
   );
 }
 
+const getSize = (sm?: boolean, md?: boolean, lg?: boolean) => {
+  switch (true) {
+    case sm:
+      return "75px";
+    case lg:
+      return "250px";
+    case md:
+    default:
+      return "150px";
+  }
+};
+
 export default function Playground({ children, transformCode, ...props }) {
   const prismTheme = usePrismTheme();
 
-  const { title } = props;
+  const { title, sm, md, lg } = props;
 
   return (
     <div className={styles.playgroundContainer}>
@@ -51,7 +63,7 @@ export default function Playground({ children, transformCode, ...props }) {
         theme={prismTheme}
         {...props}
       >
-        <ChakraIFrameProvider>
+        <ChakraIFrameProvider size={getSize(sm, md, lg)}>
           <Result />
         </ChakraIFrameProvider>
         <ThemedLiveEditor title={title?.replaceAll('"', "")} />

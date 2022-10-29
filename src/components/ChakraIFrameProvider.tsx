@@ -4,16 +4,24 @@ import { CacheProvider } from "@emotion/react";
 import weakMemoize from "@emotion/weak-memoize";
 import Frame, { FrameContextConsumer } from "react-frame-component";
 import { useColorMode } from "@docusaurus/theme-common";
+import { PropsWithChildren } from "react";
 
 const memoizedCreateCacheWithContainer = weakMemoize((container: HTMLElement) =>
   createCache({ container, key: "showcase" })
 );
 
-export const ChakraIFrameProvider = ({ children }) => {
+interface ChakraIFrameProviderProps extends PropsWithChildren {
+  size: string;
+}
+
+export const ChakraIFrameProvider = ({
+  children,
+  size,
+}: ChakraIFrameProviderProps) => {
   const { colorMode, setColorMode } = useColorMode();
 
   return (
-    <Frame width="100%">
+    <Frame width="100%" height={size}>
       <FrameContextConsumer>
         {({ document }) => {
           return document ? (
