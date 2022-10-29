@@ -1,7 +1,8 @@
 ---
 title: Customize Theme
 description: How to modify Chakra UI's default theme
-category: 'theming'
+category: "theming"
+sidebar_position: 20
 ---
 
 By default, all Chakra components inherit values from the default theme. In some
@@ -52,7 +53,7 @@ function Usage() {
 You can also use the color for the `colorScheme` prop like this:
 
 ```tsx live
-<Button colorScheme='brand'>Click me</Button>
+<Button colorScheme="brand">Click me</Button>
 ```
 
 :::note
@@ -87,7 +88,7 @@ by using the `View theme source` button on the top of every components page.
 Here's what the component style object looks like:
 
 ```tsx
-import { ComponentStyleConfig } from '@chakra-ui/react';
+import { ComponentStyleConfig } from "@chakra-ui/react";
 
 const ComponentStyle: ComponentStyleConfig = {
   // style object for base or default style
@@ -98,9 +99,9 @@ const ComponentStyle: ComponentStyleConfig = {
   variants: {},
   // default values for 'size', 'variant' and 'colorScheme'
   defaultProps: {
-    size: '',
-    variant: '',
-    colorScheme: '',
+    size: "",
+    variant: "",
+    colorScheme: "",
   },
 };
 ```
@@ -108,45 +109,45 @@ const ComponentStyle: ComponentStyleConfig = {
 For example, let's override the component styles for Chakra's Button component.
 
 ```tsx title="theme.ts"
-import { extendTheme } from '@chakra-ui/react';
-import type { StyleFunctionProps } from '@chakra-ui/styled-system';
+import { extendTheme } from "@chakra-ui/react";
+import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 
 const theme = extendTheme({
   components: {
     Button: {
       // 1. We can update the base styles
       baseStyle: {
-        fontWeight: 'bold', // Normally, it is "semibold"
+        fontWeight: "bold", // Normally, it is "semibold"
       },
       // 2. We can add a new button size or extend existing
       sizes: {
         xl: {
-          h: '56px',
-          fontSize: 'lg',
-          px: '32px',
+          h: "56px",
+          fontSize: "lg",
+          px: "32px",
         },
       },
       // 3. We can add a new visual variant
       variants: {
-        'with-shadow': {
-          bg: 'red.400',
-          boxShadow: '0 0 2px 2px #efdfde',
+        "with-shadow": {
+          bg: "red.400",
+          boxShadow: "0 0 2px 2px #efdfde",
         },
         // 4. We can override existing variants
         solid: (props: StyleFunctionProps) => ({
-          bg: props.colorMode === 'dark' ? 'red.300' : 'red.500',
+          bg: props.colorMode === "dark" ? "red.300" : "red.500",
         }),
         // 5. We can add responsive variants
         sm: {
-          bg: 'teal.500',
-          fontSize: 'md',
+          bg: "teal.500",
+          fontSize: "md",
         },
       },
       // 6. We can overwrite defaultProps
       defaultProps: {
-        size: 'lg', // default is md
-        variant: 'sm', // default is solid
-        colorScheme: 'green', // default is gray
+        size: "lg", // default is md
+        variant: "sm", // default is solid
+        colorScheme: "green", // default is gray
       },
     },
   },
@@ -166,7 +167,7 @@ that should be affected by your change when styling
 :::
 
 ```tsx
-<Button size='xl' variant='with-shadow'>
+<Button size="xl" variant="with-shadow">
   Welcome
 </Button>
 ```
@@ -182,9 +183,9 @@ To add global styles, update the `theme.styles.global` key in the theme. Global
 styles can be a style object or a function that returns a style object.
 
 ```tsx title="theme.ts"
-import { extendTheme } from '@chakra-ui/react';
-import { mode } from '@chakra-ui/theme-tools';
-import type { StyleFunctionProps } from '@chakra-ui/styled-system';
+import { extendTheme } from "@chakra-ui/react";
+import { mode } from "@chakra-ui/theme-tools";
+import type { StyleFunctionProps } from "@chakra-ui/styled-system";
 
 // Version 1: Using objects
 const theme = extendTheme({
@@ -192,14 +193,14 @@ const theme = extendTheme({
     global: {
       // styles for the `body`
       body: {
-        bg: 'gray.400',
-        color: 'white',
+        bg: "gray.400",
+        color: "white",
       },
       // styles for the `a`
       a: {
-        color: 'teal.500',
+        color: "teal.500",
         _hover: {
-          textDecoration: 'underline',
+          textDecoration: "underline",
         },
       },
     },
@@ -211,10 +212,10 @@ const overrides = extendTheme({
   styles: {
     global: (props: StyleFunctionProps) => ({
       body: {
-        fontFamily: 'body',
-        color: mode('gray.800', 'whiteAlpha.900')(props),
-        bg: mode('white', 'gray.800')(props),
-        lineHeight: 'base',
+        fontFamily: "body",
+        color: mode("gray.800", "whiteAlpha.900")(props),
+        bg: mode("white", "gray.800")(props),
+        lineHeight: "base",
       },
     }),
   },
@@ -276,9 +277,9 @@ passed into the array.
 
 ```tsx
 <>
-  <Button variant={{ base: 'base', md: 'md' }}>Object syntax</Button>
+  <Button variant={{ base: "base", md: "md" }}>Object syntax</Button>
   // the button will be orange after the `sm` breakpoint due to the array syntax
-  <Button variant={['base', 'md']}>Array syntax</Button>
+  <Button variant={["base", "md"]}>Array syntax</Button>
 </>
 ```
 
@@ -288,13 +289,13 @@ theme above.
 
 ```tsx
 <>
-  <Button variant={{ sm: 'sm' }}>fontSize lg after breakpoint sm</Button>
+  <Button variant={{ sm: "sm" }}>fontSize lg after breakpoint sm</Button>
   // without declaration of fontSize in the sm variant the fontSize would be lg as
   expected
-  <Button variant={{ sm: 'sm' }} fontSize='xl'>
+  <Button variant={{ sm: "sm" }} fontSize="xl">
     still fontSize lg after breakpoint sm
   </Button>
-  <Button variant={{ sm: 'sm' }} fontSize='xl !important'>
+  <Button variant={{ sm: "sm" }} fontSize="xl !important">
     fontSize xl due to the !important
   </Button>
 </>
@@ -305,7 +306,7 @@ below the responsive variant or by using `!important`, which overrides
 everything.
 
 ```tsx
-<Button size='sm' variant={{ md: 'md' }}>
+<Button size="sm" variant={{ md: "md" }}>
   fontSize md from 'sizes' until breakpoint md where the variant takes over
 </Button>
 ```
@@ -331,16 +332,16 @@ This way, you can structure your main theme entrypoint file to be much cleaner,
 like this:
 
 ```tsx title="theme/index.js"
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
 // Global style overrides
-import styles from './styles';
+import styles from "./styles";
 
 // Foundational style overrides
-import borders from './foundations/borders';
+import borders from "./foundations/borders";
 
 // Component style overrides
-import Button from './components/button';
+import Button from "./components/button";
 
 const overrides = {
   styles,
@@ -368,7 +369,7 @@ import {
   extendTheme,
   withDefaultColorScheme,
   theme as baseTheme,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 
 const customTheme = extendTheme(
   {
@@ -378,12 +379,12 @@ const customTheme = extendTheme(
     components: {
       Alert: {
         defaultProps: {
-          colorScheme: 'blue',
+          colorScheme: "blue",
         },
       },
     },
   },
-  withDefaultColorScheme({ colorScheme: 'brand' })
+  withDefaultColorScheme({ colorScheme: "brand" })
 );
 ```
 
@@ -409,25 +410,25 @@ extendTheme(
 You can apply a default color scheme to all components.
 
 ```js
-import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
+import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
 
-const customTheme = extendTheme(withDefaultColorScheme({ colorScheme: 'red' }));
+const customTheme = extendTheme(withDefaultColorScheme({ colorScheme: "red" }));
 ```
 
 Or pass the component names you want to apply a default `colorScheme` to. This
 lets you apply different color schemes to a group of components.
 
 ```js
-import { extendTheme, withDefaultColorScheme } from '@chakra-ui/react';
+import { extendTheme, withDefaultColorScheme } from "@chakra-ui/react";
 
 const customTheme = extendTheme(
   withDefaultColorScheme({
-    colorScheme: 'red',
-    components: ['Button', 'Badge'],
+    colorScheme: "red",
+    components: ["Button", "Badge"],
   }),
   withDefaultColorScheme({
-    colorScheme: 'blue',
-    components: ['Alert', 'Table'],
+    colorScheme: "blue",
+    components: ["Alert", "Table"],
   })
 );
 ```
@@ -437,12 +438,12 @@ const customTheme = extendTheme(
 You can apply a default size to all components.
 
 ```js
-import { extendTheme, withDefaultSize } from '@chakra-ui/react';
+import { extendTheme, withDefaultSize } from "@chakra-ui/react";
 
 const customTheme = extendTheme(
   withDefaultSize({
-    size: 'lg',
-    components: ['Button', 'Badge'],
+    size: "lg",
+    components: ["Button", "Badge"],
   })
 );
 ```
@@ -452,12 +453,12 @@ const customTheme = extendTheme(
 You can apply a default variant to all components.
 
 ```js
-import { extendTheme, withDefaultVariant } from '@chakra-ui/react';
+import { extendTheme, withDefaultVariant } from "@chakra-ui/react";
 
 const customTheme = extendTheme(
   withDefaultVariant({
-    variant: 'outline',
-    components: ['Input', 'NumberInput', 'PinInput'],
+    variant: "outline",
+    components: ["Input", "NumberInput", "PinInput"],
   })
 );
 ```
@@ -467,15 +468,15 @@ const customTheme = extendTheme(
 You can apply default props to all components.
 
 ```js
-import { extendTheme, withDefaultProps } from '@chakra-ui/react';
+import { extendTheme, withDefaultProps } from "@chakra-ui/react";
 
 const customTheme = extendTheme(
   withDefaultProps({
     defaultProps: {
-      variant: 'outline',
-      size: 'lg',
+      variant: "outline",
+      size: "lg",
     },
-    components: ['Input', 'NumberInput', 'PinInput'],
+    components: ["Input", "NumberInput", "PinInput"],
   })
 );
 ```

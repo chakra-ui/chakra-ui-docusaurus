@@ -1,7 +1,8 @@
 ---
 title: Advanced Theming
 description: Documentation for making advanced modifications to themes.
-category: 'theming'
+category: "theming"
+sidebar_position: 40
 ---
 
 Now that you understand how to use Chakra UI theming API. Let's take a step
@@ -22,7 +23,7 @@ type StyleInterpolation =
 
 interface StyleOptions {
   theme: Theme;
-  colorMode: 'light' | 'dark';
+  colorMode: "light" | "dark";
   colorScheme: string;
 }
 
@@ -53,7 +54,7 @@ type StyleInterpolation =
 
 interface StyleOptions {
   theme: Theme;
-  colorMode: 'light' | 'dark';
+  colorMode: "light" | "dark";
   colorScheme: string;
 }
 
@@ -78,7 +79,7 @@ export or an export named `theme`. For example, in
 `chakra-theme-package/src/index.js`:
 
 ```js
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 const theme = extendTheme({});
 
 // as default export
