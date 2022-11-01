@@ -97,35 +97,35 @@ export const FrameworkLinks = () => {
       gap="40px"
       fontSize="6xl"
     >
-      <FrameworkLink href="/cra-guide" name="Create React App">
+      <FrameworkLink href="/frameworks/cra-guide" name="Create React App">
         <CreateReactAppSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href="/nextjs-guide" name="Next.js">
+      <FrameworkLink href="/frameworks/nextjs-guide" name="Next.js">
         <NextjsSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href="/gatsby-guide" name="Gatsby">
+      <FrameworkLink href="/frameworks/gatsby-guide" name="Gatsby">
         <GatsbySvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href="/blitzjs-guide" name="BlitzJS">
+      <FrameworkLink href="/frameworks/blitzjs-guide" name="BlitzJS">
         <BlitzSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href="/redwoodjs-guide" name="RedwoodJS">
+      <FrameworkLink href="/frameworks/redwoodjs-guide" name="RedwoodJS">
         <RedwoodSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href="/remix-guide" name="Remix">
+      <FrameworkLink href="/frameworks/remix-guide" name="Remix">
         <RemixSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href="/vite-guide" name="Vite">
+      <FrameworkLink href="/frameworks/vite-guide" name="Vite">
         <ViteSvg style={{ margin: "auto" }} />
       </FrameworkLink>
 
-      <FrameworkLink href="/meteor-guide" name="Meteor">
+      <FrameworkLink href="/frameworks/meteor-guide" name="Meteor">
         <MeteorSvg style={{ margin: "auto" }} />
       </FrameworkLink>
     </chakra.div>
