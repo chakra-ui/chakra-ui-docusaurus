@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const packageJson = require("./package.json");
+
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
@@ -69,6 +71,21 @@ const config = {
             label: "Community",
           },
           { to: "/changelog", label: "Changelog", position: "left" },
+          {
+            position: "right",
+            // @ts-ignore
+            label: `v${packageJson.dependencies["@chakra-ui/react"]}`,
+            items: [
+              {
+                label: "v1.8.8",
+                href: "https://v1.chakra-ui.com",
+              },
+              {
+                label: "v0.8.x",
+                href: "https://v0.chakra-ui.com",
+              },
+            ],
+          },
         ],
       },
       algolia: {
@@ -82,7 +99,6 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-
   themes: [
     [
       "@docusaurus/theme-classic",
@@ -93,7 +109,6 @@ const config = {
     "@docusaurus/theme-search-algolia",
     "@docusaurus/theme-live-codeblock",
   ],
-
   plugins: [
     [
       "@docusaurus/plugin-content-blog",
