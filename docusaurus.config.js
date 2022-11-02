@@ -129,6 +129,7 @@ const config = {
         path: "./content/getting-started",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        exclude: ["**/**.example.mdx"],
       },
     ],
     [
@@ -139,6 +140,7 @@ const config = {
         path: "./content/docs",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        exclude: ["**/**.example.mdx"],
       },
     ],
     [
@@ -149,6 +151,7 @@ const config = {
         path: "./content/community",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        exclude: ["**/**.example.mdx"],
       },
     ],
     [

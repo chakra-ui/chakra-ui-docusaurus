@@ -2,7 +2,7 @@
 
 The Select component is a multipart component. Read more about how to style
 multipart components in the
-[style system docs](/docs/styled-system/component-style#styling-multipart-components).
+[style system docs](/docs/styled-system/theming/component-style#styling-multipart-components).
 
 This component has two parts: `field` and `icon`. You can find
 more information in the source for the styles
@@ -13,17 +13,17 @@ more information in the source for the styles
 The following theme would change the color of the `field` to `red.500`, and change the fontSize of `icon` to `2xl`.
 
 ```jsx
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
 const theme = extendTheme({
   components: {
     Select: {
       baseStyle: {
         field: {
-          color: 'red.500',
+          color: "red.500",
         },
         icon: {
-          fontSize: '2xl',
+          fontSize: "2xl",
         },
       },
     },
