@@ -37,7 +37,7 @@ function CommunityCardItem({ children, platform, icon, href }) {
       <chakra.p
         fontWeight='semibold'
         color={{ base: 'gray.700', dark: 'white' }}
-        margin='0'
+        margin='0!'
       >
         {children}
       </chakra.p>

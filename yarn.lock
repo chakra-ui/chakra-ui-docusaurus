@@ -2177,41 +2177,41 @@
   resolved "https://registry.yarnpkg.com/@colors/colors/-/colors-1.5.0.tgz#bb504579c1cae923e6576a4f5da43d25f97bdbd9"
   integrity sha512-ooWCrlZP11i8GImSjTHYHLkvFDP48nS4+204nGb1RiX/WXYHmJA2III9/e2DWVabCESdW7hBAEzHRqUn9OUVvQ==
 
-"@css-panda/ast@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/ast/-/ast-0.0.0-dev-20221102190849.tgz#ae234e06f492de5b20275a4f8413a1019c374c7e"
-  integrity sha512-C+oUt4Vau2VEylNWrumOxc1uJX8jn0qyW9KSjN4cxZPIFS3zvDdMqKbgjsfgmsVfnuK3YIXysbiyWsrsVmtahQ==
+"@css-panda/ast@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/ast/-/ast-0.0.0-dev-20221103161455.tgz#e1803ba06e8ae82a129592745f3b5a160bbcd728"
+  integrity sha512-OeME0zVojEZUrt9GXd8qNNJiMyiWbOFDfjmAHnPGeD9mp2TeeLBdv22w1cwAMARah0Jx1EmSG+qi+LYyjPOyiQ==
   dependencies:
-    "@css-panda/is-valid-prop" "0.0.0-dev-20221102190849"
-    "@css-panda/logger" "0.0.0-dev-20221102190849"
-    "@css-panda/shared" "0.0.0-dev-20221102190849"
-    "@css-panda/types" "0.0.0-dev-20221102190849"
+    "@css-panda/is-valid-prop" "0.0.0-dev-20221103161455"
+    "@css-panda/logger" "0.0.0-dev-20221103161455"
+    "@css-panda/shared" "0.0.0-dev-20221103161455"
+    "@css-panda/types" "0.0.0-dev-20221103161455"
     ts-morph "16.0.0"
     ts-pattern "4.0.5"
 
-"@css-panda/config@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/config/-/config-0.0.0-dev-20221102190849.tgz#9d968ae58b14856c62202e00c41aeaaf97189034"
-  integrity sha512-PtrZeAwtPUcmsRvxljWKUhDLQknNHEYqqoiAuBmpU787VeONdXgHBcj93X+jUtSW4M5Rd/y+kkq2IK7uTKvIcw==
+"@css-panda/config@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/config/-/config-0.0.0-dev-20221103161455.tgz#271bfaa8656c9b46df5237cbe2f42efe8b1f493e"
+  integrity sha512-il5bAKMXtch16Zbq6uFPBHk92RSc5a1v35cmQrMrVL8k15aXFx+nccSlUWaRhJ2b+Nuz2B2y7ifFys/iOis4ig==
   dependencies:
-    "@css-panda/error" "0.0.0-dev-20221102190849"
-    "@css-panda/logger" "0.0.0-dev-20221102190849"
-    "@css-panda/types" "0.0.0-dev-20221102190849"
+    "@css-panda/error" "0.0.0-dev-20221103161455"
+    "@css-panda/logger" "0.0.0-dev-20221103161455"
+    "@css-panda/types" "0.0.0-dev-20221103161455"
     esbuild "0.15.7"
     escalade "3.1.1"
     merge-anything "^5.0.4"
     node-eval "2.0.0"
 
-"@css-panda/core@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/core/-/core-0.0.0-dev-20221102190849.tgz#aa666851e48f04c8664b9732ccaf4be5f20ac791"
-  integrity sha512-6dl4Z6TBgkflfT7pSsUYAdfBbrBg5fgRxZokUuFid9x2J91hAriz+FFH2SIYV1Tsn+EHNgEI4oKWnFa8p9FpPA==
+"@css-panda/core@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/core/-/core-0.0.0-dev-20221103161455.tgz#64d9e17d830be517ae95e2d3fc0930e69513349b"
+  integrity sha512-MQEnq43DCc/1h+S87vDgZMtpC6B7q9O/zagU/Vn8Vjf9qAxKPD0VHOPRVLNd6E/P011ABjzYia0bLyATXwUcBQ==
   dependencies:
-    "@css-panda/error" "0.0.0-dev-20221102190849"
-    "@css-panda/logger" "0.0.0-dev-20221102190849"
-    "@css-panda/shared" "0.0.0-dev-20221102190849"
-    "@css-panda/token-dictionary" "0.0.0-dev-20221102190849"
-    "@css-panda/types" "0.0.0-dev-20221102190849"
+    "@css-panda/error" "0.0.0-dev-20221103161455"
+    "@css-panda/logger" "0.0.0-dev-20221103161455"
+    "@css-panda/shared" "0.0.0-dev-20221103161455"
+    "@css-panda/token-dictionary" "0.0.0-dev-20221103161455"
+    "@css-panda/types" "0.0.0-dev-20221103161455"
     autoprefixer "10.4.13"
     camelcase-css "^2.0.1"
     lodash.merge "4.6.2"
@@ -2222,37 +2222,37 @@
     sort-css-media-queries "^2.1.0"
     ts-pattern "4.0.5"
 
-"@css-panda/error@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/error/-/error-0.0.0-dev-20221102190849.tgz#6486d6993d007dedac5e673cda6a8b646162b395"
-  integrity sha512-NgNVhMvQ1TxsAXfUqLeMjK8tSn69/BWdSxZk8iiJRW4bhcZtkvlnkmji7tRPfABiOzxeItdHML7N6v+hi3MKng==
+"@css-panda/error@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/error/-/error-0.0.0-dev-20221103161455.tgz#363bd14f616d6c5ebabb702c83fab6ae3049fa32"
+  integrity sha512-NSkRxlhtVw7XgyLDauxpKA+QVPZBf+wJWLgnbdFejacK3k7Qw+c8MQyUbs9sCtKzAfuqUCVTfvU657rkZAtrFw==
 
-"@css-panda/is-valid-prop@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/is-valid-prop/-/is-valid-prop-0.0.0-dev-20221102190849.tgz#9c49294796ef82816581bef3d0e9b263efd75771"
-  integrity sha512-zVzzaVyfeG8txGpE28fT9rdaxa54I+CSoPN184BhvPOugnAmE9qbtvKyCvLJipnsihfFptmK2aVA6D1138lzDg==
+"@css-panda/is-valid-prop@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/is-valid-prop/-/is-valid-prop-0.0.0-dev-20221103161455.tgz#08b0323b241097ecd24049aaea32c1ff910e4d84"
+  integrity sha512-kO5HcdzWjwQ7t5iQGEnvGNMl7rFZzjXgz1UdC2UogFTkgDwCQnJZMFg/Hix4yQxEkBC/9uVUOA9Lq8DYawctWw==
 
-"@css-panda/logger@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/logger/-/logger-0.0.0-dev-20221102190849.tgz#7ad009efabf255df77b8bdfd75ff0a5f1bd89446"
-  integrity sha512-z5tpHisd9O046N2Hc+V7pCwUbW4NYNY67AiC6S4N3xmmT079/tIITBAHEqUxny5pRjrGGohMjx+oRrW90xyMpA==
+"@css-panda/logger@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/logger/-/logger-0.0.0-dev-20221103161455.tgz#bad79a5ebc63f65bd3f78fdde2900c9219bb4260"
+  integrity sha512-08/SG8JgIz25eKDmfQMnWRrjQ24cspiWRmyfjVO/7mJct/wCEwCGUFdVTv4xDep/JKCMcCoPS/ri2pvTx2J4SA==
   dependencies:
     kleur "^4.1.5"
 
-"@css-panda/node@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/node/-/node-0.0.0-dev-20221102190849.tgz#57e6bac96939017b5ed21b97ebc6665b5a1d6eca"
-  integrity sha512-+KtRRSKEUxqJbPIWOnkPz8qehGWwNqB+3AkPZi585KN0OFbt1gfTLz5Y7lWum8Hs1dGg3lSRyuJZVVcCtriPig==
+"@css-panda/node@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/node/-/node-0.0.0-dev-20221103161455.tgz#3e3b085371a68269fb3fea2af84a96cce884c111"
+  integrity sha512-kqReX8TNO4VfYOiBUi4SVZKdl++b/4snuP29EdUFwxgt2jEamRwuALBUnIU1jlaWaol4PDYKC7y+gfe1oro5FQ==
   dependencies:
-    "@css-panda/ast" "0.0.0-dev-20221102190849"
-    "@css-panda/config" "0.0.0-dev-20221102190849"
-    "@css-panda/core" "0.0.0-dev-20221102190849"
-    "@css-panda/error" "0.0.0-dev-20221102190849"
-    "@css-panda/is-valid-prop" "0.0.0-dev-20221102190849"
-    "@css-panda/logger" "0.0.0-dev-20221102190849"
-    "@css-panda/shared" "0.0.0-dev-20221102190849"
-    "@css-panda/token-dictionary" "0.0.0-dev-20221102190849"
-    "@css-panda/types" "0.0.0-dev-20221102190849"
+    "@css-panda/ast" "0.0.0-dev-20221103161455"
+    "@css-panda/config" "0.0.0-dev-20221103161455"
+    "@css-panda/core" "0.0.0-dev-20221103161455"
+    "@css-panda/error" "0.0.0-dev-20221103161455"
+    "@css-panda/is-valid-prop" "0.0.0-dev-20221103161455"
+    "@css-panda/logger" "0.0.0-dev-20221103161455"
+    "@css-panda/shared" "0.0.0-dev-20221103161455"
+    "@css-panda/token-dictionary" "0.0.0-dev-20221103161455"
+    "@css-panda/types" "0.0.0-dev-20221103161455"
     chokidar "^3.5.3"
     fast-glob "^3.2.11"
     fs-extra "10.1.0"
@@ -2270,23 +2270,23 @@
     ts-morph "16.0.0"
     ts-pattern "4.0.5"
 
-"@css-panda/shared@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/shared/-/shared-0.0.0-dev-20221102190849.tgz#b9821520ec61a573b47bb8571f5d5a4204b57c3e"
-  integrity sha512-UaPvMfkuktFPtpNcr80f/yBL/lnacSHKtCZJCzt4b9+wnSWZQVS/tp3Iw/smEdHFtawfCoWxud+MUyO588BVsw==
+"@css-panda/shared@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/shared/-/shared-0.0.0-dev-20221103161455.tgz#b9559b0a22d850a61d60620cc83ff4ad5918492b"
+  integrity sha512-KZbtRH2i+lzfR60YLfng/BhIdWkTUFTEXsTZA7DNa1JETrP8I5xkr1gVTX/6/bJQmPHCYWxSFfEGGUAkkmTBAQ==
 
-"@css-panda/token-dictionary@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/token-dictionary/-/token-dictionary-0.0.0-dev-20221102190849.tgz#cd2be0534031b99359e11f4655ceeeeda9ac831b"
-  integrity sha512-6oTmipeAsFNJ07h68j4wEK4wNLWvgNzLJm5SOdAlkCNqotS4Rh5TkgKsxCRQqQ66pWjmjCAdcfa8Ob3XdcjOmA==
+"@css-panda/token-dictionary@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/token-dictionary/-/token-dictionary-0.0.0-dev-20221103161455.tgz#b78e4e078853adf693dfae71ef8b62da9186be96"
+  integrity sha512-aAxnPy2z/EMulsiU8ElKNQ0d+FhCRZavOi5lsTYJ+L9MLy3WMWJRW/sb7d6ZKTbGSbl44nb0i8d0nVmVtLeN5A==
   dependencies:
-    "@css-panda/shared" "0.0.0-dev-20221102190849"
+    "@css-panda/shared" "0.0.0-dev-20221103161455"
     ts-pattern "4.0.5"
 
-"@css-panda/types@0.0.0-dev-20221102190849":
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/@css-panda/types/-/types-0.0.0-dev-20221102190849.tgz#61588a4c59249fce3cd603df0a8f577e6648ce70"
-  integrity sha512-yb1ZDQWcZANdRzrO6bD9K5Sqsxif6FCz0RMe1bqbfp9c5SFq6HC8qzxEJzDTJ/6O3nXsUAgZkDkKzkHwzXnmow==
+"@css-panda/types@0.0.0-dev-20221103161455":
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/@css-panda/types/-/types-0.0.0-dev-20221103161455.tgz#2c64cf2d83b13a795e56a771fdfa984455b2917d"
+  integrity sha512-afDa0d2ySqImuAcluS2aIdVBINMBXf2deLgVIyLT/bV94k0XVZYEDwG8wDOTtrnqec1f9YDAPYNdYIaSksLb4w==
 
 "@ctrl/tinycolor@^3.4.0":
   version "3.4.1"
@@ -4740,16 +4740,16 @@ css-minimizer-webpack-plugin@^4.0.0:
     serialize-javascript "^6.0.0"
     source-map "^0.6.1"
 
-css-panda@^0.0.0-dev-20221027133350:
-  version "0.0.0-dev-20221102190849"
-  resolved "https://registry.yarnpkg.com/css-panda/-/css-panda-0.0.0-dev-20221102190849.tgz#c983baf3e4417bd7aa62c59b8c1f7305a4422951"
-  integrity sha512-WcLaVFJ5rir0Oqo0vOlBfbjouGD8ynxe5j+VmbMzPone8aJHIec5n7mBkcM6GQ4+bp3cAodlUr5bptGT2nNvfg==
+css-panda@^0.0.0-dev-20221103161455:
+  version "0.0.0-dev-20221103161455"
+  resolved "https://registry.yarnpkg.com/css-panda/-/css-panda-0.0.0-dev-20221103161455.tgz#f684c01ea77cd773ee99eb71af748f333ca807e5"
+  integrity sha512-7bt0bJtmz9Z8zuVN2c/R/2Vw0GBsoExAZP1QgarwiO+NiSo43tRoOt4JpdbZPUKfbhJzK8Nc+oxBLBlmAiN0YQ==
   dependencies:
-    "@css-panda/error" "0.0.0-dev-20221102190849"
-    "@css-panda/logger" "0.0.0-dev-20221102190849"
-    "@css-panda/node" "0.0.0-dev-20221102190849"
-    "@css-panda/shared" "0.0.0-dev-20221102190849"
-    "@css-panda/types" "0.0.0-dev-20221102190849"
+    "@css-panda/error" "0.0.0-dev-20221103161455"
+    "@css-panda/logger" "0.0.0-dev-20221103161455"
+    "@css-panda/node" "0.0.0-dev-20221103161455"
+    "@css-panda/shared" "0.0.0-dev-20221103161455"
+    "@css-panda/types" "0.0.0-dev-20221103161455"
     cac "6.7.14"
 
 css-select@^4.1.3:
