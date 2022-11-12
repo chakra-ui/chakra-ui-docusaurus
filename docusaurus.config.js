@@ -127,7 +127,7 @@ const config = {
       },
     ],
     [
-      "@docusaurus/plugin-content-docs",
+      require.resolve("@docusaurus/plugin-content-docs"),
       {
         id: "getting-started",
         routeBasePath: "/",

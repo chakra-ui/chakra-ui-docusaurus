@@ -21,6 +21,7 @@ import {
 } from "../../components/color-palette";
 import ComponentLinks from "../../components/component-links";
 import { ColorBox } from "../../components/color-box";
+import ComponentOverview from "../../components/component-overview";
 
 export default {
   ...MDXComponents,
@@ -41,4 +42,5 @@ export default {
   ColorWrapper,
   ComponentLinks,
   ColorBox,
+  ComponentOverview,
 };
