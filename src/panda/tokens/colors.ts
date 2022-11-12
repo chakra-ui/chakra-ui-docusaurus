@@ -17,7 +17,7 @@ export const colors = {
   },
   blitzjs: {
     value: '#6700EB',
-    description: 'The accent color for BlitzJS.',
+    description: 'The accent color for Blitz.js.',
   },
   meteor: {
     value: '#FF6A3E',

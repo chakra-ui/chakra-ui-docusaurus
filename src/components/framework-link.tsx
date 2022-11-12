@@ -24,7 +24,7 @@ const accents = cssMap({
   RedwoodJS: {
     background: 'redwood',
   },
-  BlitzJS: {
+  'Blitz.js': {
     background: 'blitzjs',
   },
   Meteor: {
@@ -114,7 +114,7 @@ export const FrameworkLinks = () => {
         <GatsbySvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/frameworks/blitzjs-guide' name='BlitzJS'>
+      <FrameworkLink href='/frameworks/blitzjs-guide' name='Blitz.js'>
         <BlitzSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
