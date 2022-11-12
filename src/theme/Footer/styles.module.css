@@ -1,0 +1,42 @@
+.footer {
+  margin-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+.footer__container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 0.875rem;
+  flex-direction: column;
+}
+
+.footer__credits {
+  display: flex;
+  align-items: center;
+}
+
+.footer__flag {
+  height: 16px;
+  margin: 0 0.75rem;
+}
+
+.footer__links {
+  margin-top: 1rem;
+  color: #A0AEC0;
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 12px;
+  font-size: 1.25rem;
+}
+
+.footer__vercel_credit {
+  margin-top: 1rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  background: black;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 0.5rem;
+}
