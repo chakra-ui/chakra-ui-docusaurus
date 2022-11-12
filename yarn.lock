@@ -4755,7 +4755,7 @@ css-minimizer-webpack-plugin@^4.0.0:
     serialize-javascript "^6.0.0"
     source-map "^0.6.1"
 
-css-panda@^0.0.0-dev-20221103161455:
+css-panda@^0.0.0-dev-20221112054627:
   version "0.0.0-dev-20221112054627"
   resolved "https://registry.yarnpkg.com/css-panda/-/css-panda-0.0.0-dev-20221112054627.tgz#22c86d05b5c9ce3af8a1c7f91d7d1ba8db7e5077"
   integrity sha512-y2Mzqed9X1ysQPU6KBRPveSHplWGntAagZHeUtQGtaZq5aEidgwNDfqYOhM2GoqJwb2EqlqCAr4WB8PUHXBqDQ==
