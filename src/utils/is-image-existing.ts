@@ -1,7 +1,10 @@
 const isImageExisting = (url: string) => {
-  const img = new Image();
-  img.src = url;
-  return img.height !== 0;
+  try {
+    require(`@site/static/img/${url}`).default;
+    return true;
+  } catch (err) {
+    return false;
+  }
 };
 
 export default isImageExisting;

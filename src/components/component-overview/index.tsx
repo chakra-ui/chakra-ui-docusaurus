@@ -1,4 +1,5 @@
 import { chakra } from "@chakra-ui/react";
+import { css } from "../../../design-system/css";
 
 import useGetOverviewComponents from "../../hooks/use-get-overview-components";
 import ComponentOverviewCard from "./component-overview-card";
@@ -18,11 +19,17 @@ const ComponentOverview = () => {
             >
               {category}
             </chakra.h2>
-            <chakra.div
-              display='grid'
-              gridTemplateColumns={{ base: '1', sm: '2', md: '3' }}
-              gap='4rem'
-              mb='4'
+            <div
+              className={css({
+                display: "grid",
+                gridTemplateColumns: {
+                  base: "1",
+                  sm: "2",
+                  md: "3",
+                },
+                gap: "4rem",
+                mb: "4",
+              })}
             >
               {components.map(({ title, url, imageUrl }) => {
                 return (
@@ -35,7 +42,7 @@ const ComponentOverview = () => {
                   />
                 )
               })}
-            </chakra.div>
+            </div>
           </chakra.div>
         )
       })}

@@ -25,7 +25,9 @@ const useGetOverviewComponents = () => {
     return {
       category,
       components: components.map(({ label, href }): OverviewComponent | null => {
-        const hasOverviewImage = isImageExisting(`/components/${label.toLowerCase().replace(' ', '-')}.svg`)
+        const imageUrl = `components/${href.split('/')[href.split('/').length - 2]}.svg`;
+
+        const hasOverviewImage = isImageExisting(imageUrl)
 
 
         if (!hasOverviewImage) {
@@ -36,7 +38,7 @@ const useGetOverviewComponents = () => {
         return {
           title: label,
           url: href,
-          imageUrl: require(`/components/${label.toLowerCase().replace(' ', '-')}.svg`).default,
+          imageUrl: require(`@site/static/img/${imageUrl}`).default,
         }
 
       }
