@@ -23,7 +23,7 @@ export const CourseBanner = ({
     <chakra.img src={image} alt={title} objectFit='contain' />
     <chakra.div py='3' px='4'>
       <chakra.h3
-        margin='0'
+        margin='0!'
         color={{ base: 'black', dark: 'white' }}
         fontSize='medium'
         fontWeight='semibold'

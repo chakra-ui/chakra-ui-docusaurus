@@ -1,7 +1,7 @@
 ---
 title: Gatsby
 description: Setting up Chakra UI in Gatsby projects
-tags: ['gatsby']
+tags: ["gatsby"]
 author: KenzoBenzo
 category: frameworks
 sidebar_position: 30
@@ -33,7 +33,7 @@ After installation, you'll need to add `@chakra-ui/gatsby-plugin` to the
 module.exports = {
   plugins: [
     {
-      resolve: '@chakra-ui/gatsby-plugin',
+      resolve: "@chakra-ui/gatsby-plugin",
       options: {
         /**
          * @property {boolean} [resetCSS=true]
@@ -56,17 +56,17 @@ To use a custom theme, you can
 this plugin&apos;s `theme.js` file with your own theme:
 
 ```tsx title="src/@chakra-ui/gatsby-plugin/theme.js"
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 const theme = {
   colors: {
-    primary: 'rebeccapurple',
+    primary: "rebeccapurple",
   },
 };
 
 export default extendTheme(theme);
 ```
 
-If you want to use the [default theme](/docs/styled-system/theme)
+If you want to use the [default theme](/docs/styled-system/theming/default-theme)
 there's no need to shadow the file.
 
 ## Migration Notes

@@ -24,7 +24,7 @@ const accents = cssMap({
   RedwoodJS: {
     background: 'redwood',
   },
-  BlitzJS: {
+  'Blitz.js': {
     background: 'blitzjs',
   },
   Meteor: {
@@ -50,10 +50,10 @@ const FrameworkLink = (props) => {
         borderRadius: 'xl',
         overflow: 'hidden',
         transform: 'auto',
-        transition: 'all 0.1s ease-in-out',
+        transition: 'all 0.1s ease-out!',
         hover: {
           textDecoration: 'none',
-          translateY: '-4px',
+          translateY: '-2',
           shadow: 'md',
         },
       })}
@@ -79,7 +79,12 @@ const FrameworkLink = (props) => {
             accents(name)
           )}
         >
-          <chakra.p textAlign='center' fontSize='sm' fontWeight='bold' mb='0'>
+          <chakra.p
+            textAlign='center'
+            fontSize='sm'
+            fontWeight='bold'
+            marginBottom='0!'
+          >
             {name}
           </chakra.p>
         </div>
@@ -97,35 +102,35 @@ export const FrameworkLinks = () => {
       gap='40px'
       fontSize='6xl'
     >
-      <FrameworkLink href='/getting-started/cra-guide' name='Create React App'>
+      <FrameworkLink href='/frameworks/cra-guide' name='Create React App'>
         <CreateReactAppSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/nextjs-guide' name='Next.js'>
+      <FrameworkLink href='/frameworks/nextjs-guide' name='Next.js'>
         <NextjsSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/gatsby-guide' name='Gatsby'>
+      <FrameworkLink href='/frameworks/gatsby-guide' name='Gatsby'>
         <GatsbySvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/blitzjs-guide' name='BlitzJS'>
+      <FrameworkLink href='/frameworks/blitzjs-guide' name='Blitz.js'>
         <BlitzSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/redwoodjs-guide' name='RedwoodJS'>
+      <FrameworkLink href='/frameworks/redwoodjs-guide' name='RedwoodJS'>
         <RedwoodSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/remix-guide' name='Remix'>
+      <FrameworkLink href='/frameworks/remix-guide' name='Remix'>
         <RemixSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/vite-guide' name='Vite'>
+      <FrameworkLink href='/frameworks/vite-guide' name='Vite'>
         <ViteSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
 
-      <FrameworkLink href='/getting-started/meteor-guide' name='Meteor'>
+      <FrameworkLink href='/frameworks/meteor-guide' name='Meteor'>
         <MeteorSvg style={{ margin: 'auto' }} />
       </FrameworkLink>
     </chakra.div>

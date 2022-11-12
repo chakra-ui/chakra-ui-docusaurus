@@ -1,12 +1,4 @@
----
-id: alert-dialog
-category: overlay
-title: Alert Dialog
-package: '@chakra-ui/modal'
-description:
-  AlertDialog component is used to interrupt the user with a mandatory confirmation
-  or action.
----
+# Alert Dialog
 
 AlertDialog component is used to interrupt the user with a mandatory confirmation
 or action.
@@ -31,7 +23,7 @@ import {
   AlertDialogHeader,
   AlertDialogContent,
   AlertDialogOverlay,
-} from '@chakra-ui/react';
+} from "@chakra-ui/react";
 ```
 
 ## Usage
@@ -50,7 +42,7 @@ function AlertDialogExample() {
 
   return (
     <>
-      <Button colorScheme='red' onClick={onOpen}>
+      <Button colorScheme="red" onClick={onOpen}>
         Delete Customer
       </Button>
 
@@ -61,7 +53,7 @@ function AlertDialogExample() {
       >
         <AlertDialogOverlay>
           <AlertDialogContent>
-            <AlertDialogHeader fontSize='lg' fontWeight='bold'>
+            <AlertDialogHeader fontSize="lg" fontWeight="bold">
               Delete Customer
             </AlertDialogHeader>
 
@@ -73,7 +65,7 @@ function AlertDialogExample() {
               <Button ref={cancelRef} onClick={onClose}>
                 Cancel
               </Button>
-              <Button colorScheme='red' onClick={onClose} ml={3}>
+              <Button colorScheme="red" onClick={onClose} ml={3}>
                 Delete
               </Button>
             </AlertDialogFooter>
@@ -100,7 +92,7 @@ function TransitionExample() {
     <>
       <Button onClick={onOpen}>Discard</Button>
       <AlertDialog
-        motionPreset='slideInBottom'
+        motionPreset="slideInBottom"
         leastDestructiveRef={cancelRef}
         onClose={onClose}
         isOpen={isOpen}
@@ -119,7 +111,7 @@ function TransitionExample() {
             <Button ref={cancelRef} onClick={onClose}>
               No
             </Button>
-            <Button colorScheme='red' ml={3}>
+            <Button colorScheme="red" ml={3}>
               Yes
             </Button>
           </AlertDialogFooter>
@@ -147,4 +139,4 @@ function TransitionExample() {
 exception is that it requires a `leastDestructiveRef` which is similar to the
 `initialFocusRef` of `Modal`.
 
-<PropsTable of='AlertDialog' />
+<PropsTable of="AlertDialog" />

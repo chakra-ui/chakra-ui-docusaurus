@@ -1,19 +1,13 @@
----
-id: tabs
-title: Tabs
-category: 'disclosure'
-package: '@chakra-ui/tabs'
-description:
-  A React component that helps you build accessible tabs, by providing keyboard
-  interactions and ARIA attributes described in the WAI-ARIA Tab Panel Design
-  Pattern.
-video: 'https://youtu.be/hSVhhOamFaI'
----
+# Tabs
+
+A React component that helps you build accessible tabs, by providing keyboard
+interactions and ARIA attributes described in the WAI-ARIA Tab Panel Design
+Pattern.
 
 ## Import
 
 ```js
-import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react'
+import { Tabs, TabList, TabPanels, Tab, TabPanel } from '@chakra-ui/react';
 ```
 
 - **Tabs**: Provides context and state for all components
@@ -31,7 +25,7 @@ as children, and `TabPanels` should have `TabPanel` as children.
 Tabs expects `TabList` and `TabPanels` as children. The order doesn't matter,
 you can have `TabList` at the top, at the bottom, or both.
 
-```jsx
+```jsx live
 <Tabs>
   <TabList>
     <Tab>One</Tab>
@@ -58,7 +52,7 @@ you can have `TabList` at the top, at the bottom, or both.
 Tabs come in 6 different variants to style the tabs: `line`,`enclosed`,
 `enclosed-colored`, `soft-rounded`, `solid-rounded`
 
-```jsx
+```jsx live
 <Tabs variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
@@ -81,7 +75,7 @@ You can also change the color scheme for any specific variant by passing the
 > The value of `colorScheme` must exist in the theme object, and must be a key
 > in `theme.colors` that has the `50` - `900` color values.
 
-```jsx
+```jsx live
 <Tabs variant='soft-rounded' colorScheme='green'>
   <TabList>
     <Tab>Tab 1</Tab>
@@ -103,7 +97,7 @@ You can also change the color scheme for any specific variant by passing the
 You can change the size of the tab by passing `size` prop. We support 3 sizes
 `sm`, `md`, `lg`
 
-```jsx
+```jsx live
 <Tabs size='md' variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
@@ -125,7 +119,7 @@ You can change the size of the tab by passing `size` prop. We support 3 sizes
 You can change the alignment of the `TabList` by passing `align` prop. We
 support 3 sizes `start`, `center`, `end`.
 
-```jsx
+```jsx live
 <Tabs align='end' variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
@@ -146,7 +140,7 @@ support 3 sizes `start`, `center`, `end`.
 
 Stretch the tab list to fit the container by passing `isFitted` prop.
 
-```jsx
+```jsx live
 <Tabs isFitted variant='enclosed'>
   <TabList mb='1em'>
     <Tab>One</Tab>
@@ -168,7 +162,7 @@ Stretch the tab list to fit the container by passing `isFitted` prop.
 In event you need to create custom styles for the tabs. Simply set the variant
 to `unstyled`, and use the `_selected`, `_hover`, `_active` style props.
 
-```jsx
+```jsx live
 <Tabs variant='unstyled'>
   <TabList>
     <Tab _selected={{ color: 'white', bg: 'blue.500' }}>Tab 1</Tab>
@@ -191,14 +185,14 @@ The `onChange` callback returns the active tab's index whenever the user changes
 tabs. If you intend to control the tabs programmatically, use this with the
 `index` prop.
 
-```jsx
+```jsx live
 function Example() {
   const colors = useColorModeValue(
     ['red.50', 'teal.50', 'blue.50'],
-    ['red.900', 'teal.900', 'blue.900'],
-  )
-  const [tabIndex, setTabIndex] = useState(0)
-  const bg = colors[tabIndex]
+    ['red.900', 'teal.900', 'blue.900']
+  );
+  const [tabIndex, setTabIndex] = useState(0);
+  const bg = colors[tabIndex];
   return (
     <Tabs onChange={(index) => setTabIndex(index)} bg={bg}>
       <TabList>
@@ -212,7 +206,7 @@ function Example() {
         <TabPanel>Red, yellow and blue.</TabPanel>
       </TabPanels>
     </Tabs>
-  )
+  );
 }
 ```
 
@@ -221,7 +215,7 @@ function Example() {
 If you want a tab to be initially active, simply pass the `defaultIndex` prop
 and set it to the index of that tab.
 
-```jsx
+```jsx live
 <Tabs defaultIndex={1}>
   <TabPanels>
     <TabPanel>
@@ -251,7 +245,7 @@ and set it to the index of that tab.
 When a `Tab` is disabled, it is skipped during keyboard navigation and it is not
 clickable.
 
-```jsx
+```jsx live
 function Example() {
   return (
     <Tabs>
@@ -266,7 +260,7 @@ function Example() {
         <TabPanel>3</TabPanel>
       </TabPanels>
     </Tabs>
-  )
+  );
 }
 ```
 
@@ -284,7 +278,7 @@ In this scenario, you should use a manually activated tab, it moves focus
 without activating the tabs. With focus on a specific tab, users can activate a
 tab by pressing <kbd>Space</kbd> or <kbd>Enter</kbd>.
 
-```jsx
+```jsx live
 <Tabs isManual variant='enclosed'>
   <TabList>
     <Tab>One</Tab>
@@ -311,7 +305,7 @@ use the `isLazy` prop. This is useful if your tabs require heavy performance, or
 make network calls on mount that should only happen when the component is
 displayed.
 
-```jsx
+```jsx live
 <Tabs isLazy>
   <TabList>
     <Tab>One</Tab>
@@ -335,17 +329,17 @@ displayed.
 Like form inputs, a tab's state can be controlled. Make sure to include an
 onChange as well, or else the tabs will not be interactive.
 
-```jsx
+```jsx live
 function ControlledExample() {
-  const [tabIndex, setTabIndex] = useState(0)
+  const [tabIndex, setTabIndex] = useState(0);
 
   const handleSliderChange = (event) => {
-    setTabIndex(parseInt(event.target.value, 10))
-  }
+    setTabIndex(parseInt(event.target.value, 10));
+  };
 
   const handleTabsChange = (index) => {
-    setTabIndex(index)
-  }
+    setTabIndex(index);
+  };
 
   return (
     <Box>
@@ -376,7 +370,7 @@ function ControlledExample() {
         </TabPanels>
       </Tabs>
     </Box>
-  )
+  );
 }
 ```
 
@@ -386,15 +380,15 @@ Because `TabList` needs to know the order of the children, we use `cloneElement`
 to pass state internally. Your custom `Tab` component must use
 `React.forwardRef`.
 
-```jsx
+```jsx live
 function CustomTabs() {
   const CustomTab = React.forwardRef((props, ref) => {
     // 1. Reuse the `useTab` hook
-    const tabProps = useTab({ ...props, ref })
-    const isSelected = !!tabProps['aria-selected']
+    const tabProps = useTab({ ...props, ref });
+    const isSelected = !!tabProps['aria-selected'];
 
     // 2. Hook into the Tabs `size`, `variant`, props
-    const styles = useMultiStyleConfig('Tabs', tabProps)
+    const styles = useMultiStyleConfig('Tabs', tabProps);
 
     return (
       <Button __css={styles.tab} {...tabProps}>
@@ -403,8 +397,8 @@ function CustomTabs() {
         </Box>
         {tabProps.children}
       </Button>
-    )
-  })
+    );
+  });
 
   return (
     <Tabs>
@@ -417,7 +411,7 @@ function CustomTabs() {
         <TabPanel>2</TabPanel>
       </TabPanels>
     </Tabs>
-  )
+  );
 }
 ```
 
@@ -426,7 +420,7 @@ function CustomTabs() {
 If you'd like to drive your tabs with an array instead of using the granular
 components, you can create your own DataTabs component.
 
-```jsx
+```jsx live
 function Example() {
   // 1. Create the component
   function DataTabs({ data }) {
@@ -445,7 +439,7 @@ function Example() {
           ))}
         </TabPanels>
       </Tabs>
-    )
+    );
   }
 
   // 2. Create an array of data
@@ -459,10 +453,10 @@ function Example() {
       content:
         'Perhaps the surest dish ever invented but fills the stomach more than rice.',
     },
-  ]
+  ];
 
   // 3. Pass the props and chill!
-  return <DataTabs data={tabData} />
+  return <DataTabs data={tabData} />;
 }
 ```
 
@@ -491,3 +485,18 @@ function Example() {
 |           | `role="tablist"`   | Indicates that it is a tablist                                             |
 | TabPanel  | `role="tabpanel"`  | Indicates that it is a tabpanel                                            |
 |           | `aria-labelledby`  | Set to the `id` of the `Tab` that labels the `TabPanel`                    |
+
+## Props
+
+### Tabs Props
+
+Tabs composes `Box` so you call pass all `Box` related props.
+
+<PropsTable
+  of='Tabs'
+  omit={['layerStyle', 'noOfLines', 'textStyle', 'styleConfig']}
+/>
+
+### Tab Props
+
+<PropsTable of='Tab' />

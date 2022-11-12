@@ -1,24 +1,18 @@
----
-id: input
-category: form
-title: Input
-package: '@chakra-ui/input'
-description:
-  Input component is a component that is used to get user input in a text field.
-video: 'https://youtu.be/4y86kDy3Z2E'
----
+# Input
+
+Input component is a component that is used to get user input in a text field.
 
 ## Import
 
 ```js
-import { Input } from '@chakra-ui/react'
+import { Input } from '@chakra-ui/react';
 ```
 
 ## Usage
 
 Here's a basic usage example of the `Input` component:
 
-```jsx
+```jsx live
 <Input placeholder='Basic usage' />
 ```
 
@@ -31,7 +25,7 @@ The `Input` component comes in four sizes. The default is `md`.
 - `md` (`40px`)
 - `lg` (`48px`)
 
-```jsx
+```jsx live
 <Stack spacing={3}>
   <Input placeholder='extra small size' size='xs' />
   <Input placeholder='small size' size='sm' />
@@ -44,7 +38,7 @@ If you want to use the native DOM `size` attribute you can use the `htmlSize`
 prop. For it to work as expected you will also need to provide the `width` prop
 set to `auto`.
 
-```jsx
+```jsx live
 <Input htmlSize={4} width='auto' />
 ```
 
@@ -53,7 +47,7 @@ set to `auto`.
 The input component comes in 4 variants: `outline`, `unstyled`, `flushed`, and
 `filled`. Pass the `variant` prop and set it to one of these values.
 
-```jsx
+```jsx live
 <Stack spacing={3}>
   <Input variant='outline' placeholder='Outline' />
   <Input variant='filled' placeholder='Filled' />
@@ -68,7 +62,7 @@ Like bootstrap, you can add addons to the left and right of the `Input`
 component. Chakra UI exports `InputGroup`, `InputLeftAddon`, and
 `InputRightAddon` to help with this use case.
 
-```jsx
+```jsx live
 <Stack spacing={4}>
   <InputGroup>
     <InputLeftAddon children='+234' />
@@ -94,7 +88,7 @@ If the left or right is an icon or text, you can pass `pointerEvents="none"` to
 `InputLeftElement` or `InputRightElement` to ensure that clicking on them
 focused the input.
 
-```jsx
+```jsx live
 <Stack spacing={4}>
   <InputGroup>
     <InputLeftElement
@@ -122,10 +116,10 @@ focused the input.
 Let's use these components to create a password input with a show/hide password
 functionality:
 
-```jsx
+```jsx live
 function PasswordInput() {
-  const [show, setShow] = React.useState(false)
-  const handleClick = () => setShow(!show)
+  const [show, setShow] = React.useState(false);
+  const handleClick = () => setShow(!show);
 
   return (
     <InputGroup size='md'>
@@ -140,16 +134,16 @@ function PasswordInput() {
         </Button>
       </InputRightElement>
     </InputGroup>
-  )
+  );
 }
 ```
 
 ### Controlled Input
 
-```jsx
+```jsx live
 function Example() {
-  const [value, setValue] = React.useState('')
-  const handleChange = (event) => setValue(event.target.value)
+  const [value, setValue] = React.useState('');
+  const handleChange = (event) => setValue(event.target.value);
 
   return (
     <>
@@ -161,7 +155,7 @@ function Example() {
         size='sm'
       />
     </>
-  )
+  );
 }
 ```
 
@@ -172,7 +166,7 @@ You can change the border color that shows when the input receives focus
 The value can be set to a color in the theme object, like `teal.400`, or a raw
 CSS value.
 
-```jsx
+```jsx live
 <Stack spacing={3}>
   <Input focusBorderColor='lime' placeholder='Here is a sample placeholder' />
   <Input
@@ -198,7 +192,7 @@ The placeholder of an input can be styled by using the `_placeholder` prop. Per
 default the placeholder has an opacity of 0.6, so it can be necessary to set the
 opacity to 1 if you want the placeholder to have a specific color.
 
-```jsx
+```jsx live
 <Stack spacing={3}>
   <Input placeholder='default placeholder' />
   <Input
@@ -219,16 +213,20 @@ opacity to 1 if you want the placeholder to have a specific color.
 ```
 
 ### Input Methods other than Text
-You can use different types with `Input` such as dateTime, color, search, file etc. 
+
+You can use different types with `Input` such as dateTime, color, search, file etc.
 
 Date and Time Picker
 
-```jsx
-<Input
- placeholder="Select Date and Time"
- size="md"
- type="datetime-local"
-/>
+```jsx live
+<Input placeholder='Select Date and Time' size='md' type='datetime-local' />
 ```
-Check for different input types available : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#input_types 
 
+Check for different input types available : https://developer.mozilla.org/en-US/docs/Web/HTML/Element/Input#input_types
+
+## Props
+
+The `Input` component composes [Box](/docs/components/layout/box) so you can
+pass all `Box` props, and `React.InputHTMLAttributes`.
+
+<PropsTable of='Input' />

@@ -1,7 +1,7 @@
 ---
 title: RedwoodJS
 description: A guide for installing Chakra UI with redwoodjs projects
-tags: ['redwoodjs']
+tags: ["redwoodjs"]
 author: estheragbaje, philzen
 category: frameworks
 sidebar_position: 50
@@ -44,11 +44,11 @@ customizations and Storybook integration) below.
    this:
 
    ```tsx title="App.js"
-   import { ChakraProvider, ColorModeScript } from '@chakra-ui/react';
+   import { ChakraProvider, ColorModeScript } from "@chakra-ui/react";
 
    const App = () => (
      <FatalErrorBoundary page={FatalErrorPage}>
-       <RedwoodProvider titleTemplate='%PageTitle | %AppTitle'>
+       <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
          <ColorModeScript />
          <ChakraProvider>
            <RedwoodApolloProvider>
@@ -77,20 +77,20 @@ TypeScript version of `4.1.0` is required.
 ### Customize Theme
 
 If you intend to
-[customize the default theme](/docs/styled-system/customize-theme), you
+[customize the default theme](/docs/styled-system/theming/customize-theme), you
 will need to pass your extended theme object as a prop to `ChakraProvider` as
 follows:
 
 ```tsx
 // 1. Import the extendTheme function
-import { extendTheme } from '@chakra-ui/react';
+import { extendTheme } from "@chakra-ui/react";
 
 // 2. Extend the theme to include custom colors, fonts, etc
 const colors = {
   brand: {
-    900: '#1a365d',
-    800: '#153e75',
-    700: '#2a69ac',
+    900: "#1a365d",
+    800: "#153e75",
+    700: "#2a69ac",
   },
 };
 
@@ -99,7 +99,7 @@ const theme = extendTheme({ colors });
 // 3. Pass the `theme` prop to the `ChakraProvider`
 const App = () => (
   <FatalErrorBoundary page={FatalErrorPage}>
-    <RedwoodProvider titleTemplate='%PageTitle | %AppTitle'>
+    <RedwoodProvider titleTemplate="%PageTitle | %AppTitle">
       <ColorModeScript />
       <ChakraProvider theme={theme}>
         <RedwoodApolloProvider>
@@ -119,7 +119,7 @@ below.
 
 :::note
 The steps outlined here are semantically identical to our
-[Storybook integration Guide](/getting-started/with-storybook), only the
+[Storybook integration Guide](/integrations/with-storybook), only the
 install commands and file locations differ.
 :::
 
@@ -134,18 +134,18 @@ install commands and file locations differ.
    module.exports = {
      addons: [
        // ...
-       '@chakra-ui/storybook-addon',
+       "@chakra-ui/storybook-addon",
      ],
    };
    ```
 
 3. Additional configuration:
-   In case you are using any [Theme customizations](/docs/styled-system/customize-theme),
+   In case you are using any [Theme customizations](/docs/styled-system/theming/customize-theme),
    you will want to see them applied in Storybook as well. Enable them in `web/config/storybook.preview.js`
    like this:
 
    ```tsx title="web/config/storybook.preview.js"
-   const theme = require('../path/to/your/theme');
+   const theme = require("../path/to/your/theme");
 
    export const parameters = {
      // ...

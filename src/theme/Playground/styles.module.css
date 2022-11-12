@@ -1,6 +1,7 @@
 .playgroundContainer {
   margin-bottom: var(--ifm-leading);
   border-radius: var(--ifm-global-radius);
+  border: 1px solid var(--ifm-color-gray-200);
   box-shadow: var(--ifm-global-shadow-lw);
   overflow: hidden;
 }

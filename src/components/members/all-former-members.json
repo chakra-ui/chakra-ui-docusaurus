@@ -1,0 +1,20 @@
+{
+  "members": [
+    {
+      "name": "Kolawole Tioluwani",
+      "githubName": "tioluwani94",
+      "components": [
+        "Styled System",
+        "CLI"
+      ]
+    },
+    {
+      "name": "Mark Chandler",
+      "githubName": "with-heart",
+      "components": [
+        "Community",
+        "Triage"
+      ]
+    }
+  ]
+}

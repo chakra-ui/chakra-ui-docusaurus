@@ -1,6 +1,8 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
 
+const packageJson = require("./package.json");
+
 const darkCodeTheme = require("prism-react-renderer/themes/dracula");
 
 /** @type {import('@docusaurus/types').Config} */
@@ -22,6 +24,11 @@ const config = {
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
+      docs: {
+        sidebar: {
+          autoCollapseCategories: true,
+        },
+      },
       navbar: {
         logo: {
           alt: "Chakra UI Logo",
@@ -43,7 +50,7 @@ const config = {
             items: [
               {
                 type: "doc",
-                docId: "components/disclosure/accordion/index",
+                docId: "components/index",
                 docsPluginId: "docs",
                 label: "Components",
               },
@@ -69,6 +76,21 @@ const config = {
             label: "Community",
           },
           { to: "/changelog", label: "Changelog", position: "left" },
+          {
+            position: "right",
+            // @ts-ignore
+            label: `v${packageJson.dependencies["@chakra-ui/react"]}`,
+            items: [
+              {
+                label: "v1.8.8",
+                href: "https://v1.chakra-ui.com",
+              },
+              {
+                label: "v0.8.x",
+                href: "https://v0.chakra-ui.com",
+              },
+            ],
+          },
         ],
       },
       algolia: {
@@ -82,19 +104,17 @@ const config = {
         darkTheme: darkCodeTheme,
       },
     }),
-
   themes: [
-    "@docusaurus/theme-search-algolia",
-    "@docusaurus/theme-live-codeblock",
-  ],
-
-  plugins: [
     [
       "@docusaurus/theme-classic",
       {
         customCss: require.resolve("./src/css/custom.css"),
       },
     ],
+    "@docusaurus/theme-search-algolia",
+    "@docusaurus/theme-live-codeblock",
+  ],
+  plugins: [
     [
       "@docusaurus/plugin-content-blog",
       {
@@ -114,6 +134,7 @@ const config = {
         path: "./content/getting-started",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        exclude: ["**/**.example.mdx"],
       },
     ],
     [
@@ -124,6 +145,7 @@ const config = {
         path: "./content/docs",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        exclude: ["**/**.example.mdx"],
       },
     ],
     [
@@ -134,6 +156,7 @@ const config = {
         path: "./content/community",
         showLastUpdateAuthor: true,
         showLastUpdateTime: true,
+        exclude: ["**/**.example.mdx"],
       },
     ],
     [

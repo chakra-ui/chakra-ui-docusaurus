@@ -10,7 +10,7 @@ import { Badge } from "@chakra-ui/react";
 
 ## Usage
 
-```jsx
+```jsx live sm
 <Badge>Default</Badge>
 ```
 
@@ -18,9 +18,9 @@ import { Badge } from "@chakra-ui/react";
 
 Pass the `colorScheme` prop to customize the color of the Badge. `colorScheme`
 can be any **color key** that exists in `theme.colors`.
-[Learn more about theming](/docs/styled-system/theme).
+[Learn more about theming](/docs/styled-system/theming/default-theme).
 
-```jsx
+```jsx live sm
 <Stack direction="row">
   <Badge>Default</Badge>
   <Badge colorScheme="green">Success</Badge>
@@ -34,7 +34,7 @@ can be any **color key** that exists in `theme.colors`.
 Pass the `variant` prop and set it to either `subtle`, `solid`, or `outline` to
 get a different style.
 
-```jsx
+```jsx live sm
 <Stack direction="row">
   <Badge variant="outline" colorScheme="green">
     Default
@@ -50,7 +50,7 @@ get a different style.
 
 ## Composition
 
-```jsx
+```jsx live
 <Flex>
   <Avatar src="https://bit.ly/sage-adebayo" />
   <Box ml="3">
@@ -67,7 +67,7 @@ get a different style.
 
 You can also change the size of the badge by passing the `fontSize` prop.
 
-```jsx
+```jsx live sm
 <Text fontSize="xl" fontWeight="bold">
   Segun Adebayo
   <Badge ml="1" fontSize="0.8em" colorScheme="green">
