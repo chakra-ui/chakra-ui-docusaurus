@@ -9,7 +9,9 @@ category: integrations
 This example shows how to build a simple form with Chakra UI's form components
 and the [React Hook Form](https://react-hook-form.com) form library:
 
-```jsx
+<SandpackEditor dependencies={{ 'react-hook-form': 'latest' }}>
+
+```tsx HookForm.tsx active
 import { useForm } from "react-hook-form";
 import {
   FormErrorMessage,
@@ -61,26 +63,20 @@ export default function HookForm() {
 
 Wiring up to the rest of your app:
 
-```jsx
-import React from "react";
-import * as ReactDOM from "react-dom/client";
+```tsx App.tsx
+import { ChakraProvider } from "@chakra-ui/react";
 import HookForm from "./HookForm";
-import { ChakraProvider, Box } from "@chakra-ui/react";
 
-function App() {
+const App = () => {
   return (
     <ChakraProvider>
-      <Box p={4}>
         <HookForm />
-      </Box>
     </ChakraProvider>
   );
 }
 
-const rootElement = document.getElementById("root");
-ReactDOM.createRoot(rootElement).render(<App />);
+export default App;
+
 ```
 
-credit: Abhishek Kumar Singh - https://abheist.com/
-
-[Explore on Code Sandbox](https://codesandbox.io/s/chakra-ui-react-hook-form-t3l69)
+</SandpackEditor>
