@@ -1,53 +1,70 @@
-import {
-  Button,
-  ButtonProps,
-  Link,
-  useColorModeValue,
-  Wrap,
-} from "@chakra-ui/react";
-import React from "react";
-import { FaGithub, FaNpm, FaYoutube } from "react-icons/fa";
+import { PropsWithChildren } from "react";
+import { FaGithub, FaNpm } from "react-icons/fa";
+import { chakra } from '../../design-system/jsx';
 
-type ComponentLinkProps = ButtonProps & {
-  icon: React.ElementType;
+
+type ComponentLinkProps = {
+  icon: any;
   url: string;
   iconSize?: string;
   iconColor?: string;
-};
+  children: PropsWithChildren<string>;
+  name: string;
+}
 
-// TODO panda this and insert in all components
-function ComponentLink(props: ComponentLinkProps) {
-  const { icon: BtnIcon, url, children, iconSize, iconColor, ...rest } = props;
+const ComponentLink = ({ url, children, icon, name }: ComponentLinkProps) => {
   return (
-    <Button
-      as={Link}
+    <chakra.a
+      fontSize='md'
+      textDecoration='none !important'
+      borderRadius='md'
+      px='12px'
+      margin='6px !important'
+      borderStyle="solid"
+      borderWidth="1px"
+      display='flex'
+      alignItems='center'
+      borderColor={{ base: 'gray.200 !important', dark: 'rgba(255, 255, 255, 0.16) !important' }}
+      color={{ base: 'gray.600 !important', dark: 'rgba(255, 255, 255, 0.64) !important' }}
       href={url}
-      isExternal
-      size="sm"
-      fontWeight="normal"
-      variant="outline"
-      color={useColorModeValue("gray.600", "whiteAlpha.700")}
-      _hover={{
-        color: useColorModeValue("gray.700", "whiteAlpha.900"),
-        boxShadow: "sm",
-        transform: "translateY(-2px)",
-        textDecor: "none",
-      }}
-      leftIcon={<BtnIcon />}
-      sx={{
-        "& span": {
-          width: iconSize,
+      target="_blank"
+      fontWeight="medium"
+      hover={{
+        color: {
+          base: 'rgba(0, 0, 0, 0.92) !important',
+          dark: 'rgba(255, 255, 255, 0.92) !important',
         },
-        "& svg": {
-          color: iconColor,
-          width: "full",
-          height: "auto",
-        },
+        transform: 'translateY(-2px)',
       }}
-      {...rest}
     >
+      {name === "Github" &&
+        <chakra.span
+          display="inline-flex"
+          alignItems="center"
+          mr="2"
+          color={{
+            base: 'gray.600 !important',
+            dark: 'inherit !important'
+          }}
+          fontSize={"1rem"}
+        >
+          {icon}
+        </chakra.span>
+      }
+
+      {name === "NPM" &&
+        <chakra.span
+          display="inline-flex"
+          alignItems="center"
+          mr="2"
+          color="red.500 !important"
+          fontSize={"2rem"}
+        >
+          {icon}
+        </chakra.span>
+      }
       {children}
-    </Button>
+    </chakra.a>
   );
 }
 
@@ -55,13 +72,9 @@ export type ComponentLinksProps = {
   theme?: { componentName: string };
   github?: { url?: string; package?: string };
   npm?: { package: string };
-  storybook?: { url: string };
-  video?: { url: string };
 };
-function ComponentLinks(props: ComponentLinksProps) {
-  const { theme, github, npm, storybook, video, ...rest } = props;
-  const iconColor = useColorModeValue("gray.600", "inherit");
 
+function ComponentLinks({ theme, github, npm }: ComponentLinksProps) {
   const githubRepoUrl = "https://github.com/chakra-ui/chakra-ui";
 
   const githubLink = (github?.url || github?.package) && (
@@ -70,9 +83,9 @@ function ComponentLinks(props: ComponentLinksProps) {
         github.url ||
         `${githubRepoUrl}/tree/main/packages/components/${github.package}`
       }
-      icon={FaGithub}
-      iconColor={iconColor}
+      icon={<FaGithub />}
       iconSize="1rem"
+      name="Github"
     >
       View source
     </ComponentLink>
@@ -81,9 +94,8 @@ function ComponentLinks(props: ComponentLinksProps) {
   const npmLink = npm?.package && (
     <ComponentLink
       url={`https://www.npmjs.com/package/${npm.package}`}
-      icon={FaNpm}
-      iconSize="2rem"
-      iconColor="red.500"
+      icon={<FaNpm />}
+      name="NPM"
     >
       {npm.package}
     </ComponentLink>
@@ -92,20 +104,20 @@ function ComponentLinks(props: ComponentLinksProps) {
   const themeComponentLink = theme && (
     <ComponentLink
       url={`${githubRepoUrl}/tree/main/packages/components/theme/src/components/${theme.componentName}.ts`}
-      icon={FaGithub}
-      iconColor={iconColor}
+      icon={<FaGithub />}
       iconSize="1rem"
+      name="Github"
     >
       View theme source
     </ComponentLink>
   );
 
   return (
-    <Wrap spacing="3" flexWrap="wrap" overflow="visible" {...rest}>
+    <chakra.div display="flex" gap="3" flexWrap="wrap" overflow="visible">
       {githubLink}
       {themeComponentLink}
       {npmLink}
-    </Wrap>
+    </chakra.div>
   );
 }
 
