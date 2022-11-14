@@ -1,10 +1,9 @@
-import React from 'react';
-import { Box, ChakraProvider } from '@chakra-ui/react';
+import { Box } from '@chakra-ui/react';
 import {
   SandpackCodeEditor,
   SandpackLayout,
   SandpackPreview,
-  SandpackProvider,
+  SandpackProvider
 } from '@codesandbox/sandpack-react';
 import { nightOwl } from '@codesandbox/sandpack-themes';
 
