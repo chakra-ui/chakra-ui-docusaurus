@@ -19,7 +19,7 @@ There are two ways to use `as props` and `chakra factory`.
 The chakra factory function can be used to represent animation and interaction
 using `framer motion` props, as in the example below.
 
-```tsx live=false
+```tsx
 import { chakra } from "@chakra-ui/react";
 import { motion, isValidMotionProp } from "framer-motion";
 
@@ -30,18 +30,68 @@ const ChakraBox = chakra(motion.div, {
 
 Let's see an example using the chakra factory function!
 
-<!-- TODO replace with sandpack
-import {
-  App as AppFactory,
-  Index as IndexFactory,
-} from 'configs/sandpack-contents/framer-motion-examples/chakra-factory'
+<SandpackEditor>
 
-<SandpackEmbed
-  files={{
-    '/App.tsx': AppFactory,
-    '/index.tsx': IndexFactory,
-  }}
-/> -->
+```tsx FramerWithChakraFactory.tsx active
+import { Container, chakra, shouldForwardProp } from '@chakra-ui/react';
+import { motion, isValidMotionProp } from 'framer-motion';
+
+const ChakraBox = chakra(motion.div, {
+  /**
+   * Allow motion props and non-Chakra props to be forwarded.
+   */
+  shouldForwardProp: (prop) => isValidMotionProp(prop) || shouldForwardProp(prop),
+});
+
+const FramerWithChakraFactory =() => {
+  return (
+    <Container h="100vh" display="flex" alignItems="center" justifyContent="center">
+      <ChakraBox
+        animate={{
+          scale: [1, 2, 2, 1, 1],
+          rotate: [0, 0, 270, 270, 0],
+          borderRadius: ["20%", "20%", "50%", "50%", "20%"],
+        }}
+        // @ts-ignore no problem in operation, although type error appears.
+        transition={{
+          duration: 3,
+          ease: "easeInOut",
+          repeat: Infinity,
+          repeatType: "loop",
+        }}
+        padding="2"
+        bgGradient="linear(to-l, #7928CA, #FF0080)"
+        display="flex"
+        justifyContent="center"
+        alignItems="center"
+        width="100px"
+        height="100px"
+      >
+        I'm Dizzy!
+      </ChakraBox>
+    </Container>
+  )
+}
+
+export default FramerWithChakraFactory
+```
+
+```tsx App.tsx
+import { ChakraProvider } from '@chakra-ui/react';
+import FramerWithChakraFactory from './FramerWithChakraFactory';
+
+const App = () => {
+  return (
+    <ChakraProvider>
+      <FramerWithChakraFactory />
+    </ChakraProvider>
+  );
+}
+
+export default App;
+```
+
+</SandpackEditor>
 
 > `shouldForwardProp` is needed to allow framer props to be used instead of the
 > matching props from Chakra. If you do not include "children" somehow
@@ -57,7 +107,7 @@ You can also use `as` prop to add animations and interactions.
 > example, a `transition` will take precedence over a `framer motion` prop and
 > the `framer motion` feature will not work.
 
-```tsx live=false
+```tsx
 import { Box } from "@chakra-ui/react";
 import { motion } from "framer-motion";
 
@@ -73,7 +123,7 @@ function Example() {
       whileHover={{ scale: 1.1 }}
       whileTap={{ scale: 0.9 }}
       transition="0.5s linear"
-      // not work: transition={{ transition: "0.5", ease: "linear" }}
+      // does not work: transition={{ transition: "0.5", ease: "linear" }}
     />
   );
 }
@@ -81,15 +131,55 @@ function Example() {
 
 Let's look at an example of `as` prop!
 
-<!-- TODO replace with sandpack
-import {
-  App as AppAsProps,
-  Index as IndexAsProps,
-} from "configs/sandpack-contents/framer-motion-examples/as-props";
+<SandpackEditor>
 
-<SandpackEmbed
-  files={{
-    "/App.tsx": AppAsProps,
-    "/index.tsx": IndexAsProps,
-  }}
-/> -->
+
+```tsx FramerWithAsProp.tsx active
+import { Box, Container, keyframes } from '@chakra-ui/react';
+import { motion } from 'framer-motion';
+
+const animationKeyframes = keyframes`
+  0% { transform: scale(1) rotate(0); border-radius: 20%; }
+  25% { transform: scale(2) rotate(0); border-radius: 20%; }
+  50% { transform: scale(2) rotate(270deg); border-radius: 50%; }
+  75% { transform: scale(1) rotate(270deg); border-radius: 50%; }
+  100% { transform: scale(1) rotate(0); border-radius: 20%; }
+`;
+
+const animation = `${animationKeyframes} 2s ease-in-out infinite`;
+  
+const FramerWithAsProp = () => {
+  return (
+    <Container h="100vh" display="flex" alignItems="center" justifyContent="center">
+      <Box
+        as={motion.div}
+        animation={animation}
+        padding="2"
+        bgGradient="linear(to-l, #7928CA, #FF0080)"
+        width="12"
+        height="12"
+        display="flex"
+      />
+    </Container>
+  )
+};
+
+export default FramerWithAsProp;
+```
+
+```tsx App.tsx
+import { ChakraProvider } from '@chakra-ui/react';
+import FramerWithAsProp from './FramerWithAsProp';
+
+const App = () => {
+  return (
+    <ChakraProvider>
+      <FramerWithAsProp />
+    </ChakraProvider>
+  );
+}
+
+export default App;
+```
+
+</SandpackEditor>
