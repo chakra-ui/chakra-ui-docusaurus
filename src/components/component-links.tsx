@@ -2,14 +2,13 @@ import { PropsWithChildren } from "react";
 import { FaGithub, FaNpm } from "react-icons/fa";
 import { chakra } from '../../design-system/jsx';
 
-
 type ComponentLinkProps = {
   icon: any;
   url: string;
   iconSize?: string;
   iconColor?: string;
   children: PropsWithChildren<string>;
-  name: string;
+  name: "NPM" | "Github";
 }
 
 const ComponentLink = ({ url, children, icon, name }: ComponentLinkProps) => {
