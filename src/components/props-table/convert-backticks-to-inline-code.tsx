@@ -13,7 +13,7 @@ function toInlineCode(input: string) {
     .split(/(`\w+`)/)
     .map((chunk) =>
       chunk.startsWith("`") && chunk.endsWith("`") ? (
-        <InlineCode key={chunk}>{chunk.slice(1, -1)}</InlineCode>
+        <InlineCode fontSize="0.8em !important" key={chunk}>{chunk.slice(1, -1)}</InlineCode>
       ) : (
         chunk
       )
