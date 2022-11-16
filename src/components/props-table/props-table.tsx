@@ -104,16 +104,16 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
                 {/* TODO: Figure out how to generate static css using style props */}
                 <InlineCode
                   className={css({
-                    background: { base: "purple.100", dark: "purple.900" },
+                    background: { base: "purple.100 !important", dark: "rgba(214, 188, 250, 0.16) !important" },
                     color: { base: "purple.800", dark: "purple.200" },
                     fontWeight: "normal",
-                    fontSize: "sm",
+                    fontSize: "sm !important",
                   })}
                 >
                   {prop.name}
                 </InlineCode>
                 {prop.required && (
-                  <InlineCode colorScheme="red">required</InlineCode>
+                  <InlineCode fontSize="0.8em !important" colorScheme="red">required</InlineCode>
                 )}
               </chakra.div>
             </chakra.h3>
@@ -132,7 +132,7 @@ Remove the use of <PropsTable of="${of}" /> for this component in the docs.`
             <chakra.div display="flex">
               <div className={rowStyles}>Type</div>
               <div className={cellStyles}>
-                <MDXComponents.code>{prop.type}</MDXComponents.code>
+                <InlineCode fontSize="0.8em !important">{prop.type}</InlineCode>
               </div>
             </chakra.div>
             {prop.defaultValue && (
